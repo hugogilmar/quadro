@@ -14,7 +14,6 @@ PATH
       rails (~> 3.2.20)
       sass-rails (~> 3.2.3)
       summernote-rails (~> 0.5.10.2)
-      uglifier (~> 1.0.3)
 
 GEM
   remote: https://rubygems.org/
@@ -151,9 +150,6 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.42)
-    uglifier (1.0.4)
-      execjs (>= 0.3.0)
-      multi_json (>= 1.0.2)
 
 PLATFORMS
   ruby
