@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Hugo Gilmar Erazo"]
   s.email       = ["hugogilmar@gmail.com"]
   s.homepage    = "http://www.nanotutoriales.com"
-  s.summary     = "Quadro"
-  s.description = "All required libraries to initialize a Rails project"
+  s.summary     = "Quadro CMS"
+  s.description = "Quadro Content Management System"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.add_dependency "font-awesome-sass", "~> 4.2.2"
   s.add_dependency "compass-rails", "~> 2.0.1"
   s.add_dependency "animate", "~> 0.1.0"
+  s.add_dependency "summernote-rails", "~> 0.5.10.2"
+  s.add_dependency "codemirror-rails", "~> 4.5"
 
   s.add_development_dependency "sqlite3"
 end
