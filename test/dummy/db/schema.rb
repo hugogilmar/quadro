@@ -14,9 +14,12 @@
 ActiveRecord::Schema.define(:version => 20141122163450) do
 
   create_table "quadro_widgets", :force => true do |t|
-    t.string   "name",            :null => false
     t.integer  "widgetable_id"
     t.string   "widgetable_type"
+    t.string   "type",            :null => false
+    t.string   "name",            :null => false
+    t.text     "content"
+    t.text     "settings"
     t.datetime "deleted_at"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
@@ -24,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20141122163450) do
 
   add_index "quadro_widgets", ["deleted_at"], :name => "index_quadro_widgets_on_deleted_at"
   add_index "quadro_widgets", ["name"], :name => "index_quadro_widgets_on_name", :unique => true
+  add_index "quadro_widgets", ["type"], :name => "index_quadro_widgets_on_type"
   add_index "quadro_widgets", ["widgetable_id", "widgetable_type"], :name => "index_quadro_widgets_on_widgetable_id_and_widgetable_type"
 
 end

@@ -1,5 +1,12 @@
 module Quadro
   class Widget < ActiveRecord::Base
-    # attr_accessible :title, :body
+    # attributes
+    attr_accessible :name
+
+    # validations
+    validates :name, uniqueness: true
+
+    # associations
+    belongs_to :widgetable, polymorphic: true
   end
 end

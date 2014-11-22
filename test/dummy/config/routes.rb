@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Quadro::Engine => "/quadro"
+  mount Quadro::Engine => "/"
 end
