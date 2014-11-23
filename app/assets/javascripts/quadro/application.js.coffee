@@ -5,3 +5,5 @@
 #= require codemirror/modes/javascript
 #= require codemirror/modes/http
 #= require codemirror/modes/css
+#= require summernote
+#= require quadro/site
