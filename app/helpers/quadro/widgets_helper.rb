@@ -1,13 +1,23 @@
 module Quadro
   module WidgetsHelper
     def widget_for(name, *args, &block)
+      return "" unless name
+
+      widget = widgets.select{ |w| w.name == name.to_s }.first || Quadro::Widget::Html.new(name: name)
+      options = args[0] || { airmode: false }
+
       if block_given?
-        options = args[0] || { airmode: false }
         content_tag :div, class: 'summernote', data: options do
-          capture(&block).html_safe
+          if widget.content.blank?
+            capture(&block).html_safe
+          else
+            widget.content.html_safe
+          end
         end
       else
-        ""
+        content_tag :div, class: 'summernote', data: options do
+          widget.content.html_safe unless widget.content.blank?
+        end
       end
     end
   end

@@ -2,8 +2,9 @@
 #= require jquery_ujs
 #= require bootstrap-sprockets
 #= require codemirror
+#= require codemirror/modes/htmlmixed
+#= require codemirror/modes/xml
 #= require codemirror/modes/javascript
-#= require codemirror/modes/http
 #= require codemirror/modes/css
 #= require summernote
 #= require quadro/site

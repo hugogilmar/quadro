@@ -1,9 +1,26 @@
-= widget_for :title, airmode: true do
+= widget_for :headline, airmode: true do
   .page-header
     %h1 Welcome#index
 
-%p Find me in app/views/quadro/welcome/index.html.haml
+= widget_for :lead, airmode: true do
+  %p.lead Find me in app/views/quadro/welcome/index.html.haml
 
-= widget_for :title do
-  %h2 Widget
-  %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
+.row
+  .col-md-6
+    = widget_for :about, airmode: true do
+      %h1 About us
+      %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  .col-md-6
+    .row
+      = widget_for :article1, airmode: true do
+        %img.img-circle(src="http://www.placehold.it/100x100")
+        %h1 About us
+        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      = widget_for :article2, airmode: true do
+        %img.img-circle(src="http://www.placehold.it/100x100")
+        %h1 About us
+        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+      = widget_for :article3, airmode: true do
+        %img.img-circle(src="http://www.placehold.it/100x100")
+        %h1 About us
+        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
