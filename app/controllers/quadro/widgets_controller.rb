@@ -14,12 +14,12 @@ module Quadro
 
     def create
       widget.save
-      respond_with widget
+      respond_with widget, location: widgets_path
     end
 
     def update
       widget.update_attributes(params[:widget])
-      respond_with widget
+      respond_with widget, location: widgets_path
     end
 
     def destroy

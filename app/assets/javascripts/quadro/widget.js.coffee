@@ -20,7 +20,7 @@ class Widget
     return
 
   getContent: ->
-    @content = $(".summernote[data-id=#{@id}]").code()
+    @content = $(".summernote[data-name=#{@name}]").code()
     return
 
   create: ->
@@ -33,6 +33,8 @@ class Widget
           content: @content
       success: (data) ->
         console.log data
+        @id = data.id
+        $(".summernote[data-name=#{@name}]").data('id', data.id)
         return
       error: ->
         console.log "something failed"
