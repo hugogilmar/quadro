@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "animate", "~> 0.1.0"
   s.add_dependency "summernote-rails", "~> 0.5.10.2"
   s.add_dependency "codemirror-rails", "~> 4.5"
+  s.add_dependency "pace-rails", "~> 0.1.1"
 
   s.add_development_dependency "sqlite3"
 end

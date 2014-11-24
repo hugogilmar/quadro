@@ -5,7 +5,7 @@ module Quadro
     private
 
     def widgets
-      @widgets ||= Quadro::Widget.all
+      @widgets ||= Quadro::Widget::Html.all
     end
     helper_method :widgets, :widget
 
@@ -13,9 +13,9 @@ module Quadro
       @widget ||=
         case
         when ["create"].include?(action_name)
-          Quadro::Widget.new(params[:widget])
+          Quadro::Widget::Html.new(params[:widget])
         else
-          Quadro::Widget.find(params[:id]) rescue nil
+          Quadro::Widget::Html.find(params[:id]) rescue nil
         end
     end
   end
