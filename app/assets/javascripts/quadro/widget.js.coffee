@@ -3,7 +3,32 @@ class Widget
     @id = @element.data 'id'
     @name = @element.data 'name'
     @type = @element.data 'type'
+    @airmode = @element.data 'airmode'
+    @summernote()
     return
+
+  summernote: ->
+    @element.summernote
+      airMode: @airmode
+      codemirror:
+        lineNumbers: true
+        lineWrapping: true
+        tabSize: 2
+        mode: 'htmlmixed'
+        theme: 'monokai'
+      oninit: ->
+        console.log 'initialize'
+        return
+      onfocus: ->
+        console.log 'focus'
+        return
+      onblur: ->
+        console.log 'blur'
+        return
+      onChange: =>
+        console.log 'change'
+        @save()
+        return
 
   save: ->
     @getContent()
