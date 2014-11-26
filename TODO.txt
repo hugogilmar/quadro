@@ -1,0 +1,4 @@
++ improve homepage design
++ pages support with ancestry and friendly id
++ homepage and page generators
++ breadcrumb and menu helpers
