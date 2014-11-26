@@ -1,5 +1,8 @@
 class Widget
-  constructor: (@id, @type, @name, @content=null) ->
+  constructor: (@element) ->
+    @id = @element.data 'id'
+    @name = @element.data 'name'
+    @type = @element.data 'type'
     return
 
   save: ->
@@ -12,7 +15,6 @@ class Widget
       url: "/widgets/#{@id}.json"
       type: "GET"
       success: (data) ->
-        console.log data
         return
       error: ->
         console.log "something failed"
@@ -31,10 +33,10 @@ class Widget
         widget:
           name: @name
           content: @content
-      success: (data) ->
-        console.log data
-        @id = data.id
+      success: (data) =>
+        $(".summernote[data-name=#{@name}]").attr('data-id', data.id)
         $(".summernote[data-name=#{@name}]").data('id', data.id)
+        @id = data.id
         return
       error: ->
         console.log "something failed"
@@ -49,7 +51,6 @@ class Widget
         widget:
           content: @content
       success: (data) ->
-        console.log data
         return
       error: ->
         console.log "something failed"
@@ -61,7 +62,6 @@ class Widget
       url: "/widgets/#{@id}.json"
       type: "DELETE"
       success: (data) ->
-        console.log data
         return
       error: ->
         console.log "something failed"

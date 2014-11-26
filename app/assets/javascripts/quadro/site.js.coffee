@@ -1,10 +1,6 @@
 $ ->
   $('.summernote[data-airmode=false]').each ->
-    id = $(this).data('id')
-    type = $(this).data('type')
-    name = $(this).data('name')
-
-    widget = new Widget id, type, name
+    widget = new Widget $(this)
 
     $(this).summernote
       codemirror:
@@ -28,11 +24,7 @@ $ ->
         return
 
   $('.summernote[data-airmode=true]').each ->
-    id = $(this).data('id')
-    type = $(this).data('type')
-    name = $(this).data('name')
-
-    widget = new Widget id, type, name
+    widget = new Widget $(this)
 
     $(this).summernote
       airMode: true
