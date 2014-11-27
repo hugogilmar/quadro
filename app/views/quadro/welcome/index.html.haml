@@ -1,26 +1,6 @@
-= widget_for :headline, airmode: true do
-  .page-header
-    %h1 Welcome#index
-
-= widget_for :lead, airmode: true do
-  %p.lead Find me in app/views/quadro/welcome/index.html.haml
-
-.row
-  .col-md-6
-    = widget_for :about, airmode: true do
-      %h1 About us
-      %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-  .col-md-6
-    .row
-      = widget_for :article1, airmode: true do
-        %img.img-circle(src="http://www.placehold.it/100x100")
-        %h1 About us
-        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-      = widget_for :article2, airmode: true do
-        %img.img-circle(src="http://www.placehold.it/100x100")
-        %h1 About us
-        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-      = widget_for :article3, airmode: true do
-        %img.img-circle(src="http://www.placehold.it/100x100")
-        %h1 About us
-        %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+#quadro-welcome
+  .jumbotron
+    = widget_for :welcome, airmode: true do
+      = image_tag 'quadro/quadro-logo.png', alt: 'Quadro Logo'
+      %h1 Welcome to Quadro CMS
+      %p An elegant CMS written in Ruby for Rails projects
