@@ -4,6 +4,7 @@ class Widget
     @name = @element.data 'name'
     @type = @element.data 'type'
     @airmode = @element.data 'airmode'
+    @changed = false
     @summernote()
     return
 
@@ -16,38 +17,26 @@ class Widget
         tabSize: 2
         mode: 'htmlmixed'
         theme: 'monokai'
-      oninit: ->
-        console.log 'initialize'
-        return
-      onfocus: ->
-        console.log 'focus'
-        return
-      onblur: ->
-        console.log 'blur'
-        return
       onChange: =>
-        console.log 'change'
-        @save()
+        @setChanged()
         return
 
   save: ->
     @getContent()
     if @id then @update() else @create()
+    @unsetChanged()
     return
 
   reload: ->
     $.ajax
       url: "/widgets/#{@id}.json"
       type: "GET"
+      dataType: "json"
       success: (data) ->
         return
       error: ->
         console.log "something failed"
         return
-    return
-
-  getContent: ->
-    @content = $(".summernote[data-name=#{@name}]").code()
     return
 
   create: ->
@@ -93,4 +82,17 @@ class Widget
         return
     return
 
+  getContent: ->
+    @content = $(".summernote[data-name=#{@name}]").code()
+    return
+
+  setChanged: ->
+    @changed = true
+    $('#quadro-toolbar').show()
+    return
+
+  unsetChanged: ->
+    @changed = false
+    $('#quadro-toolbar').hide()
+    return
 window.Widget = Widget

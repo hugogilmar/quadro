@@ -11,4 +11,5 @@
 #= require summernote
 #= require quadro/plugins/highlight
 #= require quadro/widget
+#= require quadro/quadro
 #= require quadro/site
