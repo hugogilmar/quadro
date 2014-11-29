@@ -1,0 +1,5 @@
+<% if page.errors.size > 0 %>
+  $("#quadro-modal .modal-body").html("<%= escape_javascript(render(partial: 'quadro/pages/edit', locals: { page: page })) %>");
+<% else %>
+  $("#quadro-modal").modal('hide');
+<% end %>

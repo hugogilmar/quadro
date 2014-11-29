@@ -4,7 +4,7 @@ module Quadro
     attr_accessible :name
 
     # validations
-    validates :name, uniqueness: true, scope: :page_id
+    validates :name, uniqueness: { scope: :page_id }
 
     # associations
     belongs_to :page
