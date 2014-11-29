@@ -30,12 +30,13 @@ class Widget
 
   create: ->
     $.ajax
-      url: "/pages/#{@page}/widgets.json"
+      url: "/#{@page}/widgets.json"
       type: "POST"
       data:
         widget:
           name: @name
           content: @content
+        type: @type
       success: (data) =>
         $(".summernote[data-name=#{@name}]").attr('data-id', data.id)
         $(".summernote[data-name=#{@name}]").data('id', data.id)
@@ -48,7 +49,7 @@ class Widget
 
   update: ->
     $.ajax
-      url: "/pages/#{@page}/widgets/#{@id}.json"
+      url: "/#{@page}/widgets/#{@id}.json"
       type: "PUT"
       data:
         widget:
@@ -62,7 +63,7 @@ class Widget
 
   destroy: ->
     $.ajax
-      url: "/pages/#{@page}/widgets/#{@id}.json"
+      url: "/#{@page}/widgets/#{@id}.json"
       type: "DELETE"
       success: (data) ->
         return

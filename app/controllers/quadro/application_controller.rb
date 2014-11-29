@@ -12,7 +12,10 @@ module Quadro
       @widget ||=
         case
         when ["create"].include?(action_name)
-          page.widgets.new(params[:widget])
+          widget_type = params[:type].constantize
+          new_widget = widget_type.new(params[:widget])
+          page.widgets << new_widget
+          new_widget
         else
           page.widgets.find(params[:id]) rescue nil
         end

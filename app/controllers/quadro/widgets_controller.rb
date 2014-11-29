@@ -5,7 +5,6 @@ module Quadro
     respond_to :json, :xml
 
     def create
-      widget.save
       respond_with widget, location: page_widgets_path
     end
 

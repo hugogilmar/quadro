@@ -1,4 +1,7 @@
-+ improve homepage design
-+ pages support with ancestry and friendly id
 + homepage and page generators
 + breadcrumb and menu helpers
+
+= widget_for :welcome, airmode: true do
+  = image_tag 'quadro/quadro-logo.png', alt: 'Quadro Logo'
+  %h1 Welcome to Quadro CMS
+  %p An elegant CMS written in Ruby for Rails projects

@@ -5,7 +5,7 @@ module Quadro
 
       widget = widgets.select{ |w| w.name == name.to_s }.first || Quadro::Widget::Html.new(name: name)
       options = args[0] || { airmode: false }
-      options.merge!({id: widget.id, type: widget.type, name: name, page: widget.page_id}).reject!{ |k, v| v.nil? }
+      options.merge!({id: widget.id, type: widget.type, name: name, page: (widget.page_id ? widget.page_id : page.id) }).reject!{ |k, v| v.nil? }
 
       if block_given?
         content_tag :div, class: 'summernote', data: options do
