@@ -1,7 +1,7 @@
 Quadro::Engine.routes.draw do
-  get "welcome/index"
+  resources :pages, path: "/" do
+    resources :widgets, only: [:create, :update, :delete]
+  end
 
-  resources :widgets, except: [:new, :edit]
-
-  root :to => "welcome#index"
+  root :to => "pages#index"
 end

@@ -1,0 +1,13 @@
+#quadro-welcome
+  .jumbotron.text-center
+    = widget_for :welcome, airmode: true do
+      = image_tag 'quadro/quadro-logo.png', alt: 'Quadro Logo'
+      %h1 Welcome to Quadro CMS
+      %p An elegant CMS written in Ruby for Rails projects
+
+%ul
+  - unless page.is_childless?
+    - page.children.each do |p|
+      %li
+        = link_to page_path(p) do
+          = p.title

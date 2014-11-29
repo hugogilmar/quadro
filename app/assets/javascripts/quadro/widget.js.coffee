@@ -3,6 +3,7 @@ class Widget
     @id = @element.data 'id'
     @name = @element.data 'name'
     @type = @element.data 'type'
+    @page = @element.data 'page'
     @airmode = @element.data 'airmode'
     @changed = false
     @summernote()
@@ -27,21 +28,9 @@ class Widget
     @unsetChanged()
     return
 
-  reload: ->
-    $.ajax
-      url: "/widgets/#{@id}.json"
-      type: "GET"
-      dataType: "json"
-      success: (data) ->
-        return
-      error: ->
-        console.log "something failed"
-        return
-    return
-
   create: ->
     $.ajax
-      url: "/widgets.json"
+      url: "/pages/#{@page}/widgets.json"
       type: "POST"
       data:
         widget:
@@ -59,7 +48,7 @@ class Widget
 
   update: ->
     $.ajax
-      url: "/widgets/#{@id}.json"
+      url: "/pages/#{@page}/widgets/#{@id}.json"
       type: "PUT"
       data:
         widget:
@@ -73,7 +62,7 @@ class Widget
 
   destroy: ->
     $.ajax
-      url: "/widgets/#{@id}.json"
+      url: "/pages/#{@page}/widgets/#{@id}.json"
       type: "DELETE"
       success: (data) ->
         return
@@ -88,11 +77,11 @@ class Widget
 
   setChanged: ->
     @changed = true
-    $('#quadro-toolbar').show()
+    $('#quadro-widgets').show()
     return
 
   unsetChanged: ->
     @changed = false
-    $('#quadro-toolbar').hide()
+    $('#quadro-widgets').hide()
     return
 window.Widget = Widget

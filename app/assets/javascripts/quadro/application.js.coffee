@@ -9,7 +9,6 @@
 #= require codemirror/modes/ruby
 #= require codemirror/modes/haml
 #= require summernote
-#= require quadro/plugins/highlight
 #= require quadro/widget
 #= require quadro/quadro
 #= require quadro/site

@@ -13,5 +13,11 @@ module Quadro
 
     # behaviours
     has_ancestry
+    acts_as_url :title, url_attribute: :slug
+
+    # methods
+    def to_param
+      slug
+    end
   end
 end

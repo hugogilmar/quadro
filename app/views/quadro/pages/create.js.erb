@@ -1,0 +1,5 @@
+<% if page.persisted? %>
+  $("#quadro-modal").modal('hide');
+<% else %>
+  $("#quadro-modal .modal-body").html("<%= escape_javascript(render(partial: 'quadro/pages/new', locals: { page: page })) %>");
+<% end %>

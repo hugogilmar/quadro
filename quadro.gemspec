@@ -21,6 +21,8 @@ Gem::Specification.new do |s|
   s.add_dependency "ancestry", "~> 2.1.0"
   s.add_dependency "paranoia", "~> 1.0"
   s.add_dependency "haml-rails", "~> 0.4"
+  s.add_dependency "simple_form", "~> 2.1.1"
+  s.add_dependency "stringex", "~> 2.5.2"
 
   s.add_dependency "jquery-rails", "~> 3.1.2"
   s.add_dependency "coffee-rails", "~> 3.2.2"

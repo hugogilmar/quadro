@@ -4,10 +4,9 @@ module Quadro
     attr_accessible :name
 
     # validations
-    validates :name, uniqueness: true
+    validates :name, uniqueness: true, scope: :page_id
 
     # associations
-    belongs_to :widgetable, polymorphic: true
     belongs_to :page
   end
 end

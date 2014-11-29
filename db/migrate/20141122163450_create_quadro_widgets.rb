@@ -1,7 +1,7 @@
 class CreateQuadroWidgets < ActiveRecord::Migration
   def change
     create_table :quadro_widgets do |t|
-      t.references :widgetable, polymorphic: true
+      t.references :page
       t.string :type, length: 24, null: false
       t.string :name, length: 24, null: false
       t.text :content
@@ -10,9 +10,10 @@ class CreateQuadroWidgets < ActiveRecord::Migration
       t.timestamps
     end
 
-    add_index :quadro_widgets, :name, unique: true
+    add_index :quadro_widgets, [:page_id, :name], unique: true
+    add_index :quadro_widgets, :name
+    add_index :quadro_widgets, :page_id
     add_index :quadro_widgets, :type
-    add_index :quadro_widgets, [:widgetable_id, :widgetable_type]
     add_index :quadro_widgets, :deleted_at
   end
 end

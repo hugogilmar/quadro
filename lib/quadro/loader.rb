@@ -1,5 +1,8 @@
+require "ancestry"
 require "paranoia"
 require "haml-rails"
+require "simple_form"
+require "stringex"
 require "jquery-rails"
 require "coffee-rails"
 require "sass-rails"
