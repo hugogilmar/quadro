@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     quadro (0.0.1)
+      ancestry (~> 2.1.0)
       animate (~> 0.1.0)
       bootstrap-sass (~> 3.3.0.1)
       codemirror-rails (~> 4.5)
@@ -45,6 +46,8 @@ GEM
     activesupport (3.2.21)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    ancestry (2.1.0)
+      activerecord (>= 3.0.0)
     animate (0.1.0)
       compass (>= 0.13.alpha.0)
       sass (>= 3.2.0)

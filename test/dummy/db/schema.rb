@@ -11,7 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141122163450) do
+ActiveRecord::Schema.define(:version => 20141129022923) do
+
+  create_table "quadro_pages", :force => true do |t|
+    t.string   "title"
+    t.string   "slug"
+    t.string   "ancestry"
+    t.text     "settings"
+    t.datetime "deleted_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "quadro_pages", ["ancestry"], :name => "index_quadro_pages_on_ancestry"
+  add_index "quadro_pages", ["deleted_at"], :name => "index_quadro_pages_on_deleted_at"
+  add_index "quadro_pages", ["slug"], :name => "index_quadro_pages_on_slug", :unique => true
 
   create_table "quadro_widgets", :force => true do |t|
     t.integer  "widgetable_id"
@@ -23,10 +37,12 @@ ActiveRecord::Schema.define(:version => 20141122163450) do
     t.datetime "deleted_at"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "page_id"
   end
 
   add_index "quadro_widgets", ["deleted_at"], :name => "index_quadro_widgets_on_deleted_at"
   add_index "quadro_widgets", ["name"], :name => "index_quadro_widgets_on_name", :unique => true
+  add_index "quadro_widgets", ["page_id"], :name => "index_quadro_widgets_on_page_id"
   add_index "quadro_widgets", ["type"], :name => "index_quadro_widgets_on_type"
   add_index "quadro_widgets", ["widgetable_id", "widgetable_type"], :name => "index_quadro_widgets_on_widgetable_id_and_widgetable_type"
 

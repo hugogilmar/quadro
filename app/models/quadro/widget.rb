@@ -8,5 +8,6 @@ module Quadro
 
     # associations
     belongs_to :widgetable, polymorphic: true
+    belongs_to :page
   end
 end

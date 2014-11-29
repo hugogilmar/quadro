@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 3.2.20"
 
+  s.add_dependency "ancestry", "~> 2.1.0"
   s.add_dependency "paranoia", "~> 1.0"
   s.add_dependency "haml-rails", "~> 0.4"
 
