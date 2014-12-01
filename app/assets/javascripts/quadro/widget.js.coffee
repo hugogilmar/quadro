@@ -22,6 +22,16 @@ class Widget
         @setChanged()
         return
 
+  switchAirmodeOn: ->
+    @element.destroy()
+    @airmode = true
+    @summernote()
+
+  switchAirmodeOff: ->
+    @element.destroy()
+    @airmode = false
+    @summernote()
+
   save: ->
     @getContent()
     if @id then @update() else @create()
