@@ -1,15 +1,15 @@
 .container
   = render_crumbs
-  .row
-    .col-md-3
-      %ul.nav.nav-pills.nav-stacked
-        - unless page.is_childless?
+
+  - if page.has_children?
+    .row
+      .col-md-3
+        %ul.nav.nav-pills.nav-stacked
           - page.children.each do |p|
             %li
               = link_to page_path(p) do
                 = p.title
-    .col-md-9
-      .page-header
-        %h1= page.title
-
-      %p.lead= page.description
+      .col-md-9
+        = render 'quadro/shared/page_header'
+  - else
+    = render 'quadro/shared/page_header'

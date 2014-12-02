@@ -4,7 +4,7 @@ class Widget
     @name = @element.data 'name'
     @type = @element.data 'type'
     @page = @element.data 'page'
-    @airmode = @element.data 'airmode'
+    @airmode = true
     @changed = false
     @summernote()
     return
@@ -88,11 +88,11 @@ class Widget
 
   setChanged: ->
     @changed = true
-    $('#quadro-widgets').show()
+    $('#quadro-actions').show()
     return
 
   unsetChanged: ->
     @changed = false
-    $('#quadro-widgets').hide()
+    $('#quadro-actions').hide()
     return
 window.Widget = Widget

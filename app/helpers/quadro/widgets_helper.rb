@@ -4,7 +4,7 @@ module Quadro
       return "" unless name
 
       widget = widgets.select{ |w| w.name == name.to_s }.first || Quadro::Widget::Html.new(name: name)
-      options = args[0] || { airmode: false }
+      options = args[0] || {}
       options.merge!({id: widget.id, type: widget.type, name: name, page: (widget.page_id ? widget.page_id : page.id) }).reject!{ |k, v| v.nil? }
 
       if block_given?

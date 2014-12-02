@@ -18,14 +18,14 @@
             %i.fa.fa-cog
             Edit page
     %ul#quadro-widgets.nav.navbar-nav.navbar-right
-      %li
+      %li#quadro-controls
         Editor advanced:
         .btn-group(role='group')
           %button#quadro-airmode-off.btn.btn-default.navbar-btn(type='button')
             %i.fa.fa-eye
           %button#quadro-airmode-on.btn.btn-default.navbar-btn.active(type='button')
             %i.fa.fa-eye-slash
-      %li
+      %li#quadro-actions
         = link_to '#', id: 'quadro-save' do
           %i.fa.fa-save
           Save

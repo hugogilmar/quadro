@@ -1,0 +1,17 @@
+%nav.navbar.navbar-default(role='navigation')
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed(data-target='#navigation' data-toggle='collapse' type='button')
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path, class: 'navbar-brand' do
+        Brand
+    #navigation.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        - unless root.is_childless?
+          - root.children.each do |child|
+            %li(class="#{'active' if page.id == child.id}")
+              = link_to page_path(child) do
+                = child.title

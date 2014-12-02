@@ -4,6 +4,7 @@ class CreateQuadroPages < ActiveRecord::Migration
       t.string :title, length: 24
       t.string :slug, length: 24
       t.string :ancestry, length: 24
+      t.integer :ancestry_depth, default: 0
       t.text :settings
       t.timestamp :deleted_at
       t.timestamps
