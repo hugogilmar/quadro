@@ -24,3 +24,5 @@ $ ->
     for widget in Object.keys(widgets)
       widgets[widget].save()
     return
+
+  $('#quadro-uploader').dropzone url: '/file/post'

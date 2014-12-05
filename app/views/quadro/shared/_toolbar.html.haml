@@ -1,5 +1,6 @@
 %nav#quadro-toolbar.navbar.navbar-default.navbar-fixed-bottom(role='navigation')
   .container-fluid
+    #quadro-uploader
     .navbar-header
       = link_to root_path, class: 'navbar-brand' do
         = image_tag 'quadro/quadro-logo-mini.png'
@@ -29,3 +30,8 @@
         = link_to '#', id: 'quadro-save' do
           %i.fa.fa-save
           Save
+    %ul#quadro-plugins.nav.navbar-nav.navbar-right
+      %li
+        = link_to '#', id: 'quadro-gallery' do
+          %i.fa.fa-picture-o
+          Image gallery
