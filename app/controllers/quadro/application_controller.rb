@@ -21,6 +21,20 @@ module Quadro
         end
     end
 
+    def assets
+      @assets ||= page.assets
+    end
+
+    def asset
+      @asset ||=
+        case
+        when ["create"].include?(action_name)
+          page.assets.new(params[:asset])
+        else
+          page.assets.find(params[:id]) rescue nil
+        end
+    end
+
     def root
       Quadro::Page.roots.first
     end
@@ -45,7 +59,7 @@ module Quadro
           else
             root.children.find_by_slug(params[:id]) rescue nil
           end
-        else ["widgets"].include?(controller_name)
+        when ["widgets", "assets"].include?(controller_name)
           root.subtree.find(params[:page_id]) rescue nil
         end
     end

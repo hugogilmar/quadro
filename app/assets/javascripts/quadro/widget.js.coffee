@@ -21,16 +21,19 @@ class Widget
       onChange: =>
         @setChanged()
         return
+    return
 
   switchAirmodeOn: ->
     @element.destroy()
     @airmode = true
     @summernote()
+    return
 
   switchAirmodeOff: ->
     @element.destroy()
     @airmode = false
     @summernote()
+    return
 
   save: ->
     @getContent()
@@ -95,4 +98,5 @@ class Widget
     @changed = false
     $('#quadro-actions').hide()
     return
+
 window.Widget = Widget
