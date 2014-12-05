@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.add_dependency "crummy", "~> 1.8.0"
   s.add_dependency "stringex", "~> 2.5.2"
 
+  s.add_dependency "paperclip", "~> 4.2.0"
+
   s.add_dependency "jquery-rails", "~> 3.1.2"
   s.add_dependency "coffee-rails", "~> 3.2.2"
   s.add_dependency "sass-rails", "~> 3.2.3"
@@ -34,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_dependency "animate", "~> 0.1.0"
   s.add_dependency "codemirror-rails", "~> 4.5"
   s.add_dependency "summernote-rails", "~> 0.5.10.2"
-  s.add_dependency "dropzonejs-rails"
+  s.add_dependency "dropzonejs-rails", "~> 0.5.2"
 
   s.add_development_dependency "sqlite3"
 end
