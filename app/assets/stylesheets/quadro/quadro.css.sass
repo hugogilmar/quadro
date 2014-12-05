@@ -5,4 +5,16 @@
   display: none
 
 #quadro-uploader
+  overflow: auto
+
+#quadro-uploader.collapsed
+  height: 0em
+  +transition-property(height)
+  +transition-duration(1s)
+  +transition-timing-function(ease-in)
+
+#quadro-uploader.expanded
   height: 20em
+  +transition-property(height)
+  +transition-duration(1s)
+  +transition-timing-function(ease-out)

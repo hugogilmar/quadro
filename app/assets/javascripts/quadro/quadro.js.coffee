@@ -25,4 +25,7 @@ $ ->
       widgets[widget].save()
     return
 
+  $('#quadro-gallery').on 'click', ->
+    if $('#quadro-uploader').hasClass 'collapsed' then $('#quadro-uploader').removeClass('collapsed').addClass 'expanded' else $('#quadro-uploader').removeClass('expanded').addClass 'collapsed'
+
   $('#quadro-uploader').dropzone url: '/file/post'
