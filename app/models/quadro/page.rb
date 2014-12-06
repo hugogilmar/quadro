@@ -2,7 +2,7 @@ module Quadro
   class Page < ActiveRecord::Base
     # constants
     PAGE_TEMPLATES_PATH = "app/views/quadro/shared/templates/"
-    SITEMAP_FRECUENCY = ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"]
+    SITEMAP_FREQUENCY = ["always", "hourly", "daily", "weekly", "monthly", "yearly", "never"]
     SITEMAP_PRIORITY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
     # attributes
