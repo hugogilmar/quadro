@@ -4,8 +4,8 @@ module Quadro
     PAGE_TEMPLATES_PATH = "app/views/quadro/shared/templates/"
 
     # attributes
-    attr_accessible :title, :description, :template
-    store :settings, accessors: [:description, :template]
+    attr_accessible :title, :description, :template, :frequency, :priority
+    store :settings, accessors: [:description, :template, :frequency, :priority]
 
     # validations
     validates :title, presence: true

@@ -2,6 +2,12 @@
   = hidden_field_tag :is_root, true if page.is_root?
   = form.input :title, input_html: { class: 'form-control' }
   = form.input :description, input_html: { class: 'form-control' }
-  = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
+  .row
+    .col-md-4
+      = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
+    .col-md-4
+      = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
+    .col-md-4
+      = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
   %p.text-right
     = form.submit class: 'btn btn-primary'
