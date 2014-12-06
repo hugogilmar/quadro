@@ -9,7 +9,8 @@
 #= require codemirror/modes/ruby
 #= require codemirror/modes/haml
 #= require summernote
-#= require dropzone
+#= require quadro/plugins/jquery.fs.dropper.min
 #= require quadro/widget
+#= require quadro/uploader
 #= require quadro/quadro
 #= require quadro/site

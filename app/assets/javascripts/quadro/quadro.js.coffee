@@ -25,8 +25,8 @@ $ ->
       widgets[widget].save()
     return
 
-  $('#quadro-gallery').on 'click', ->
-    if $('#quadro-uploader').hasClass 'collapsed' then $('#quadro-uploader').removeClass('collapsed').addClass 'expanded' else $('#quadro-uploader').removeClass('expanded').addClass 'collapsed'
+  $('#quadro-gallery-toggle').on 'click', ->
+    if $('#quadro-gallery').hasClass 'collapsed' then $('#quadro-gallery').removeClass('collapsed').addClass 'expanded' else $('#quadro-gallery').removeClass('expanded').addClass 'collapsed'
 
   uploader = new Uploader $('#quadro-uploader')
 

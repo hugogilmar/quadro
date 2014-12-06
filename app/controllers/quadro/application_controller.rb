@@ -26,10 +26,13 @@ module Quadro
     end
 
     def asset
-      @asset ||=
+     @asset ||=
         case
         when ["create"].include?(action_name)
-          page.assets.new(params[:asset])
+          asset_type = params[:type].constantize
+          new_asset = asset_type.new(params[:asset])
+          page.assets << new_asset
+          new_asset
         else
           page.assets.find(params[:id]) rescue nil
         end

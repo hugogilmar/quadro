@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141202040426) do
+ActiveRecord::Schema.define(:version => 20141206085127) do
+
+  create_table "quadro_assets", :force => true do |t|
+    t.integer  "assetable_id"
+    t.string   "assetable_type"
+    t.string   "type",                    :null => false
+    t.text     "settings"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
+    t.datetime "deleted_at"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "quadro_assets", ["assetable_id", "assetable_type"], :name => "index_quadro_assets_on_assetable_id_and_assetable_type"
+  add_index "quadro_assets", ["deleted_at"], :name => "index_quadro_assets_on_deleted_at"
+  add_index "quadro_assets", ["type"], :name => "index_quadro_assets_on_type"
 
   create_table "quadro_pages", :force => true do |t|
     t.string   "title"

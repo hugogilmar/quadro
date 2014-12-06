@@ -13,6 +13,7 @@ module Quadro
 
     # associations
     has_many :widgets
+    has_many :assets, as: :assetable
 
     # behaviours
     has_ancestry

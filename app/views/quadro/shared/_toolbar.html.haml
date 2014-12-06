@@ -1,5 +1,9 @@
 %nav#quadro-toolbar.navbar.navbar-default.navbar-fixed-bottom(role='navigation')
-  #quadro-uploader.collapsed(data-page=page.id)
+  #quadro-gallery.collapsed
+    #quadro-uploader.collapsed(data-page="#{page.id}" data-type='Quadro::Asset::Image')
+    #quadro-images
+      - page.assets.each do |asset|
+        = render 'quadro/assets/image', image: asset
   .container-fluid
     .navbar-header
       = link_to root_path, class: 'navbar-brand' do
@@ -32,6 +36,6 @@
           Save
     %ul#quadro-plugins.nav.navbar-nav.navbar-right
       %li
-        = link_to '#', id: 'quadro-gallery' do
+        = link_to '#', id: 'quadro-gallery-toggle' do
           %i.fa.fa-picture-o
           Image gallery

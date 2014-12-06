@@ -1,12 +1,21 @@
 class Uploader
   constructor: (@element) ->
     @page = @element.data 'page'
-    @dropzone()
+    @type = @element.data 'type'
+    @dropper()
+    @binding()
     return
 
-  dropzone: ->
-    @element.dropzone
-      url: "/#{page}/assets"
+  binding: ->
+    @element.on 'fileComplete.dropper', (e, f) ->
+      console.log f
+
+  dropper: ->
+    @element.dropper
+      action: "/#{@page}/assets.json"
+      postData:
+        type: @type
+      postKey: 'asset[attachment]'
     return
 
 window.Uploader = Uploader

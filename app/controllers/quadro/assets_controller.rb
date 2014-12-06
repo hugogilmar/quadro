@@ -2,7 +2,7 @@ require_dependency "quadro/application_controller"
 
 module Quadro
   class AssetsController < ApplicationController
-    respond_to :json, :xml
+    respond_to :js, :json, :xml
 
     def create
       asset.save
