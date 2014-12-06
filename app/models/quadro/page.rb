@@ -48,7 +48,7 @@ module Quadro
 
     def initialize_defaults
       self.template = 'blank'
-      self.frecuency = 'monthly'
+      self.frequency = 'monthly'
       self.priority = 0.5
     end
   end
