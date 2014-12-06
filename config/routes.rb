@@ -8,3 +8,6 @@ Quadro::Engine.routes.draw do
 
   root :to => "pages#index"
 end
+Rails.application.routes.prepend do
+  match 'sitemap.xml' => 'sitemaps#sitemap'
+end
