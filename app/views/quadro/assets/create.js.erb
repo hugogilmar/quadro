@@ -1,0 +1,3 @@
+<% if @asset.present? %>
+  $('#quadro-images').append('<%= escape_javascript(render("quadro/assets/image", image: @asset))%>')
+<% end %>

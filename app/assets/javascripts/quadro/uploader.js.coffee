@@ -12,7 +12,7 @@ class Uploader
 
   dropper: ->
     @element.dropper
-      action: "/#{@page}/assets.json"
+      action: "/#{@page}/assets.js"
       postData:
         type: @type
       postKey: 'asset[attachment]'
