@@ -6,8 +6,8 @@
     .col-md-4
       = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
     .col-md-4
-      = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
+      = form.input :frecuency, collection: Quadro::Page::SITEMAP_FRECUENCY, input_html: { class: 'form-control' }
     .col-md-4
-      = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
+      = form.input :priority, collection: Quadro::Page::SITEMAP_PRIORITY, input_html: { class: 'form-control' }
   %p.text-right
     = form.submit class: 'btn btn-primary'
