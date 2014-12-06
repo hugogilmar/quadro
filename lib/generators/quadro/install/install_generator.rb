@@ -3,7 +3,6 @@ class Quadro::InstallGenerator < Rails::Generators::Base
 
   def install
     route "mount Quadro::Engine => '/'"
-    route "match 'sitemap.xml' => 'sitemaps#sitemap'"
 
     rake "quadro:install:migrations"
     rake "db:migrate"
