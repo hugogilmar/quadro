@@ -17,7 +17,7 @@ module Quadro
 
     # behaviours
     has_ancestry
-    acts_as_url :title, url_attribute: :slug
+    acts_as_url :title, url_attribute: :slug, sync_url: true
 
     # callbacks
     after_initialize :initialize_defaults, :if => :new_record?
