@@ -3,12 +3,11 @@ class Quadro::InstallGenerator < Rails::Generators::Base
 
   def install
     route "mount Quadro::Engine => '/'"
+    route "match 'sitemap.xml' => 'sitemaps#sitemap'"
 
     rake "quadro:install:migrations"
     rake "db:migrate"
     rake "quadro:create_root_page"
-
-    copy_file "config/initializers/sitemap.rb", "config/initializers/sitemap.rb"
 
     copy_file "app/views/quadro/shared/_page_header.html.haml", "app/views/quadro/shared/_page_header.html.haml"
     copy_file "app/views/quadro/shared/templates/_blank.html.haml", "app/views/quadro/shared/templates/_blank.html.haml"

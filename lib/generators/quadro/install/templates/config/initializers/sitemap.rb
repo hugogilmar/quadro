@@ -22,6 +22,6 @@ SitemapGenerator::Sitemap.create do
   # Add all articles:
   #
   Quadro::Page.find_each do |page|
-    add page_url(page), lastmod: page.updated_at
+    add page_path(page), lastmod: page.updated_at
   end
 end

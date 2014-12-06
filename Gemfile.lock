@@ -9,6 +9,7 @@ PATH
       coffee-rails (~> 3.2.2)
       compass-rails (~> 2.0.1)
       crummy (~> 1.8.0)
+      dynamic_sitemaps (= 1.0.8)
       font-awesome-sass (~> 4.2.2)
       haml-rails (~> 0.4)
       jquery-rails (~> 3.1.2)
@@ -17,7 +18,6 @@ PATH
       rails (~> 3.2.20)
       sass-rails (~> 3.2.3)
       simple_form (~> 2.1.1)
-      sitemap_generator (~> 5.0.5)
       stringex (~> 2.5.2)
       summernote-rails (~> 0.5.10.2)
 
@@ -89,6 +89,7 @@ GEM
     compass-rails (2.0.1)
       compass (~> 1.0.0)
     crummy (1.8.0)
+    dynamic_sitemaps (1.0.8)
     erubis (2.7.0)
     execjs (2.2.2)
     ffi (1.9.6)
@@ -157,8 +158,6 @@ GEM
     simple_form (2.1.2)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
-    sitemap_generator (5.0.5)
-      builder
     sprockets (2.2.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
