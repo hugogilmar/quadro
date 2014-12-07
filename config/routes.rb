@@ -1,5 +1,5 @@
 Quadro::Engine.routes.draw do
-  devise_for :users, class_name: 'Quadro::User'
+  devise_for :users, class_name: 'Quadro::User', module: :devise
 
   match 'sitemap.xml' => 'sitemaps#sitemap'
 
