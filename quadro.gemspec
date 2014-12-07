@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency "crummy", "~> 1.8.0"
   s.add_dependency "stringex", "~> 2.5.2"
 
+  s.add_dependency "devise", "~> 3.4.1"
   s.add_dependency "paperclip", "~> 4.2.0"
   s.add_dependency "figaro"
   s.add_dependency "dynamic_sitemaps", "1.0.8"

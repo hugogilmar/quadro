@@ -2,6 +2,8 @@ require_dependency "quadro/application_controller"
 
 module Quadro
   class AssetsController < ApplicationController
+    before_filter :authenticate_user!
+
     respond_to :js, :json, :xml
 
     def create

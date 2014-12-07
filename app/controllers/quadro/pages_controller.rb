@@ -2,7 +2,9 @@ require_dependency "quadro/application_controller"
 
 module Quadro
   class PagesController < ApplicationController
+    before_filter :authenticate_user!, except: [:index, :show]
     before_filter :prepare_breadcrumbs
+
     respond_to :html, :js
 
     def create
