@@ -1,5 +1,5 @@
-+ homepage and page generators
-+ breadcrumb and menu helpers
++ enhance signed_in/signed_out assets
++ enhance users layout
 
 = widget_for :welcome, airmode: true do
   = image_tag 'quadro/quadro-logo.png', alt: 'Quadro Logo'
