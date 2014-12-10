@@ -5,6 +5,7 @@ class Widget
     @type = @element.data 'type'
     @page = @element.data 'page'
     @airmode = true
+    @focus = false
     @changed = false
     @summernote()
     return
@@ -20,6 +21,8 @@ class Widget
         theme: 'monokai'
       onChange: =>
         @setChanged()
+      onfocus: =>
+        @setFocus()
         return
     return
 
@@ -87,6 +90,10 @@ class Widget
 
   getContent: ->
     @content = $(".summernote[data-name=#{@name}]").code()
+    return
+
+  setFocus: ->
+    @focus = true
     return
 
   setChanged: ->
