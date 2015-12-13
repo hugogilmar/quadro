@@ -17,7 +17,7 @@
         - if page.is_root?
           = link_to edit_page_path(page.slug, is_root: true), remote: true do
             %i.fa.fa-cog
-            Edit pager
+            Edit page
         - else
           = link_to edit_page_path(page.slug), remote: true do
             %i.fa.fa-cog
