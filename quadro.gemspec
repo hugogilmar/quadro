@@ -27,14 +27,14 @@ Gem::Specification.new do |s|
 
   s.add_dependency "devise", "~> 3.4.1"
   s.add_dependency "paperclip", "~> 4.2.0"
-  s.add_dependency "figaro"
+  s.add_dependency "figaro", "~> 1.1.1"
   s.add_dependency "dynamic_sitemaps", "1.0.8"
 
   s.add_dependency "jquery-rails", "~> 3.1.2"
   s.add_dependency "coffee-rails", "~> 3.2.2"
-  s.add_dependency "sass-rails", "~> 3.2.3"
+  s.add_dependency "sass-rails", "~> 3.2.6"
   s.add_dependency "compass-rails", "~> 2.0.1"
-  s.add_dependency "bootstrap-sass", "~> 3.3.0.1"
+  s.add_dependency "bootstrap-sass", "~> 3.3.1.0"
   s.add_dependency "font-awesome-sass", "~> 4.2.2"
   s.add_dependency "animate", "~> 0.1.0"
   s.add_dependency "codemirror-rails", "~> 4.5"
