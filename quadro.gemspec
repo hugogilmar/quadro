@@ -40,5 +40,7 @@ Gem::Specification.new do |s|
   s.add_dependency "codemirror-rails", "~> 4.5"
   s.add_dependency "summernote-rails", "~> 0.5.10.2"
 
+  s.add_dependency "gravatar_image_tag"
+
   s.add_development_dependency "sqlite3"
 end

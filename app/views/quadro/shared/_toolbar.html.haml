@@ -17,7 +17,7 @@
         - if page.is_root?
           = link_to edit_page_path(page.slug, is_root: true), remote: true do
             %i.fa.fa-cog
-            Edit page
+            Edit pager
         - else
           = link_to edit_page_path(page.slug), remote: true do
             %i.fa.fa-cog
@@ -34,6 +34,15 @@
         = link_to '#', id: 'quadro-save' do
           %i.fa.fa-save
           Save
+      %li.dropdown
+        %a.dropdown-toggle(href="#" data-toggle="dropdown")
+          = gravatar_image_tag(current_user.email, alt: current_user.email, title: current_user.email, gravatar: { size: 16 }, class: 'img-rounded')
+          = current_user.email
+          %b.caret
+        %ul.dropdown-menu
+          %li
+            = link_to destroy_user_session_url, method: :delete do
+              Sign Out
     %ul#quadro-plugins.nav.navbar-nav.navbar-right
       %li
         = link_to '#', id: 'quadro-gallery-toggle' do
