@@ -6,8 +6,8 @@ module Quadro
     SITEMAP_PRIORITY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
     # attributes
-    attr_accessible :title, :description, :template, :frequency, :priority
-    store :settings, accessors: [:description, :template, :frequency, :priority]
+    attr_accessible :title, :description, :author, :template, :frequency, :priority
+    store :settings, accessors: [:description, :author, :template, :frequency, :priority]
 
     # validations
     validates :title, presence: true
@@ -50,6 +50,7 @@ module Quadro
       self.template = 'blank'
       self.frequency = 'monthly'
       self.priority = 0.5
+      self.author = ENV['author']
     end
   end
 end
