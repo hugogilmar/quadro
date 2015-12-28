@@ -1,6 +1,6 @@
 module Quadro
   class ApplicationController < ActionController::Base
-    helper_method :widgets, :widget, :root, :page
+    helper_method :widgets, :widget, :root, :page, :subpages
 
     private
 
