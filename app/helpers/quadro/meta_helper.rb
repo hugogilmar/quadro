@@ -8,10 +8,6 @@ module Quadro
     description.present? ? description : ENV['description']
   end
 
-  def meta_keywords keywords
-    keywords.present? ? keywords : ENV['keywords']
-  end
-
   def meta_author author
     author.present? ? author : ENV['author']
   end

@@ -7,7 +7,7 @@
         %span.icon-bar
         %span.icon-bar
       = link_to root_path, class: 'navbar-brand' do
-        Brand
+        = ENV['name']
     #navigation.collapse.navbar-collapse
       - unless user_signed_in?
         %ul.nav.navbar-nav.navbar-right

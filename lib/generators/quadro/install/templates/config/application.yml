@@ -3,7 +3,6 @@ development:
   name: "Quadro"
   title: "Quadro CMS"
   description: "Quadro Content Management System"
-  keywords: ""
   author: "Quadro"
 
 production:
@@ -11,5 +10,4 @@ production:
   name: "Quadro"
   title: "Quadro CMS"
   description: "Quadro Content Management System"
-  keywords: ""
   author: "Quadro"
