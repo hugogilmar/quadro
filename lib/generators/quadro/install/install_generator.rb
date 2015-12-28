@@ -17,7 +17,7 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     copy_file "app/views/quadro/shared/templates/_blank.html.haml", "app/views/quadro/shared/templates/_blank.html.haml"
     copy_file "app/views/quadro/shared/templates/_sidebar.html.haml", "app/views/quadro/shared/templates/_sidebar.html.haml"
     copy_file "app/assets/javascripts/quadro/site.js.coffee", "app/assets/javascripts/quadro/site.js.coffee"
-    copy_file "app/assets/stylesheets/quadro/site.css.sass", "app/assets/javascripts/quadro/site.css.sass"
+    copy_file "app/assets/stylesheets/quadro/site.css.sass", "app/assets/stylesheets/quadro/site.css.sass"
 
     remove_file "public/index.html"
   end
