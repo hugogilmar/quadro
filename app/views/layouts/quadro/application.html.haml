@@ -3,6 +3,10 @@
   %head
     %meta(charset='utf-8')
     %meta(content='width=device-width, initial-scale=1.0' name='viewport')
+    %title= meta_title(page.title)
+    %meta(content="#{meta_description(page.description)}" name="description")
+    %meta(content="#{meta_keywords(page.keywords)}" name="keywords")
+    %meta(content="#{meta_author(page.author)}" name="author")
     = stylesheet_link_tag 'quadro/application'
     = javascript_include_tag 'quadro/application'
     = favicon_link_tag 'quadro/favicon.png'
