@@ -1,0 +1,8 @@
+.media
+  .media-left
+    = link_to page_path(page), class: "img-thumbnail" do
+      = image_tag "http://placehold.it/300x300"
+  .media-body
+    %h4.media-heading
+      = page.title
+    %p= page.description
