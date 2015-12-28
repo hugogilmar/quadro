@@ -20,6 +20,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "ancestry", "~> 2.1.0"
   s.add_dependency "paranoia", "~> 1.0"
+  s.add_dependency "kaminari", "~> 0.16.3"
+  s.add_dependency "kaminari-bootstrap", "~> 3.0.1"
   s.add_dependency "haml-rails", "~> 0.4"
   s.add_dependency "simple_form", "~> 2.1.1"
   s.add_dependency "crummy", "~> 1.8.0"

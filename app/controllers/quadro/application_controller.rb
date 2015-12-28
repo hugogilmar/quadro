@@ -66,5 +66,9 @@ module Quadro
           root.subtree.find(params[:page_id]) rescue nil
         end
     end
+
+    def subpages
+      page.children.page(params[:page])
+    end
   end
 end
