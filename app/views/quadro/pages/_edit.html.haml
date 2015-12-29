@@ -2,21 +2,21 @@
   - form.object.build_cover if form.object.cover.nil?
   = hidden_field_tag :is_root, true if page.is_root?
   = form.input :title, input_html: { class: 'form-control' }
-  = form.input :description, as: :text, input_html: { class: 'form-control', rows: 3 }
-  = form.input :author, input_html: { class: 'form-control' }
+  = form.input :description, as: :text, input_html: { class: 'form-control', rows: 2 }
   .row
     .col-md-6
       .fileinput.fileinput-new(data-provides="fileinput")
-        .fileinput-new.thumbnail(style="width: 200px; height: 150px;")
+        .fileinput-new.thumbnail
           = image_tag form.object.cover.url(:small)
-        .fileinput-preview.fileinput-exists.thumbnail(style="max-width: 200px; max-height: 150px;")
-        %div
+        .fileinput-preview.fileinput-exists.thumbnail
+        .text-center
           %span.btn.btn-default.btn-file
-            %span.fileinput-new Select image
+            %span.fileinput-new Select cover
             %span.fileinput-exists Change
             = form.simple_fields_for :cover do |cover|
               = cover.input_field :attachment
           %a.btn.btn-default.fileinput-exists(data-dismiss="fileinput" href="#") Remove
+      = form.input :author, input_html: { class: 'form-control' }
     .col-md-6
       = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
       = form.input :frequency, collection: Quadro::Page::SITEMAP_FREQUENCY, input_html: { class: 'form-control' }
