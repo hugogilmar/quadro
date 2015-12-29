@@ -43,6 +43,9 @@ Gem::Specification.new do |s|
   s.add_dependency "codemirror-rails", "~> 4.5"
   s.add_dependency "summernote-rails", "~> 0.5.10.2"
 
+  s.add_dependency "rails-i18n", "~> 3.0.0"
+  s.add_dependency "devise-i18n", "~> 0.12.1"
+
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
 
   s.add_development_dependency "sqlite3"
