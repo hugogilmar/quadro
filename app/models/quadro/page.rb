@@ -8,7 +8,6 @@ module Quadro
     # attributes
     attr_accessible :title, :description, :author, :template, :frequency, :priority, :cover_attributes
     store :settings, accessors: [:description, :author, :template, :frequency, :priority]
-    accepts_nested_attributes_for :cover
 
     # validations
     validates :title, presence: true
@@ -19,6 +18,9 @@ module Quadro
     has_many :assets, as: :assetable
     has_many :images, as: :assetable, class_name: Quadro::Asset::Image
     has_one :cover, as: :assetable, class_name: Quadro::Asset::Cover
+
+    # nested attributes
+    accepts_nested_attributes_for :cover
 
     # behaviours
     has_ancestry
