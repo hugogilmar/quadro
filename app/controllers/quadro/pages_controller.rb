@@ -22,7 +22,7 @@ module Quadro
     private
 
     def prepare_breadcrumbs
-      add_crumb "Home", root_path
+      add_crumb "Blog", root_path
       add_crumb page if ["show"].include?(action_name)
     end
   end
