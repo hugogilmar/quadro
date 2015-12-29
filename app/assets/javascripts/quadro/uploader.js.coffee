@@ -1,6 +1,7 @@
 class Uploader
   constructor: (@element) ->
     @page = @element.data 'page'
+    @path = @element.data 'path'
     @type = @element.data 'type'
     @dropper()
     @binding()
@@ -12,7 +13,7 @@ class Uploader
 
   dropper: ->
     @element.dropper
-      action: "#{@page}"
+      action: "#{@path}"
       postData:
         type: @type
       postKey: 'asset[attachment]'

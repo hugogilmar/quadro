@@ -4,6 +4,7 @@ class Widget
     @name = @element.data 'name'
     @type = @element.data 'type'
     @page = @element.data 'page'
+    @path = @element.data 'path'
     @airmode = true
     @focus = false
     @changed = false
@@ -46,7 +47,7 @@ class Widget
 
   create: ->
     $.ajax
-      url: "/#{@page}/widgets.json"
+      url: "#{@path}"
       type: "POST"
       data:
         widget:
@@ -65,7 +66,7 @@ class Widget
 
   update: ->
     $.ajax
-      url: "/#{@page}/widgets/#{@id}.json"
+      url: "#{@path}"
       type: "PUT"
       data:
         widget:
@@ -79,7 +80,7 @@ class Widget
 
   destroy: ->
     $.ajax
-      url: "/#{@page}/widgets/#{@id}.json"
+      url: "#{@path}"
       type: "DELETE"
       success: (data) ->
         return
