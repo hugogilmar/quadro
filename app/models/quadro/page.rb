@@ -6,8 +6,9 @@ module Quadro
     SITEMAP_PRIORITY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
 
     # attributes
-    attr_accessible :title, :description, :author, :template, :frequency, :priority
+    attr_accessible :title, :description, :author, :template, :frequency, :priority, :cover_attributes
     store :settings, accessors: [:description, :author, :template, :frequency, :priority]
+    accepts_nested_attributes_for :cover
 
     # validations
     validates :title, presence: true
@@ -16,6 +17,8 @@ module Quadro
     # associations
     has_many :widgets
     has_many :assets, as: :assetable
+    has_many :images, as: :assetable, class_name: Quadro::Asset::Image
+    has_one :cover, as: :assetable, class_name: Quadro::Asset::Cover
 
     # behaviours
     has_ancestry
