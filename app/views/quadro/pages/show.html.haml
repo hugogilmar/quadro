@@ -1,1 +1,8 @@
 = render "quadro/shared/templates/#{page.template}", page: page
+
+= content_for :opengraph do
+  %meta(content="#{page.title}" property="og:title")
+  %meta(content="#{page.description}" property="og:description")
+  %meta(content="article" property="og:type")
+  %meta(content="#{page_url(@post)}" property="og:url")
+  %meta(content="#{page.cover.url(:large) rescue ''})}" property="og:image")
