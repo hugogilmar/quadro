@@ -1,5 +1,6 @@
 #= require jquery
 #= require jquery_ujs
+#= require jquery.remotipart
 #= require bootstrap-sprockets
 #= require codemirror
 #= require codemirror/modes/htmlmixed
@@ -10,6 +11,7 @@
 #= require codemirror/modes/haml
 #= require summernote
 #= require quadro/plugins/jquery.fs.dropper.min
+#= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/widget
 #= require quadro/uploader
 #= require quadro/quadro

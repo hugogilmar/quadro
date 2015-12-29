@@ -33,6 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency "dynamic_sitemaps", "1.0.8"
 
   s.add_dependency "jquery-rails", "~> 3.1.2"
+  s.add_dependency "remotipart", "~> 1.0"
   s.add_dependency "coffee-rails", "~> 3.2.2"
   s.add_dependency "sass-rails", "~> 3.2.6"
   s.add_dependency "compass-rails", "~> 2.0.1"

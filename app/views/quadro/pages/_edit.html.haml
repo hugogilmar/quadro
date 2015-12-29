@@ -1,8 +1,11 @@
-= simple_form_for page, remote: true do |form|
+= simple_form_for page, multipart: true, remote: true do |form|
+  - form.object.build_cover if form.object.cover.nil?
   = hidden_field_tag :is_root, true if page.is_root?
   = form.input :title, input_html: { class: 'form-control' }
-  = form.input :description, input_html: { class: 'form-control' }
+  = form.input :description, as: :text, input_html: { class: 'form-control', rows: 3 }
   = form.input :author, input_html: { class: 'form-control' }
+  = form.simple_fields_for :cover do |cover|
+    = cover.input :attachment, input_html: { class: 'form-control' }
   .row
     .col-md-4
       = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
