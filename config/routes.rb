@@ -1,5 +1,5 @@
 Quadro::Engine.routes.draw do
-  devise_for :users, class_name: 'Quadro::User', module: :devise, controllers: { unlocks: 'quadro/users/unlocks', passwords: 'quadro/users/passwords', sessions: 'quadro/users/sessions' }
+  devise_for :users, class_name: 'Quadro::User', module: :devise
 
   match 'sitemap.xml' => 'sitemaps#sitemap'
 
