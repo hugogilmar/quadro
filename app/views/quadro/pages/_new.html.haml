@@ -1,4 +1,4 @@
-= simple_form_for page, remote: true do |form|
+= simple_form_for page, url: pages_path(parent_id: params[:parent_id]), remote: true do |form|
   = form.input :title, input_html: { class: 'form-control' }
   %p.text-right
     = form.submit class: 'btn btn-primary'

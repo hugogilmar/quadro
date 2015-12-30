@@ -10,18 +10,13 @@
         = image_tag 'quadro/quadro-logo-mini.png'
     %ul#quadro-pages.nav.navbar-nav.navbar-left
       %li
-        = link_to new_page_path, remote: true do
+        = link_to new_page_path(parent_id: page.id), remote: true do
           %i.fa.fa-plus
-          New page
+          New sub page
       %li
-        - if page.is_root?
-          = link_to edit_page_path(page.slug, is_root: true), remote: true do
-            %i.fa.fa-cog
-            Edit page
-        - else
-          = link_to edit_page_path(page.slug), remote: true do
-            %i.fa.fa-cog
-            Edit page
+        = link_to edit_page_path(page.slug), remote: true do
+          %i.fa.fa-cog
+          Edit current page
     %ul#quadro-widgets.nav.navbar-nav.navbar-right
       %li#quadro-controls
         Editor advanced:
@@ -33,7 +28,7 @@
       %li#quadro-actions
         = link_to '#', id: 'quadro-save' do
           %i.fa.fa-save
-          Save
+          Save changes
       %li.dropdown
         %a.dropdown-toggle(href="#" data-toggle="dropdown")
           = gravatar_image_tag(current_user.email, alt: current_user.email, title: current_user.email, gravatar: { size: 16 }, class: 'img-rounded')
