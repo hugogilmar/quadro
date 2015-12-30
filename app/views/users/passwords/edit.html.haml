@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .panel.panel-default
+        .panel-heading.text-center
+          = image_tag 'quadro/quadro-logo-text.png'
+        .panel-body
+          = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |form|
+            = devise_error_messages!
+            = form.hidden_field :reset_password_token
+            = form.input :password
+            = form.input :password_confirmation, input_html: { class: 'form-control' }
+            = form.submit 'Change my password', class: 'btn btn-primary btn-block'
+          %br
+          = render 'users/shared/links'

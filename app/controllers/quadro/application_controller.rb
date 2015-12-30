@@ -3,11 +3,11 @@ module Quadro
     helper_method :widgets, :widget, :root, :parent, :page, :subpages
 
     def after_sign_in_path_for(resource)
-      root_path
+      quadro.root_path
     end
 
     def after_sign_out_path_for(resource)
-      root_path
+      quadro.root_path
     end
 
     private

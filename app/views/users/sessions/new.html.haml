@@ -1,0 +1,15 @@
+.container
+  .row
+    .col-md-4.col-md-offset-4
+      .panel.panel-default
+        .panel-heading.text-center
+          = image_tag 'quadro/quadro-logo-text.png'
+        .panel-body
+          = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |form|
+            = form.input :email, input_html: { class: 'form-control' }
+            = form.input :password, input_html: { class: 'form-control' }
+            - if devise_mapping.rememberable?
+              = form.input :remember_me, as: :boolean, wrapper_html: { class: 'checkbox' }
+            = form.submit 'Sign In', class: 'btn btn-primary btn-block'
+          %br
+          = render 'users/shared/links'
