@@ -1,6 +1,6 @@
 %nav#quadro-toolbar.navbar.navbar-default.navbar-fixed-bottom(role='navigation')
   #quadro-gallery.collapsed
-    #quadro-uploader.collapsed(data-page="#{page_assets_path(page_id: page.id)}" data-type='Quadro::Asset::Image')
+    #quadro-uploader.collapsed(data-page="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}")
     #quadro-images
       - page.images.each do |asset|
         = render 'quadro/assets/image', image: asset
