@@ -9,11 +9,11 @@ Gem::Specification.new do |s|
   s.version     = Quadro::VERSION
   s.authors     = ["Hugo Gilmar Erazo"]
   s.email       = ["hugogilmar@gmail.com"]
-  s.homepage    = "http://www.nanotutoriales.com"
+  s.homepage    = "https://github.com/hugogilmar/quadro"
   s.summary     = "Quadro CMS"
   s.description = "Quadro Content Management System"
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.20"
