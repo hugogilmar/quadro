@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20141207202401) do
+ActiveRecord::Schema.define(:version => 20160111042137) do
 
   create_table "quadro_assets", :force => true do |t|
     t.integer  "assetable_id"

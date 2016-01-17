@@ -1,0 +1,13 @@
+development:
+  host: "http://localhost:3000"
+  name: "Quadro"
+  title: "Quadro CMS"
+  description: "Quadro Content Management System"
+  author: "Quadro"
+
+production:
+  host: "http://www.example.com"
+  name: "Quadro"
+  title: "Quadro CMS"
+  description: "Quadro Content Management System"
+  author: "Quadro"

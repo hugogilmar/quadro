@@ -11,7 +11,7 @@
     = javascript_include_tag 'quadro/application'
     = favicon_link_tag 'quadro/favicon.ico'
     = csrf_meta_tags
-  %body(class="#{(user_signed_in? ? 'signed_in' : '')}")
+  %body(class="#{(user_signed_in? ? 'quadro-signed-in' : '')}")
     = yield
     - if user_signed_in?
       = render 'quadro/shared/toolbar'

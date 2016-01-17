@@ -1,0 +1,17 @@
+%nav.navbar.navbar-default.navbar-fixed-top(role='navigation')
+  .container
+    .navbar-header
+      %button.navbar-toggle.collapsed(data-target='#navigation' data-toggle='collapse' type='button')
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to root_path, class: 'navbar-brand' do
+        = ENV['name']
+    #navigation.collapse.navbar-collapse
+      - unless user_signed_in?
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to new_user_session_path do
+              Sign In
+      = navigation_for root, class: "nav navbar-nav navbar-right"

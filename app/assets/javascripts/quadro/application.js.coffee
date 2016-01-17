@@ -12,6 +12,8 @@
 #= require summernote
 #= require quadro/plugins/jquery.fs.dropper.min
 #= require quadro/plugins/jasny-bootstrap.min
+#= require quadro/plugins/jquery.smartmenus.min
+#= require quadro/plugins/jquery.smartmenus.bootstrap.min
 #= require quadro/widget
 #= require quadro/uploader
 #= require quadro/quadro
