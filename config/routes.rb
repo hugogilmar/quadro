@@ -5,8 +5,8 @@ Quadro::Engine.routes.draw do
 
   resources :pages, path: '/' do
     get 'page/:page', action: :index, on: :collection
-    resources :widgets, only: [:create, :update, :delete]
-    resources :assets, only: [:create, :update, :delete]
+    resources :widgets, only: [:create, :update, :destroy]
+    resources :assets, only: [:create, :update, :destroy]
   end
 
   root :to => 'pages#index'

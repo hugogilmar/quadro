@@ -1,1 +1,8 @@
-= image_tag image.url(:small), alt: image.alt
+.col-sm-2(id="image-#{image.id}")
+  .thumbnail
+    = image_tag image.url(:small), alt: image.alt
+    .caption.text-center
+      %strong= image.attachment_file_name
+      = link_to page_asset_path(id: image.id, page_id: page.id), method: "delete", confirm: "Are you sure of delete this image?", remote: true, class: "btn btn-danger btn-block" do
+        %i.fa.fa-trash-o
+        Delete

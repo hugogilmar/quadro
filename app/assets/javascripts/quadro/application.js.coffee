@@ -14,6 +14,7 @@
 #= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/plugins/jquery.smartmenus.min
 #= require quadro/plugins/jquery.smartmenus.bootstrap.min
+#= require quadro/plugins/pace.min
 #= require quadro/widget
 #= require quadro/uploader
 #= require quadro/quadro

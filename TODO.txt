@@ -1,7 +1,4 @@
-+ enhance signed_in/signed_out assets
-+ enhance users layout
-
-= widget_for :welcome, airmode: true do
-  = image_tag 'quadro/quadro-logo.png', alt: 'Quadro Logo'
-  %h1 Welcome to Quadro CMS
-  %p An elegant CMS written in Ruby for Rails projects
+- remove images
+- slider widget
+- map widget
+- form widget
