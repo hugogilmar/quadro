@@ -37,4 +37,7 @@ $ ->
     return
 
   $('#quadro-gallery-toggle').on 'click', ->
-    if $('#quadro-gallery').hasClass 'collapsed' then $('#quadro-gallery').removeClass('collapsed').addClass 'expanded' else $('#quadro-gallery').removeClass('expanded').addClass 'collapsed'
+    if $('#quadro-gallery').hasClass('collapsed')
+      $('#quadro-gallery').removeClass('collapsed').addClass('expanded')
+    else
+      $('#quadro-gallery').removeClass('expanded').addClass('collapsed')

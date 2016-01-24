@@ -6,49 +6,42 @@ body.quadro-signed-in
 
 #quadro-toolbar
   padding: 8px
-  .well
-    margin: 0px
 
-#quadro-gallery
-  .well
-    padding: 0px
+#quadro-controls
+  margin: 0px
+
+#quadro-images
+  overflow: auto
 
 #quadro-gallery.collapsed
+  padding: 0px
   height: 0em
+  min-height: 0px
+  margin-bottom: 0px
+  border: none
+  box-shadow: none
   +transition-property(height)
   +transition-duration(0.5s)
   +transition-timing-function(ease-in)
 
   #quadro-uploader
     height: 0em
-    +transition-property(height)
-    +transition-duration(0.5s)
-    +transition-timing-function(ease-out)
 
   #quadro-images
     height: 0em
-    +transition-property(height)
-    +transition-duration(0.5s)
-    +transition-timing-function(ease-out)
 
 #quadro-gallery.expanded
-  height: 24em
+  padding: 0px
+  height: 25em
   +transition-property(height)
   +transition-duration(0.5s)
   +transition-timing-function(ease-out)
 
   #quadro-uploader
-    height: 12em
-    +transition-property(height)
-    +transition-duration(0.5s)
-    +transition-timing-function(ease-out)
+    height: auto
 
   #quadro-images
-    height: 12em
-    +transition-property(height)
-    +transition-duration(0.5s)
-    +transition-timing-function(ease-out)
-    overflow: auto
+    height: 13em
 
 .note-editor
   margin-bottom: 20px
