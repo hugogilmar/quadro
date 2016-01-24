@@ -10,11 +10,14 @@
 #= require codemirror/modes/ruby
 #= require codemirror/modes/haml
 #= require summernote
+#= require jquery.slick
 #= require quadro/plugins/jquery.fs.dropper.min
 #= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/plugins/jquery.smartmenus.min
 #= require quadro/plugins/jquery.smartmenus.bootstrap.min
 #= require quadro/plugins/pace.min
+#= require quadro/plugins/humane.min
+#= require quadro/message
 #= require quadro/widget
 #= require quadro/uploader
 #= require quadro/quadro

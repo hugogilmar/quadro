@@ -1,0 +1,5 @@
+.asset-uploader
+  .asset-dropper(data-assetable-type='Quadro::Widget::Slider' data-assetable-id="#{widget.id}" data-type='Quadro::Asset::Slide' data-path="#{page_widget_assets_path(page_id: widget.page.id, widget_id: widget.id)}")
+  .asset-list(data-assetable-type='Quadro::Widget::Slider' data-assetable-id="#{widget.id}")
+    - widget.slides.each do |slide|
+      = render 'quadro/assets/slide', widget: widget, slide: slide

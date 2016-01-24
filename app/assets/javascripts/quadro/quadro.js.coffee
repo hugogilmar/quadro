@@ -1,12 +1,23 @@
 $ ->
   widgets = {}
 
-  $('.summernote').each ->
+  $('.widget-slider').slick(
+    autoplay: true
+    arrows: true
+    fade: true
+    mobileFirst: true
+    pauseOnHover: false
+  )
+
+  $('.widget-html').each ->
     widget = new Widget $(this)
 
     widgets[widget.name] = widget
 
   window.widgets = widgets
+
+  $('.asset-dropper').each ->
+    uploader = new Uploader $(this)
 
   $('#quadro-airmode-on').on 'click', ->
     $('#quadro-airmode-off').removeClass 'active'
@@ -27,7 +38,3 @@ $ ->
 
   $('#quadro-gallery-toggle').on 'click', ->
     if $('#quadro-gallery').hasClass 'collapsed' then $('#quadro-gallery').removeClass('collapsed').addClass 'expanded' else $('#quadro-gallery').removeClass('expanded').addClass 'collapsed'
-
-  uploader = new Uploader $('#quadro-uploader')
-
-  window.uploader = uploader

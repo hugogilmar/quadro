@@ -1,0 +1,10 @@
+=# render("quadro/widgets/slider/toolbar", widget: widget)
+
+- if content.blank? && widget.slides.blank?
+  = render("quadro/widgets/slider/empty")
+- elsif widget.slides.blank?
+  = content.html_safe
+- else
+  = render("quadro/widgets/slider/widget", widget: widget)
+
+= render("quadro/widgets/slider/uploader", widget: widget)

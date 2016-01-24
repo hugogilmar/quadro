@@ -16,14 +16,15 @@ module Quadro
     end
 
     def destroy
-      page.destroy
+      page.destroy unless page.is_root?
     end
 
     private
 
     def prepare_breadcrumbs
-      add_crumb "Blog", root_path
-      add_crumb page if ["show"].include?(action_name)
+      page.path.each do |path|
+        page.id == path.id ? add_crumb(path.title) : add_crumb(path.title, page_path(path))
+      end
     end
   end
 end

@@ -1,0 +1,6 @@
+- if content.blank? && widget.content.blank?
+  = render "quadro/widgets/html/empty"
+- elsif widget.content.blank?
+  = content.html_safe
+- else
+  = render "quadro/widget/html/widget", widget: widget

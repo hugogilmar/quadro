@@ -1,6 +1,8 @@
 <% if page.errors.size > 0 %>
   $("#quadro-modal .modal-body").html("<%= escape_javascript(render(partial: 'quadro/pages/new', locals: { page: page })) %>");
+  new Message('Page not created');
 <% else %>
   $("#quadro-modal").modal('hide');
+  new Message('Page created');
   location.href = "<%= escape_javascript(page_path(page)) %>";
 <% end %>

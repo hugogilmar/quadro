@@ -1,17 +1,17 @@
 body
-  margin-top: 50px
+  margin-top: 60px
 
-body.signed_in
-  margin-bottom: 50px
+body.quadro-signed-in
+  margin-bottom: 60px
 
-#quadro-controls
-  padding: 0em 1em
-
-#quadro-actions
-  display: none
+#quadro-toolbar
+  padding: 8px
+  .well
+    margin: 0px
 
 #quadro-gallery
-  overflow: auto
+  .well
+    padding: 0px
 
 #quadro-gallery.collapsed
   height: 0em
@@ -19,38 +19,58 @@ body.signed_in
   +transition-duration(0.5s)
   +transition-timing-function(ease-in)
 
+  #quadro-uploader
+    height: 0em
+    +transition-property(height)
+    +transition-duration(0.5s)
+    +transition-timing-function(ease-out)
+
+  #quadro-images
+    height: 0em
+    +transition-property(height)
+    +transition-duration(0.5s)
+    +transition-timing-function(ease-out)
+
 #quadro-gallery.expanded
-  height: 20em
+  height: 24em
   +transition-property(height)
   +transition-duration(0.5s)
   +transition-timing-function(ease-out)
 
-#quadro-uploader
-  margin: 1em
+  #quadro-uploader
+    height: 12em
+    +transition-property(height)
+    +transition-duration(0.5s)
+    +transition-timing-function(ease-out)
 
-.quadro-image
-  margin: 0.5em 0 0.5em 1em
+  #quadro-images
+    height: 12em
+    +transition-property(height)
+    +transition-duration(0.5s)
+    +transition-timing-function(ease-out)
+    overflow: auto
+
+.note-editor
+  margin-bottom: 20px
 
 .fileinput > .thumbnail > img
   width: 100%
 
-.dropdown-li
-  display: inline-block !important
+.dropper-input
+  left: 0px
 
-.dropdown-link
-  display: inline-block !important
-  padding-right: 4px !important
+.asset-dropper
+  margin: 1em
 
-.dropdown-caret
-  display: inline-block !important
-  padding-left: 4px !important
+.slick-arrow
+  z-index: 1000
 
-.nav > li:hover
-  background-color: #e7e7e7
-  color: #555
+.slick-prev
+  left: 20px
 
-.nav > li:hover > a
-  color: white
+.slick-next
+  right: 20px
 
-.nav > li:hover > ul > a
-  color: black
+.slide
+  img
+    width: 100%

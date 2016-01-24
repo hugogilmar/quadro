@@ -1,7 +1,7 @@
 module Quadro
   class Widget < ActiveRecord::Base
     # attributes
-    attr_accessible :name
+    attr_accessible :name, :type
 
     # validations
     validates :name, uniqueness: { scope: :page_id }

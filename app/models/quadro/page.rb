@@ -14,8 +14,8 @@ module Quadro
     validates :slug, uniqueness: true
 
     # associations
-    has_many :widgets
-    has_many :assets, as: :assetable
+    has_many :widgets, dependent: :destroy
+    has_many :assets, as: :assetable, dependent: :destroy
     has_many :images, as: :assetable, class_name: Quadro::Asset::Image
     has_one :cover, as: :assetable, class_name: Quadro::Asset::Cover
 
@@ -23,7 +23,7 @@ module Quadro
     accepts_nested_attributes_for :cover
 
     # behaviours
-    has_ancestry
+    has_ancestry orphan_strategy: :destroy
     acts_as_url :title, url_attribute: :slug, sync_url: true
 
     # callbacks
@@ -56,6 +56,12 @@ module Quadro
       self.frequency = 'monthly'
       self.priority = 0.5
       self.author = ENV['author']
+    end
+
+    class << self
+      def short_name
+        "page"
+      end
     end
   end
 end

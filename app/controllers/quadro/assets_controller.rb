@@ -8,12 +8,10 @@ module Quadro
 
     def create
       asset.save
-      respond_with asset, location: page_assets_path
     end
 
     def update
       asset.update_attributes(params[:asset])
-      respond_with asset, location: page_assets_path
     end
 
     def destroy

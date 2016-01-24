@@ -3,5 +3,11 @@ module Quadro
     # attributes
     attr_accessible :content
     store :settings, accessors: [:width, :height]
+
+    class << self
+      def short_name
+        "html"
+      end
+    end
   end
 end

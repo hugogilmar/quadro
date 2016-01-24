@@ -7,12 +7,12 @@ module Quadro
     respond_to :json, :xml
 
     def create
-      respond_with widget, location: page_widgets_path
+      respond_with widget
     end
 
     def update
       widget.update_attributes(params[:widget])
-      respond_with widget, location: page_widgets_path
+      respond_with widget
     end
 
     def destroy

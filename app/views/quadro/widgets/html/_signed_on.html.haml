@@ -1,0 +1,9 @@
+=# render("quadro/widgets/html/toolbar", widget: widget)
+
+= content_tag :div, class: 'widget widget-html', data: options do
+  - if content.blank? && widget.content.blank?
+    = render("quadro/widgets/html/empty")
+  - elsif widget.content.blank?
+    = content.html_safe
+  - else
+    = widget.content.html_safe

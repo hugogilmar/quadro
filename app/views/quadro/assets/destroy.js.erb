@@ -1,3 +1,11 @@
 <% if @asset.destroyed? %>
-  $('#image-<%= @asset.id %>').remove();
+  <% case @asset.type.constantize.short_name %>
+  <% when 'image' %>
+    $('#image-<%= @asset.id %>').remove();
+  <% when 'slide' %>
+    $('#slide-<%= @asset.id %>').remove();
+  <% end %>
+  new Message('Asset deleted');
+<% else %>
+  new Message('Asset not deleted');
 <% end %>

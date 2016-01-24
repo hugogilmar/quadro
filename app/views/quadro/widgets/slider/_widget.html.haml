@@ -1,0 +1,4 @@
+.widget.widget-slider
+  - widget.slides.each do |image|
+    .slide
+      = image_tag image.url(:medium), alt: image.alt

@@ -17,13 +17,15 @@ module Quadro
     end
 
     def widget
-      @widget ||=
+      @widget =
         case
-        when ["create"].include?(action_name)
+        when ["widgets"].include?(controller_name) && ["create"].include?(action_name)
           widget_type = params[:type].constantize
           new_widget = widget_type.new(params[:widget])
           page.widgets << new_widget
           new_widget
+        when ["assets"].include?(controller_name)
+          page.widgets.find(params[:widget_id]) rescue nil
         else
           page.widgets.find(params[:id]) rescue nil
         end
@@ -36,13 +38,19 @@ module Quadro
     def asset
      @asset ||=
         case
-        when ["create"].include?(action_name)
+        when ["assets"].include?(controller_name) && ["create"].include?(action_name)
           asset_type = params[:type].constantize
           new_asset = asset_type.new(params[:asset])
-          page.assets << new_asset
+          if widget.present?
+            widget.assets << new_asset
+          elsif page.present?
+            page.assets << new_asset
+          end
           new_asset
+        when ["assets"].include?(controller_name) && ["update", "destroy"].include?(action_name)
+          new_asset = widget.assets.find(params[:id]).becomes(widget.type.constantize)
         else
-          page.assets.find(params[:id]) rescue nil
+          page.assets.find(params[:id]).becomes(widget.type.constantize)
         end
     end
 

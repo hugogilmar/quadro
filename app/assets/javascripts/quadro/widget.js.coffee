@@ -3,7 +3,6 @@ class Widget
     @id = @element.data 'id'
     @name = @element.data 'name'
     @type = @element.data 'type'
-    @page = @element.data 'page'
     @path = @element.data 'path'
     @airmode = true
     @focus = false
@@ -58,9 +57,10 @@ class Widget
         $(".summernote[data-name=#{@name}]").attr('data-id', data.id)
         $(".summernote[data-name=#{@name}]").data('id', data.id)
         @id = data.id
+        new Message "Save success"
         return
       error: ->
-        console.log "something failed"
+        new Message "Save failed"
         return
     return
 
@@ -72,9 +72,10 @@ class Widget
         widget:
           content: @content
       success: (data) ->
+        new Message "Save success"
         return
       error: ->
-        console.log "something failed"
+        new Message "Save failed"
         return
     return
 
@@ -83,9 +84,10 @@ class Widget
       url: "#{@path}"
       type: "DELETE"
       success: (data) ->
+        new Message "Save success"
         return
       error: ->
-        console.log "something failed"
+        new Message "Save failed"
         return
     return
 
@@ -99,12 +101,12 @@ class Widget
 
   setChanged: ->
     @changed = true
-    $('#quadro-actions').show()
+    $('#quadro-save').removeClass 'hide'
     return
 
   unsetChanged: ->
     @changed = false
-    $('#quadro-actions').hide()
+    $('#quadro-save').addClass 'hide'
     return
 
 window.Widget = Widget

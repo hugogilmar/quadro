@@ -40,8 +40,10 @@ Gem::Specification.new do |s|
   s.add_dependency "bootstrap-sass", "~> 3.3.1.0"
   s.add_dependency "font-awesome-sass", "~> 4.2.2"
   s.add_dependency "animate", "~> 0.1.0"
+
   s.add_dependency "codemirror-rails", "~> 4.5"
   s.add_dependency "summernote-rails", "~> 0.5.10.2"
+  s.add_dependency "jquery-slick-rails", "~> 1.5.9.1"
 
   s.add_dependency "rails-i18n", "~> 3.0.0"
   s.add_dependency "devise-i18n", "~> 0.12.1"
