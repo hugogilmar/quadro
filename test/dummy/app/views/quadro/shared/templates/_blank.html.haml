@@ -3,6 +3,9 @@
 .container
   = render_crumbs
 
-  = render 'quadro/shared/page_header'
+  .page-header
+    %h1= page.title
 
-  = render 'quadro/shared/page_content'
+  %p.lead= page.description
+
+  = widget_for :content

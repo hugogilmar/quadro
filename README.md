@@ -13,7 +13,8 @@ With Quadro you have the following features:
 - Make any area on your template editable with the *quadro widget*.
 - Generate a sitemap.xml automatically.
 - Upload images for each page, even a cover.
-- Use *summernote* as editor.
+- Use *summernote* as content editor.
+- Slider with *slick* carousel.
 - Integrate any *Bootstrap 3* template.
 
 ## Installation
@@ -21,7 +22,7 @@ With Quadro you have the following features:
 In order to start using it, you need to add the gem entry on your *Gemfile*.
 
 ```ruby
-gem "quadro", git: "https://github.com/hugogilmar/quadro.git"
+gem "quadro"
 ```
 
 Then you need to run your bundler.
@@ -49,10 +50,43 @@ You will need to set the *application.yml* file under the *config* directory on 
 By default, all templates are written with *Haml*. In order to use the widget, you need to do it as the following example:
 
 ```ruby
-= widget_for :content do
-  %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+= widget_for :content
 ```
+
+It also works with a default HTML block.
+
+```ruby
+= widget_for :content do
+  %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+```
+
+The *widget_for* helper receives a second parameter which is *type*.
+
+```ruby
+= widget_for :content, type: :html
+```
+
+In this release, the possible options are:
+
+- html
+- slider
+
+## Working with page templates
+
+Every page has a template associated to it, it sets the layout that will be displayed on the browser. There is a default list of available templates by default.
+
+- blank (full width content)
+- sidebar (content with sidebar navigation)
+- demo (an example layout with an example of all available widgets)
+
+You can create your own templates, just add the template files as *partials* in the following path:
+
+```bash
+app/views/quadro/shared/templates
+```
+
+## Use it and enjoy it
 
 Now when you log in into the *Quadro CMS* you will find a *toolbar* fixed at the bottom, to manage your new website or blog.
 
-I hope you will find this gem helpful.
+Now you are ready to get started with Quadro CMS.
