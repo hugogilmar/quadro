@@ -1,9 +1,9 @@
-<% if @asset.persisted? %>
-  <% case @asset.type.constantize.short_name %>
+<% if asset.persisted? %>
+  <% case asset.type.constantize.short_name %>
   <% when 'image' %>
-    $('.asset-list').filter('[data-assetable-type="<%= @asset.assetable.class.to_s %>"],[data-assetable-id="<%= @asset.assetable.id %>"]').append('<%= escape_javascript(render("quadro/assets/image", image: @asset))%>')
+    $('.asset-list').filter('[data-assetable-type="<%= asset.assetable.class.to_s %>"],[data-assetable-id="<%= asset.assetable.id %>"]').append('<%= escape_javascript(render("quadro/assets/image/image", asset: image, page: page))%>');
   <% when 'slide' %>
-  $('.asset-list').filter('[data-assetable-type="<%= @asset.assetable.class.to_s %>"],[data-assetable-id="<%= @asset.assetable.id %>"]').append('<%= escape_javascript(render("quadro/assets/slide", slide: @asset))%>')
+    $('.asset-list').filter('[data-assetable-type="<%= asset.assetable.class.to_s %>"],[data-assetable-id="<%= asset.assetable.id %>"]').append('<%= escape_javascript(render("quadro/assets/slide/slide", asset: asset, widget: widget, page: page))%>');
   <% end %>
   new Message('Asset created');
 <% else %>

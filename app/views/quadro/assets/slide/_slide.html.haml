@@ -1,0 +1,9 @@
+.col-xs-6.col-sm-4.col-md-3.col-lg-2(id="slide-#{asset.id}")
+  .thumbnail
+    = image_tag asset.url(:small), alt: asset.alt
+    .caption.clearfix
+      .pull-right
+        = link_to edit_page_widget_asset_path(id: asset.id, widget_id: widget.id, page_id: page.id), remote: true, class: "btn btn-link btn-xs" do
+          %i.fa.fa-cog.text-muted
+        = link_to page_widget_asset_path(id: asset.id, widget_id: widget.id, page_id: page.id), method: "delete", confirm: "Are you sure of delete this slide?", remote: true, class: "btn btn-link btn-xs" do
+          %i.fa.fa-trash-o.text-danger

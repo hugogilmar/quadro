@@ -4,7 +4,7 @@ module Quadro
   class WidgetsController < ApplicationController
     before_filter :authenticate_user!
 
-    respond_to :json, :xml
+    respond_to :js, :json, :xml
 
     def create
       respond_with widget

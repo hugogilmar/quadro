@@ -11,6 +11,7 @@
 #= require codemirror/modes/haml
 #= require summernote
 #= require jquery.slick
+#= require photoswipe
 #= require quadro/plugins/jquery.fs.dropper.min
 #= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/plugins/jquery.smartmenus.min

@@ -65,6 +65,7 @@ class Widget
     return
 
   update: ->
+    console.log @path
     $.ajax
       url: "#{@path}"
       type: "PUT"

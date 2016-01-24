@@ -2,11 +2,11 @@
   #quadro-gallery.well.well-sm.collapsed
     #quadro-uploader.asset-dropper(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}")
     #quadro-images.asset-list
-      - page.images.each do |asset|
-        = render 'quadro/assets/image', image: asset
+      - page.images.each do |image|
+        = render 'quadro/assets/image/image', asset: image, page: page
   #quadro-controls.well.well-sm.clearfix
     .pull-left
-      = link_to root_path do
+      = link_to root_path, class: "quadro-brand" do
         = image_tag 'quadro/quadro-logo-mini.png'
       = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm hidden-xs" do
         %i.fa.fa-plus
