@@ -6,17 +6,9 @@ module Quadro
 
     respond_to :js, :json, :xml
 
-    def create
-      respond_with widget
-    end
-
     def update
       widget.update_attributes(params[:widget])
       respond_with widget
-    end
-
-    def destroy
-      widget.destroy
     end
   end
 end

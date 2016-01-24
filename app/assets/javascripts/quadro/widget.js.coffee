@@ -40,32 +40,11 @@ class Widget
 
   save: ->
     @getContent()
-    if @id then @update() else @create()
+    @update()
     @unsetChanged()
     return
 
-  create: ->
-    $.ajax
-      url: "#{@path}"
-      type: "POST"
-      data:
-        widget:
-          name: @name
-          content: @content
-        type: @type
-      success: (data) =>
-        $(".summernote[data-name=#{@name}]").attr('data-id', data.id)
-        $(".summernote[data-name=#{@name}]").data('id', data.id)
-        @id = data.id
-        new Message "Save success"
-        return
-      error: ->
-        new Message "Save failed"
-        return
-    return
-
   update: ->
-    console.log @path
     $.ajax
       url: "#{@path}"
       type: "PUT"
@@ -73,27 +52,15 @@ class Widget
         widget:
           content: @content
       success: (data) ->
-        new Message "Save success"
+        new Message "Content updated"
         return
       error: ->
-        new Message "Save failed"
-        return
-    return
-
-  destroy: ->
-    $.ajax
-      url: "#{@path}"
-      type: "DELETE"
-      success: (data) ->
-        new Message "Save success"
-        return
-      error: ->
-        new Message "Save failed"
+        new Message "Content not updated"
         return
     return
 
   getContent: ->
-    @content = $(".summernote[data-name=#{@name}]").code()
+    @content = $(".widget-html[data-name=#{@name}]").code()
     return
 
   setFocus: ->
@@ -102,12 +69,12 @@ class Widget
 
   setChanged: ->
     @changed = true
-    $('#quadro-save').removeClass 'hide'
+    $('#quadro-save').removeClass('hide')
     return
 
   unsetChanged: ->
     @changed = false
-    $('#quadro-save').addClass 'hide'
+    $('#quadro-save').addClass('hide')
     return
 
 window.Widget = Widget
