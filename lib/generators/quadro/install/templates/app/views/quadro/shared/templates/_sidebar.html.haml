@@ -3,15 +3,13 @@
 .container
   = render_crumbs
 
-  - if page.has_children?
-    .row
-      .col-md-3
-        = navigation_for page, class: "nav nav-pills nav-stacked"
-      .col-md-9
-        = render 'quadro/shared/page_header'
+  .row
+    .col-md-3
+      = navigation_for page, class: "nav nav-pills nav-stacked"
+    .col-md-9
+      .page-header
+        %h1= page.title
 
-        = render 'quadro/shared/page_content'
-  - else
-    = render 'quadro/shared/page_header'
+      %p.lead= page.description
 
-    = render 'quadro/shared/page_content'
+      = widget_for :content
