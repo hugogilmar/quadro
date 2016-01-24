@@ -1,0 +1,9 @@
+<% if asset.present? %>
+  <% case asset.type.constantize.short_name %>
+  <% when 'image' %>
+    $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/assets/image/form', asset: asset, page: page)) %>");
+  <% when 'slide' %>
+    $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/assets/slide/form', asset: asset, widget: widget, page: page)) %>");
+  <% end %>
+  $("#quadro-modal").modal("show");
+<% end %>

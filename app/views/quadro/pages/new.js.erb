@@ -1,2 +1,2 @@
-$("#quadro-modal .modal-body").html("<%= escape_javascript(render(partial: 'quadro/pages/new', locals: { page: page })) %>");
+$("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/pages/new', page: page)) %>");
 $("#quadro-modal").modal("show");

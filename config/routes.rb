@@ -5,7 +5,7 @@ Quadro::Engine.routes.draw do
 
   resources :pages, path: '/' do
     get 'page/:page', action: :index, on: :collection
-    resources :widgets, only: [:update] do
+    resources :widgets, only: [:edit, :update] do
       resources :assets, only: [:create, :edit, :update, :destroy]
     end
     resources :assets, only: [:create, :edit, :update, :destroy]

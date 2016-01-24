@@ -1,0 +1,18 @@
+<% if asset.errors.size > 0 %>
+  <% case asset.type.constantize.short_name %>
+  <% when 'image' %>
+    $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/assets/image/form', asset: asset, page: page)) %>");
+  <% when 'slide' %>
+    $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/assets/slide/form', asset: asset, widget: widget, page: page)) %>");
+  <% end %>
+  new Message('Asset not updated');
+<% else %>
+  <% case asset.type.constantize.short_name %>
+  <% when 'image' %>
+    $('#image-<%= asset.id %>').replaceWith('<%= escape_javascript(render("quadro/assets/image/image", asset: asset, page: page))%>');
+  <% when 'slide' %>
+    $('#slide-<%= asset.id %>').replaceWith('<%= escape_javascript(render("quadro/assets/slide/slide", asset: asset, widget: widget, page: page))%>');
+  <% end %>
+  $("#quadro-modal").modal('hide');
+  new Message('Asset updated');
+<% end %>

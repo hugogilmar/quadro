@@ -1,9 +1,0 @@
-.col-sm-2(id="image-#{image.id}")
-  .thumbnail
-    = image_tag image.url(:small), alt: image.alt
-    .caption.clearfix
-      .pull-right
-        = link_to edit_page_asset_path(id: image.id, page_id: image.assetable.id), remote: true, class: "btn btn-link btn-xs" do
-          %i.fa.fa-cog.text-muted
-        = link_to page_asset_path(id: image.id, page_id: image.assetable.id), method: "delete", confirm: "Are you sure of delete this image?", remote: true, class: "btn btn-link btn-xs" do
-          %i.fa.fa-trash-o.text-danger

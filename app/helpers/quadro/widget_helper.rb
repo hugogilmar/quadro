@@ -7,11 +7,11 @@ module Quadro
 
       _widget = case options[:type]
       when :html
-        widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s).becomes(Quadro::Widget::Html)
+        page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s).becomes(Quadro::Widget::Html)
       when :slider
-        widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Slider.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Slider.to_s).becomes(Quadro::Widget::Slider)
+        page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Slider.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Slider.to_s).becomes(Quadro::Widget::Slider)
       else
-        widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s).becomes(Quadro::Widget::Html)
+        page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s).becomes(Quadro::Widget::Html)
       end
 
       widget_block(_widget, options, (block_given? ? capture(&block) : nil))

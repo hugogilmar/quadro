@@ -1,37 +1,43 @@
 #quadro-toolbar.navbar.navbar-fixed-bottom
-  #quadro-gallery.collapsed
-    .well.well-sm
-      #quadro-uploader.asset-dropper(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}")
-      #quadro-images.asset-list.clearfix
-        - page.images.each do |asset|
-          = render 'quadro/assets/image', image: asset
-  .well.well-sm.clearfix
+  #quadro-gallery.well.well-sm.collapsed
+    #quadro-uploader.asset-dropper(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}")
+    #quadro-images.asset-list
+      - page.images.each do |image|
+        = render 'quadro/assets/image/image', asset: image, page: page
+  #quadro-controls.well.well-sm.clearfix
     .pull-left
-      = link_to root_path do
+      = link_to root_path, class: "quadro-brand" do
         = image_tag 'quadro/quadro-logo-mini.png'
-      = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm" do
+      = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm hidden-xs" do
         %i.fa.fa-plus
         New sub page
-      = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
+      = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
         %i.fa.fa-cog
         Edit current page
-      = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm" do
+      = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm hidden-xs" do
         %i.fa.fa-trash-o
-        %span Delete current page
+        Delete current page
+      .btn-group.visible-xs-inline-block(role='group')
+        = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm" do
+          %i.fa.fa-plus
+        = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
+          %i.fa.fa-cog
+        = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm" do
+          %i.fa.fa-trash-o
     .pull-right
       %a#quadro-save.btn.btn-default.btn-sm.hide
         %i.fa.fa-floppy-o
         Save changes
-      %a#quadro-gallery-toggle.btn.btn-default.btn-sm
+      %a#quadro-gallery-toggle.btn.btn-default.btn-sm.hidden-xs.hidden-sm
         %i.fa.fa-picture-o
         Image gallery
-      Editor advanced:
-      .btn-group(role='group')
+      %span.hidden-xs.hidden-sm Editor advanced:
+      .btn-group.hidden-xs.hidden-sm(role='group')
         %button#quadro-airmode-off.btn.btn-default.btn-sm(type='button')
           %i.fa.fa-eye
         %button#quadro-airmode-on.btn.btn-default.btn-sm(type='button')
           %i.fa.fa-eye-slash
-      .btn-group.dropup
+      .btn-group.dropup.hidden-xs
         %button.btn.btn-default.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
           = gravatar_image_tag(current_user.email, alt: current_user.email, title: current_user.email, gravatar: { size: 16 }, class: 'img-rounded')
           = current_user.email
@@ -40,48 +46,5 @@
           %li
             = link_to destroy_user_session_url, method: :delete do
               Sign Out
--#
-  %nav#quadro-toolbar.navbar.navbar-default.navbar-fixed-bottom(role='navigation')
-    .container-fluid
-      .navbar-header
-        = link_to root_path, class: 'navbar-brand' do
-          = image_tag 'quadro/quadro-logo-mini.png'
-      %ul#quadro-pages.nav.navbar-nav.navbar-left
-        %li
-          = link_to new_page_path(parent_id: page.id), remote: true do
-            %i.fa.fa-plus
-            New sub page
-        %li
-          = link_to edit_page_path(page.slug), remote: true do
-            %i.fa.fa-cog
-            Edit current page
-        %li
-          = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?" do
-            %i.fa.fa-trash-o
-            %span Delete current page
-      %ul#quadro-widgets.nav.navbar-nav.navbar-right
-        %li#quadro-controls
-          Editor advanced:
-          .btn-group(role='group')
-            %button#quadro-airmode-off.btn.btn-default.navbar-btn(type='button')
-              %i.fa.fa-eye
-            %button#quadro-airmode-on.btn.btn-default.navbar-btn.active(type='button')
-              %i.fa.fa-eye-slash
-        %li#quadro-actions
-          %a.quadro-save
-            %i.fa.fa-save
-            Save changes
-        %li.dropdown
-          %a.dropdown-toggle(href="#" data-toggle="dropdown")
-            = gravatar_image_tag(current_user.email, alt: current_user.email, title: current_user.email, gravatar: { size: 16 }, class: 'img-rounded')
-            = current_user.email
-            %b.caret
-          %ul.dropdown-menu
-            %li
-              = link_to destroy_user_session_url, method: :delete do
-                Sign Out
-      %ul#quadro-plugins.nav.navbar-nav.navbar-right
-        %li
-          %a#quadro-gallery-toggle
-            %i.fa.fa-picture-o
-            Image gallery
+      = link_to destroy_user_session_url, method: :delete, class: "btn btn-default btn-sm visible-xs-inline-block hidden-sm" do
+        Sign Out
