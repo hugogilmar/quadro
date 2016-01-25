@@ -1,4 +1,0 @@
-- remove images
-- slider widget
-- map widget
-- form widget

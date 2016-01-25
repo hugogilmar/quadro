@@ -23,6 +23,12 @@ Current stable version.
 
 [![Gem Version](https://badge.fury.io/rb/quadro.png)](https://badge.fury.io/rb/quadro)
 
+## Code Climate and Semaphore status
+
+[![Code Climate](https://codeclimate.com/github/hugogilmar/quadro/badges/gpa.svg)](https://codeclimate.com/github/hugogilmar/quadro)
+[![Test Coverage](https://codeclimate.com/github/hugogilmar/quadro/badges/coverage.svg)](https://codeclimate.com/github/hugogilmar/quadro/coverage)
+[![Build Status](https://semaphoreci.com/api/v1/projects/8ea0775c-7bb5-4de3-8c19-81b120edb79b/671958/shields_badge.svg)](https://semaphoreci.com/hugogilmar/quadro)
+
 ## Installation
 
 In order to start using it, you need to add the gem entry on your *Gemfile*.
