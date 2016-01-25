@@ -23,11 +23,11 @@ Current stable version.
 
 [![Gem Version](https://badge.fury.io/rb/quadro.png)](https://badge.fury.io/rb/quadro)
 
-## Code Climate and Semaphore status
+## Code Climate and Travis CI status
 
 [![Code Climate](https://codeclimate.com/github/hugogilmar/quadro/badges/gpa.svg)](https://codeclimate.com/github/hugogilmar/quadro)
 [![Test Coverage](https://codeclimate.com/github/hugogilmar/quadro/badges/coverage.svg)](https://codeclimate.com/github/hugogilmar/quadro/coverage)
-[![Build Status](https://semaphoreci.com/api/v1/projects/8ea0775c-7bb5-4de3-8c19-81b120edb79b/671958/shields_badge.svg)](https://semaphoreci.com/hugogilmar/quadro)
+[![Build Status](https://travis-ci.org/hugogilmar/quadro.svg?branch=master)](https://travis-ci.org/hugogilmar/quadro)
 
 ## Installation
 
