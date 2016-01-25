@@ -17,9 +17,9 @@ With Quadro you have the following features:
 - Slider with *slick* carousel.
 - Integrate any *Bootstrap 3* template.
 
-## Latest version
+## Current stable version
 
-Current stable latest version.
+Current stable version.
 
 [![Gem Version](https://badge.fury.io/rb/quadro.png)](https://badge.fury.io/rb/quadro)
 
