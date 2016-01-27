@@ -6,7 +6,7 @@ module Quadro
 
     class << self
       def short_name
-        "html"
+        'html'
       end
     end
   end

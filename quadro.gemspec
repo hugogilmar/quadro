@@ -51,6 +51,8 @@ Gem::Specification.new do |s|
   s.add_dependency "kaminari-i18n", "~> 0.3.2"
 
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
+  s.add_dependency "turnout", "~> 2.2.1"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "rails_best_practices"
 end

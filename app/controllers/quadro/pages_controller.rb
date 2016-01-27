@@ -1,4 +1,4 @@
-require_dependency "quadro/application_controller"
+require_dependency 'quadro/application_controller'
 
 module Quadro
   class PagesController < ApplicationController

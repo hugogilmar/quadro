@@ -2,11 +2,11 @@ module Quadro
   class ApplicationController < ActionController::Base
     helper_method :widget, :asset, :root, :parent, :page, :subpages
 
-    def after_sign_in_path_for(resource)
+    def after_sign_in_path_for(_resource)
       quadro.root_path
     end
 
-    def after_sign_out_path_for(resource)
+    def after_sign_out_path_for(_resource)
       quadro.root_path
     end
 
@@ -15,12 +15,12 @@ module Quadro
     def widget
       @widget =
         case
-        when ["widgets"].include?(controller_name) && ["create"].include?(action_name)
+        when %w(widgets).include?(controller_name) && %w(create).include?(action_name)
           widget_type = params[:type].constantize
           new_widget = widget_type.new(params[:widget])
           page.widgets << new_widget
           new_widget
-        when ["assets"].include?(controller_name)
+        when %w(assets).include?(controller_name)
           new_widget = page.widgets.find(params[:widget_id]) rescue nil
           new_widget.becomes(new_widget.type.constantize) unless new_widget.nil?
         else
@@ -30,17 +30,20 @@ module Quadro
     end
 
     def asset
-     @asset ||=
+      @asset ||=
         case
-        when ["assets"].include?(controller_name) && ["create"].include?(action_name)
-          new_asset = params[:type].constantize.new(params[:asset])
-          if widget.present?
-            widget.assets << new_asset
-          elsif page.present?
-            page.assets << new_asset
+        when %w(assets).include?(controller_name) && %w(create).include?(action_name)
+          klass = params[:type].constantize
+          if allowed_asset_types.include?(klass)
+            new_asset = params[:type].constantize.new(params[:asset])
+            if widget.present?
+              widget.assets << new_asset
+            elsif page.present?
+              page.assets << new_asset
+            end
+            new_asset
           end
-          new_asset
-        when ["assets"].include?(controller_name) && ["edit", "update", "destroy"].include?(action_name)
+        when %w(assets).include?(controller_name) && %w(edit update destroy).include?(action_name)
           if widget.present?
             new_asset = widget.assets.find(params[:id]) rescue nil
             new_asset.becomes(new_asset.type.constantize) unless new_asset.nil?
@@ -65,20 +68,20 @@ module Quadro
     def page
       @page ||=
         case
-        when ["pages"].include?(controller_name)
+        when %w(pages).include?(controller_name)
           case
-          when ["index"].include?(action_name)
+          when %w(index).include?(action_name)
             root
-          when ["new"].include?(action_name)
+          when %w(new).include?(action_name)
             parent.children.new
-          when ["create"].include?(action_name)
+          when %w(create).include?(action_name)
             parent.children.new(params[:page])
-          when ["edit", "update"].include?(action_name)
+          when %w(edit update).include?(action_name)
             root.subtree.find_by_slug(params[:id]) rescue nil
           else
             root.subtree.find_by_slug(params[:id]) rescue nil
           end
-        when ["widgets", "assets"].include?(controller_name)
+        when %w(widgets assets).include?(controller_name)
           root.subtree.find(params[:page_id]) rescue nil
         else
           root.subtree.find(params[:page_id]) rescue nil
@@ -87,6 +90,12 @@ module Quadro
 
     def subpages
       @subpages ||= page.children.page(params[:page])
+    end
+
+    private
+
+    def allowed_asset_types
+      [Quadro::Asset::Image, Quadro::Asset::Slide]
     end
   end
 end

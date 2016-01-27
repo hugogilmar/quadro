@@ -10,7 +10,7 @@ module Quadro
 
     class << self
       def short_name
-        "slider"
+        'slider'
       end
     end
   end
