@@ -16,16 +16,21 @@ module Quadro
       @widget =
         case
         when %w(widgets).include?(controller_name) && %w(create).include?(action_name)
-          widget_type = params[:type].constantize
-          new_widget = widget_type.new(params[:widget])
-          page.widgets << new_widget
-          new_widget
+          widget_type = params[:type]
+          if allowed_widget_types.include?(widget_type)
+            klass = widget_type.constantize
+            new_widget = klass.new(params[:widget])
+            page.widgets << new_widget
+            new_widget
+          end
         when %w(assets).include?(controller_name)
           new_widget = page.widgets.find(params[:widget_id]) rescue nil
           new_widget.becomes(new_widget.type.constantize) unless new_widget.nil?
+          new_widget
         else
           new_widget = page.widgets.find(params[:id]) rescue nil
           new_widget.becomes(new_widget.type.constantize) unless new_widget.nil?
+          new_widget
         end
     end
 
@@ -33,9 +38,10 @@ module Quadro
       @asset ||=
         case
         when %w(assets).include?(controller_name) && %w(create).include?(action_name)
-          klass = params[:type].constantize
-          if allowed_asset_types.include?(klass)
-            new_asset = params[:type].constantize.new(params[:asset])
+          asset_type = params[:type]
+          if allowed_asset_types.include?(asset_type)
+            klass = widget_type.constantize
+            new_asset = klass.new(params[:asset])
             if widget.present?
               widget.assets << new_asset
             elsif page.present?
@@ -45,16 +51,16 @@ module Quadro
           end
         when %w(assets).include?(controller_name) && %w(edit update destroy).include?(action_name)
           if widget.present?
-            new_asset = widget.assets.find(params[:id]) rescue nil
-            new_asset.becomes(new_asset.type.constantize) unless new_asset.nil?
-          else
-            new_asset = page.assets.find(params[:id]) rescue nil
-            new_asset.becomes(new_asset.type.constantize) unless new_asset.nil?
+            widget.find_asset(params[:id])
+          elsif page.present?
+            page.find_asset(params[:id])
           end
         else
-          new_asset = page.assets.find(params[:id]) rescue nil
-          new_asset.becomes(new_asset.type.constantize) unless new_asset.nil?
+          page.find_asset(params[:id])
         end
+    end
+
+    def new_asset
     end
 
     def root
@@ -92,10 +98,12 @@ module Quadro
       @subpages ||= page.children.page(params[:page])
     end
 
-    private
-
     def allowed_asset_types
-      [Quadro::Asset::Image, Quadro::Asset::Slide]
+      [Quadro::Asset::Image.to_s, Quadro::Asset::Cover.to_s, Quadro::Asset::Slide.to_s]
+    end
+
+    def allowed_widget_types
+      [Quadro::Widget::Html.to_s, Quadro::Widget::Slide.to_s]
     end
   end
 end

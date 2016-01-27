@@ -20,7 +20,7 @@ module Quadro
     has_one :cover, as: :assetable, class_name: Quadro::Asset::Cover
 
     # nested attributes
-    accepts_nested_attributes_for :cover
+    accepts_nested_attributes_for :cover, allow_destroy: false
 
     # behaviours
     has_ancestry orphan_strategy: :destroy
@@ -47,13 +47,19 @@ module Quadro
       templates
     end
 
+    def find_asset(asset_id)
+      new_asset = assets.find(asset_id) rescue nil
+      new_asset.becomes(new_asset.type.constantize) unless new_asset.nil?
+      new_asset
+    end
+
     private
 
     def initialize_defaults
-      template = 'blank'
-      frequency = 'monthly'
-      priority = 0.5
-      author = ENV['author']
+      self.template = 'blank'
+      self.frequency = 'monthly'
+      self.priority = 0.5
+      self.author = ENV['author']
     end
 
     class << self

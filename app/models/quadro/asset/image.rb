@@ -8,6 +8,7 @@ module Quadro
     # validations
     validates_attachment :attachment, content_type: { content_type: ['image/jpg', 'image/jpeg', 'image/png', 'image/gif'] }
 
+    # methods
     class << self
       def short_name
         'image'

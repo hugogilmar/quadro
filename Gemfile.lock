@@ -9,7 +9,7 @@ PATH
       coffee-rails (~> 3.2.2)
       compass-rails (~> 2.0.1)
       crummy (~> 1.8.0)
-      devise (~> 3.4.1)
+      devise (~> 3.5.4)
       devise-i18n (~> 0.12.1)
       dynamic_sitemaps (= 1.0.8)
       figaro (~> 1.1.1)
@@ -78,8 +78,6 @@ GEM
       activesupport (>= 3.0)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
-    code_analyzer (0.4.5)
-      sexp_processor
     codeclimate-test-reporter (0.4.8)
       simplecov (>= 0.7.1, < 1.0.0)
     codemirror-rails (4.13)
@@ -91,7 +89,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
-    colored (1.2)
     compass (1.0.3)
       chunky_png (~> 1.2)
       compass-core (~> 1.0.2)
@@ -109,7 +106,7 @@ GEM
       sass-rails (< 5.1)
       sprockets (< 2.13)
     crummy (1.8.0)
-    devise (3.4.1)
+    devise (3.5.5)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -187,15 +184,6 @@ GEM
     rails-i18n (3.0.1)
       i18n (~> 0.5)
       rails (>= 3.0.0, < 4.0.0)
-    rails_best_practices (1.15.7)
-      activesupport
-      code_analyzer (>= 0.4.3)
-      colored
-      erubis
-      i18n
-      json
-      require_all
-      ruby-progressbar
     railties (3.2.22.1)
       actionpack (= 3.2.22.1)
       activesupport (= 3.2.22.1)
@@ -210,16 +198,13 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     remotipart (1.2.1)
-    require_all (1.3.2)
     responders (1.1.2)
       railties (>= 3.2, < 4.2)
-    ruby-progressbar (1.7.5)
     sass (3.4.21)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
-    sexp_processor (4.6.0)
     simple_form (2.1.3)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -256,5 +241,4 @@ PLATFORMS
 DEPENDENCIES
   codeclimate-test-reporter
   quadro!
-  rails_best_practices
   sqlite3
