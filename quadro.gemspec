@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_dependency "crummy", "~> 1.8.0"
   s.add_dependency "stringex", "~> 2.5.2"
 
-  s.add_dependency "devise", "~> 3.4.1"
+  s.add_dependency "devise", "~> 3.5.4"
   s.add_dependency "paperclip", "~> 4.2.0"
   s.add_dependency "figaro", "~> 1.1.1"
   s.add_dependency "dynamic_sitemaps", "1.0.8"
@@ -51,6 +51,7 @@ Gem::Specification.new do |s|
   s.add_dependency "kaminari-i18n", "~> 0.3.2"
 
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
+  s.add_dependency "turnout", "~> 2.2.1"
 
   s.add_development_dependency "sqlite3"
 end

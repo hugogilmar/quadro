@@ -6,3 +6,5 @@ test/dummy/log/*.log
 test/dummy/public/system/
 test/dummy/tmp/
 test/dummy/.sass-cache
+rails_best_practices_output.html
+rubocop.html

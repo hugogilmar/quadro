@@ -19,6 +19,8 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     copy_file "app/assets/javascripts/quadro/site.js.coffee", "app/assets/javascripts/quadro/site.js.coffee"
     copy_file "app/assets/stylesheets/quadro/site.css.sass", "app/assets/stylesheets/quadro/site.css.sass"
     copy_file "app/assets/images/quadro/favicon.ico", "app/assets/images/quadro/favicon.ico"
+    copy_file "public/maintenance.html", "public/maintenance.html"
+    copy_file "public/quadro-maintenance.png", "public/quadro-maintenance.png"
 
     remove_file "public/index.html"
   end
