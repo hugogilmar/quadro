@@ -17,7 +17,7 @@ module Quadro
         case
         when %w(widgets).include?(controller_name) && %w(create).include?(action_name)
           widget_type = params[:type]
-          if allowed_widget_types.include?(widget_type)
+          if Quadro.available_widgets.include?(widget_type)
             klass = widget_type.constantize
             new_widget = klass.new(params[:widget])
             page.widgets << new_widget
@@ -39,8 +39,8 @@ module Quadro
         case
         when %w(assets).include?(controller_name) && %w(create).include?(action_name)
           asset_type = params[:type]
-          if allowed_asset_types.include?(asset_type)
-            klass = widget_type.constantize
+          if Quadro.available_assets.include?(asset_type)
+            klass = asset_type.constantize
             new_asset = klass.new(params[:asset])
             if widget.present?
               widget.assets << new_asset
@@ -58,9 +58,6 @@ module Quadro
         else
           page.find_asset(params[:id])
         end
-    end
-
-    def new_asset
     end
 
     def root
@@ -96,14 +93,6 @@ module Quadro
 
     def subpages
       @subpages ||= page.children.page(params[:page])
-    end
-
-    def allowed_asset_types
-      [Quadro::Asset::Image.to_s, Quadro::Asset::Cover.to_s, Quadro::Asset::Slide.to_s]
-    end
-
-    def allowed_widget_types
-      [Quadro::Widget::Html.to_s, Quadro::Widget::Slide.to_s]
     end
   end
 end

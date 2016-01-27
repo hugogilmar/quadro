@@ -1,7 +1,7 @@
 #quadro-toolbar.navbar.navbar-fixed-bottom
   #quadro-gallery.well.well-sm.collapsed
     #quadro-uploader.asset-dropper(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}")
-    #quadro-images.asset-list
+    #quadro-images.asset-list(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}")
       - page.images.each do |image|
         = render 'quadro/assets/image/image', asset: image, page: page
   #quadro-controls.well.well-sm.clearfix
