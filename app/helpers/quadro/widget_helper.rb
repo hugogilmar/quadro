@@ -11,6 +11,8 @@ module Quadro
           page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s).becomes(Quadro::Widget::Html)
         when :slider
           page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Slider.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Slider.to_s).becomes(Quadro::Widget::Slider)
+        when :gallery
+          page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Gallery.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Gallery.to_s).becomes(Quadro::Widget::Gallery)
         else
           page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s)
         end

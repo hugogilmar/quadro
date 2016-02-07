@@ -1,4 +1,4 @@
-$ ->
+$(document).ready ->
   widgets = {}
 
   $('.widget-slider').slick(
