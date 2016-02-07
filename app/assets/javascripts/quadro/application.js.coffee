@@ -1,5 +1,4 @@
 #= require jquery
-#= require jquery.turbolinks
 #= require jquery_ujs
 #= require jquery.remotipart
 #= require bootstrap-sprockets
@@ -24,4 +23,3 @@
 #= require quadro/uploader
 #= require quadro/quadro
 #= require quadro/site
-#= require turbolinks

@@ -52,8 +52,5 @@ Gem::Specification.new do |s|
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
   s.add_dependency "turnout", "~> 2.2.1"
 
-  s.add_dependency "turbolinks","~> 1.3.1"
-  s.add_dependency "jquery-turbolinks", "~> 2.0.2"
-
   s.add_development_dependency "sqlite3"
 end
