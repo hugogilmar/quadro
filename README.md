@@ -15,6 +15,7 @@ With Quadro you have the following features:
 - Upload images for each page, even a cover.
 - Use *summernote* as content editor.
 - Slider with *slick* carousel.
+- Image gallery with *lightbox2*.
 - Integrate any *Bootstrap 3* template.
 
 ## Current stable version
@@ -82,6 +83,7 @@ In this release, the possible options are:
 
 - html
 - slider
+- gallery
 
 ## Working with page templates
 
