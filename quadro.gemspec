@@ -44,7 +44,6 @@ Gem::Specification.new do |s|
   s.add_dependency "codemirror-rails", "~> 4.5"
   s.add_dependency "summernote-rails", "~> 0.5.10.2"
   s.add_dependency "jquery-slick-rails", "~> 1.5.9.1"
-  s.add_dependency "photoswipe-rails", "~> 4.1.0"
 
   s.add_dependency "rails-i18n", "~> 3.0.0"
   s.add_dependency "devise-i18n", "~> 0.12.1"
@@ -52,6 +51,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
   s.add_dependency "turnout", "~> 2.2.1"
+
+  s.add_dependency "turbolinks","~> 1.3.1"
+  s.add_dependency "jquery-turbolinks", "~> 2.0.2"
 
   s.add_development_dependency "sqlite3"
 end
