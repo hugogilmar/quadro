@@ -1,0 +1,10 @@
+=# render("quadro/widgets/gallery/toolbar", widget: widget)
+
+- if content.blank? && widget.images.blank?
+  = render("quadro/widgets/gallery/empty")
+- elsif widget.images.blank?
+  = content.html_safe
+- else
+  = render("quadro/widgets/gallery/widget", widget: widget)
+
+= render("quadro/widgets/gallery/uploader", widget: widget)

@@ -1,4 +1,4 @@
 .widget.widget-slider
-  - widget.slides.each do |image|
+  - widget.slides.each do |slide|
     .slide
-      = image_tag image.url(:medium), alt: image.alt
+      = image_tag slide.url(:medium), alt: slide.alt

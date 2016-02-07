@@ -1,0 +1,5 @@
+.asset-uploader
+  .asset-dropper(data-assetable-type='Quadro::Widget::Gallery' data-assetable-id="#{widget.id}" data-type='Quadro::Asset::Image' data-path="#{page_widget_assets_path(page_id: widget.page.id, widget_id: widget.id)}")
+  .asset-list.clearfix(data-assetable-type='Quadro::Widget::Gallery' data-assetable-id="#{widget.id}")
+    - widget.images.each do |image|
+      = render 'quadro/assets/image/image', asset: image, widget: widget, page: page

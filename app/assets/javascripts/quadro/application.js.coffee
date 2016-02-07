@@ -1,4 +1,5 @@
 #= require jquery
+#= require jquery.turbolinks
 #= require jquery_ujs
 #= require jquery.remotipart
 #= require bootstrap-sprockets
@@ -11,15 +12,16 @@
 #= require codemirror/modes/haml
 #= require summernote
 #= require jquery.slick
-#= require photoswipe
 #= require quadro/plugins/jquery.fs.dropper.min
 #= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/plugins/jquery.smartmenus.min
 #= require quadro/plugins/jquery.smartmenus.bootstrap.min
 #= require quadro/plugins/pace.min
 #= require quadro/plugins/humane.min
+#= require quadro/plugins/lightbox.min
 #= require quadro/message
 #= require quadro/widget
 #= require quadro/uploader
 #= require quadro/quadro
 #= require quadro/site
+#= require turbolinks
