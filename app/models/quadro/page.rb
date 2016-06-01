@@ -10,8 +10,9 @@ module Quadro
     store :settings, accessors: [:description, :author, :template, :frequency, :priority]
 
     # validations
-    validates :title, presence: true
+    validates :title, presence: true, length: { maximum: 60 }
     validates :slug, uniqueness: true
+    validates :description, length: { maximum: 160 }
 
     # associations
     has_many :widgets, dependent: :destroy
@@ -28,6 +29,7 @@ module Quadro
 
     # callbacks
     after_initialize :initialize_defaults, if: :new_record?
+    after_save :ensure_cover
 
     # methods
     def to_param
@@ -53,13 +55,22 @@ module Quadro
       new_asset
     end
 
+    def ensure_cover
+      generate_cover if self.cover.nil?
+    end
+
     private
 
     def initialize_defaults
-      self.template = 'blank'
-      self.frequency = 'monthly'
-      self.priority = 0.5
-      self.author = ENV['author']
+      self.template = ENV['template'] if self.template.blank?
+      self.frequency = ENV['frequency'] if self.frequency.blank?
+      self.priority = ENV['priority'] if self.priority.blank?
+      self.author = ENV['author'] if self.author.blank?
+    end
+
+    def generate_cover
+      self.build_cover
+      self.cover.save
     end
 
     class << self

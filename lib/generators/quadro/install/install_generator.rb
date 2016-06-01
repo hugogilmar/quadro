@@ -11,9 +11,11 @@ class Quadro::InstallGenerator < Rails::Generators::Base
 
     copy_file "config/application.yml", "config/application.yml"
 
-    copy_file "app/views/quadro/pages/_page.html.haml", "app/views/quadro/pages/_page.html.haml"
+    copy_file "app/views/quadro/pages/page/_list.html.haml", "app/views/quadro/pages/page/_list.html.haml"
+    copy_file "app/views/quadro/pages/page/_thumbnail.html.haml", "app/views/quadro/pages/page/_thumbnail.html.haml"
     copy_file "app/views/quadro/shared/_navigation.html.haml", "app/views/quadro/shared/_navigation.html.haml"
     copy_file "app/views/quadro/shared/templates/_blank.html.haml", "app/views/quadro/shared/templates/_blank.html.haml"
+    copy_file "app/views/quadro/shared/templates/_jumbotron.html.haml", "app/views/quadro/shared/templates/_jumbotron.html.haml"
     copy_file "app/views/quadro/shared/templates/_sidebar.html.haml", "app/views/quadro/shared/templates/_sidebar.html.haml"
     copy_file "app/views/quadro/shared/templates/_demo.html.haml", "app/views/quadro/shared/templates/_demo.html.haml"
     copy_file "app/assets/javascripts/quadro/site.js.coffee", "app/assets/javascripts/quadro/site.js.coffee"
