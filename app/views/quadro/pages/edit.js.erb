@@ -1,2 +1,4 @@
 $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/pages/edit', page: page)) %>");
+$("#page_title").show_char_limit(60);
+$("#page_description").show_char_limit(160);
 $("#quadro-modal").modal("show");

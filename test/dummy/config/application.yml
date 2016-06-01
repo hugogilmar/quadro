@@ -4,6 +4,10 @@ development:
   title: "Quadro CMS"
   description: "Quadro Content Management System"
   author: "Quadro"
+  layout: "list"
+  template: "blank"
+  frequency: "monthly"
+  priority: "0.5"
 
 production:
   host: "http://www.example.com"
@@ -11,3 +15,7 @@ production:
   title: "Quadro CMS"
   description: "Quadro Content Management System"
   author: "Quadro"
+  layout: "list"
+  template: "blank"
+  frequency: "monthly"
+  priority: "0.5"

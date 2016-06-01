@@ -1,0 +1,10 @@
+= render 'quadro/shared/navigation'
+
+.container
+  .jumbotron(style="background-image: url(#{page.cover.url(:large)})")
+    %h1= page.title
+    %p= page.description
+
+  = render_crumbs
+
+  = widget_for :content
