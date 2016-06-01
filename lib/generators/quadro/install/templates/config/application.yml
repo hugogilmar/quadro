@@ -6,7 +6,7 @@ development:
   author: "Quadro"
   layout: "list"
   template: "blank"
-  frecuency: "monthly"
+  frequency: "monthly"
   priority: "0.5"
 
 production:
@@ -17,5 +17,5 @@ production:
   author: "Quadro"
   layout: "list"
   template: "blank"
-  frecuency: "monthly"
+  frequency: "monthly"
   priority: "0.5"
