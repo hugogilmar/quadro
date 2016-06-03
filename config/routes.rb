@@ -1,4 +1,6 @@
 Quadro::Engine.routes.draw do
+  default_url_options host: ENV['host']
+
   devise_for :users, class_name: 'Quadro::User', module: :devise
 
   match 'sitemap.xml' => 'sitemaps#sitemap'
