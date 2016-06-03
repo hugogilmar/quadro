@@ -19,6 +19,7 @@
 #= require quadro/plugins/pace.min
 #= require quadro/plugins/humane.min
 #= require quadro/plugins/lightbox.min
+#= require quadro/plugins/gmaps.min
 #= require quadro/message
 #= require quadro/widget
 #= require quadro/uploader

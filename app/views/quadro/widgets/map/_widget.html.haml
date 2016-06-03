@@ -1,0 +1,45 @@
+.widget.widget-map.thumbnail(id="map#{widget.id}")
+
+= content_for :javascript do
+  - unless options.key?(:static)
+    :coffee
+      $ ->
+        maps = []
+
+        maps["map#{widget.id}"] = new GMaps(
+          div: "#map#{widget.id}"
+          lat: "#{options[:latitude]}"
+          lng: "#{options[:longitude]}"
+        )
+
+        maps["map#{widget.id}"].addMarker(
+          lat: "#{options[:latitude]}"
+          lng: "#{options[:longitude]}"
+          title: "#{options[:title]}"
+          infoWindow:
+            content: "#{content.html_safe}"
+        )
+  - else
+    :coffee
+      $ ->
+        imageUrl = GMaps.staticMapURL(
+          size: [640, 640]
+          scale: 2
+          format: 'jpg-baseline'
+          lat: "#{options[:latitude]}"
+          lng: "#{options[:longitude]}"
+          markers: [
+            lat: "#{options[:latitude]}"
+            lng: "#{options[:longitude]}"
+          ]
+        )
+
+        $("#map#{widget.id}").css('background-image', 'url(' + imageUrl + ')') if imageUrl
+
+    - if options.key?(:width)
+      :coffee
+        $("#map#{widget.id}").css('width', "#{options[:width]}")
+
+    - if options.key?(:height)
+      :coffee
+        $("#map#{widget.id}").css('width', "#{options[:height]}")
