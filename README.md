@@ -4,20 +4,20 @@ This project rocks and uses MIT-LICENSE.
 
 ---
 
-Quadro is a CMS written for Rails developers. It works as an engine and provides the standard functionality to start a website or a blog from the scratch.
+**Quadro** is a CMS written for Rails developers. It works as an engine and provides the standard functionality to start a website or a blog from the scratch.
 
-With Quadro you have the following features:
+With **Quadro** you have the following features:
 
 - Create pages.
 - Create your own templates.
-- Make any area on your template editable with the *quadro widget*.
+- Make any area on your template editable.
 - Generate a sitemap.xml automatically.
 - Upload images for each page, even a cover.
-- Use *summernote* as content editor.
-- Slider with *slick* carousel.
-- Image gallery with *lightbox2*.
-- Integrate any *Bootstrap 3* template.
-- *Google Maps* integration through *gmaps*.
+- Use summernote as content editor.
+- Slider with slick carousel.
+- Image gallery with lightbox2.
+- Integrate any Bootstrap 3 template.
+- Google Maps integration with gmaps.
 
 ## Current stable version
 
@@ -33,7 +33,7 @@ Current stable version.
 
 ## Installation
 
-In order to start using it, you need to add the gem entry on your *Gemfile*.
+In order to start using it, you need to add the gem entry on your `Gemfile`.
 
 ```ruby
 gem "quadro"
@@ -53,15 +53,13 @@ rails g quadro:install
 
 ## Configuration
 
-It will add a mountable route on your project *routes.rb*.
+It will add a mountable route on your project `config/routes.rb`.
 
-The default user is *quadro@example.com* and its password *quadro123*.
-
-You will need to set the *application.yml* file under the *config* directory on your project.
+The default user is `quadro@example.com` and password `quadro123`.
 
 ## Using the widget
 
-By default, all templates are written with *Haml*. In order to use the widget, you need to do it as the following example:
+By default, all templates are written with HAML. In order to use the widget, you need to do it as the following example:
 
 ```ruby
 = widget_for :content
@@ -74,7 +72,7 @@ It also works with a default HTML block.
   %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 ```
 
-The *widget_for* helper receives a second parameter which is *type*.
+The `widget_for` helper receives a second parameter which is `type`.
 
 ```ruby
 = widget_for :content, type: :html
@@ -116,7 +114,7 @@ Every page has a template associated to it, it sets the layout that will be disp
 - sidebar (content with sidebar navigation)
 - demo (an example layout with an example of all available widgets)
 
-You can create your own templates, just add the template files as *partials* in the following path:
+You can create your own templates, just add the template files as partials in the following path:
 
 ```bash
 app/views/quadro/shared/templates
@@ -126,10 +124,11 @@ app/views/quadro/shared/templates
 
 Quadro global configuration options are defined at `config/application.yml`. Here a description for each of them:
 
-- host (url with schema)
+- host (site domain)
+- email (site email)
 - name (site name)
 - author (page author default)
-- layout (sub page list layout, use *list* or *thumbnail*)
+- layout (sub page list layout, use `list` or `thumbnail`)
 - template (page template default)
 - frequency (sitemap.xml default)
 - priority (sitemap.xml default)
@@ -143,6 +142,6 @@ app/views/quadro/pages/page
 
 ## Use it and enjoy it
 
-Now when you log in into the *Quadro CMS* you will find a *toolbar* fixed at the bottom, to manage your new website or blog.
+Now when you log in into **Quadro** you will find a toolbar fixed at the bottom, to manage your new website or blog.
 
-Now you are ready to get started with Quadro CMS.
+Now you are ready to get started with **Quadro**.

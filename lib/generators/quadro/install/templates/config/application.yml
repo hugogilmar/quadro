@@ -1,5 +1,6 @@
 development:
-  host: "http://www.example.com"
+  host: "www.example.com"
+  email: "quadro@example.com"
   name: "Quadro"
   author: "Quadro"
   layout: "list"
@@ -9,7 +10,8 @@ development:
   google_maps_api_key: ""
 
 production:
-  host: "http://www.example.com"
+  host: "www.example.com"
+  email: "quadro@example.com"
   name: "Quadro"
   author: "Quadro"
   layout: "list"
