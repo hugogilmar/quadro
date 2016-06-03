@@ -92,6 +92,9 @@ Map widget options are:
 - latitude (required)
 - longitude (required)
 - title (optional)
+- static (optional)
+
+*Note: `static` option displays a JPEG graphic map instead of traditional. Default value is false.*
 
 Content block will be used for location's pin info window if provided.
 
@@ -102,7 +105,7 @@ Content block will be used for location's pin info window if provided.
 
 You also need to set `google_maps_api_key` on `config/application.yml`.
 
-*To get an API key, please refer to Google Maps official documentaion [here](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)*.
+*Note: to get an API key, please refer to Google Maps official documentaion [here](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key).*
 
 ## Working with page templates
 
@@ -126,11 +129,17 @@ Quadro global configuration options are defined at `config/application.yml`. Her
 - host (url with schema)
 - name (site name)
 - author (page author default)
-- layout (subpage list layout, use *list* or *thumbnail*)
+- layout (sub page list layout, use *list* or *thumbnail*)
 - template (page template default)
 - frequency (sitemap.xml default)
 - priority (sitemap.xml default)
 - google_maps_api_key
+
+*Note: as page templates, sub page list layout can be added at:*
+
+```bash
+app/views/quadro/pages/page
+```
 
 ## Use it and enjoy it
 
