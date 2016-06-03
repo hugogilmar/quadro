@@ -17,6 +17,7 @@ With Quadro you have the following features:
 - Slider with *slick* carousel.
 - Image gallery with *lightbox2*.
 - Integrate any *Bootstrap 3* template.
+- *Google Maps* integration through *gmaps*.
 
 ## Current stable version
 
@@ -81,15 +82,34 @@ The *widget_for* helper receives a second parameter which is *type*.
 
 In this release, the possible options are:
 
-- html
+- html (default)
 - slider
 - gallery
+- map
+
+Map widget options are:
+
+- latitude (required)
+- longitude (required)
+- title (optional)
+
+Content block will be used for location's pin info window if provided.
+
+```ruby
+= widget_for :address, type: :map, latitude: 13.701291, longitude: -89.224423 do
+  %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+```
+
+You also need to set `google_maps_api_key` on `config/application.yml`.
+
+*To get an API key, please refer to Google Maps official documentaion [here](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key)*.
 
 ## Working with page templates
 
 Every page has a template associated to it, it sets the layout that will be displayed on the browser. There is a default list of available templates by default.
 
 - blank (full width content)
+- jumbotron (full width content with cover header)
 - sidebar (content with sidebar navigation)
 - demo (an example layout with an example of all available widgets)
 
@@ -98,6 +118,19 @@ You can create your own templates, just add the template files as *partials* in 
 ```bash
 app/views/quadro/shared/templates
 ```
+
+## Global configuration options
+
+Quadro global configuration options are defined at `config/application.yml`. Here a description for each of them:
+
+- host (url with schema)
+- name (site name)
+- author (page author default)
+- layout (subpage list layout, use *list* or *thumbnail*)
+- template (page template default)
+- frequency (sitemap.xml default)
+- priority (sitemap.xml default)
+- google_maps_api_key
 
 ## Use it and enjoy it
 
