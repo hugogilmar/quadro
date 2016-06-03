@@ -1,5 +1,5 @@
 Quadro::Engine.routes.draw do
-  default_url_options host: ENV['host']
+  default_url_options host: Quadro.vars[:host]
 
   devise_for :users, class_name: 'Quadro::User', module: :devise
 

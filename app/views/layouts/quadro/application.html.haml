@@ -3,15 +3,14 @@
   %head
     %meta(charset='utf-8')
     %meta(content='width=device-width, initial-scale=1.0' name='viewport')
-    - unless devise_controller?
-      %title= page.title
-      %meta(content="#{page.description}" name="description")
-      %meta(content="#{page.author}" name="author")
-      %meta(content="#{page.title}" property="og:title")
-      %meta(content="#{page.description}" property="og:description")
-      %meta(content="article" property="og:type")
-      %meta(content="#{page.is_root? ? root_url : page_url(page)}" property="og:url")
-      %meta(content="#{paperclip_url(page.cover.url(:large))}" property="og:image")
+    %title= page.title
+    %meta(content="#{page.description}" name="description")
+    %meta(content="#{page.author}" name="author")
+    %meta(content="#{page.title}" property="og:title")
+    %meta(content="#{page.description}" property="og:description")
+    %meta(content="article" property="og:type")
+    %meta(content="#{page.is_root? ? root_url : page_url(page)}" property="og:url")
+    %meta(content="#{paperclip_url(page.cover.url(:large))}" property="og:image")
     = stylesheet_link_tag 'quadro/application'
     = favicon_link_tag 'quadro/favicon.ico'
     = csrf_meta_tags
@@ -21,5 +20,5 @@
       = render 'quadro/shared/toolbar'
       = render 'quadro/shared/modal'
     = javascript_include_tag 'quadro/application'
-    = javascript_include_tag "//maps.google.com/maps/api/js?key=#{ENV['google_maps_api_key']}"
+    = javascript_include_tag "//maps.google.com/maps/api/js?key=#{Quadro.vars[:google_maps_api_key]}"
     = yield :javascript
