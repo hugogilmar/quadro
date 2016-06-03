@@ -4,13 +4,8 @@ class Quadro::InstallGenerator < Rails::Generators::Base
   def install
     route "mount Quadro::Engine => '/'"
 
-    rake "quadro:install:migrations"
-    rake "db:migrate"
-    rake "quadro:create_root_page"
-    rake "quadro:create_admin_user"
-
     copy_file "config/application.yml", "config/application.yml"
-
+    copy_file "config/initializers/quadro.rb", "config/initializers/quadro.rb"
     copy_file "app/views/quadro/pages/page/_list.html.haml", "app/views/quadro/pages/page/_list.html.haml"
     copy_file "app/views/quadro/pages/page/_thumbnail.html.haml", "app/views/quadro/pages/page/_thumbnail.html.haml"
     copy_file "app/views/quadro/shared/_navigation.html.haml", "app/views/quadro/shared/_navigation.html.haml"
@@ -25,5 +20,10 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     copy_file "public/quadro-maintenance.png", "public/quadro-maintenance.png"
 
     remove_file "public/index.html"
+
+    rake "quadro:install:migrations"
+    rake "db:migrate"
+    rake "quadro:create_root_page"
+    rake "quadro:create_admin_user"
   end
 end
