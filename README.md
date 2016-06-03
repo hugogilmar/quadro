@@ -126,7 +126,7 @@ Quadro global configuration options are defined at `config/application.yml`. Her
 
 - host (site domain)
 - email (site email)
-- name (site name)
+- site (site name)
 - author (page author default)
 - layout (sub page list layout, use `list` or `thumbnail`)
 - template (page template default)
