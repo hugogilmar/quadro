@@ -1,0 +1,18 @@
+#mapempty.widget.widget-map.thumbnail
+
+= content_for :javascript do
+  :coffee
+    $ ->
+      imageUrl = GMaps.staticMapURL(
+        size: [640, 640]
+        scale: 2
+        format: 'jpg-baseline'
+        lat: 13.701291
+        lng: -89.224423
+        markers: [
+          lat: 13.701291
+          lng: -89.224423
+        ]
+      )
+
+      $("#mapempty").css('background-image', 'url(' + imageUrl + ')') if imageUrl

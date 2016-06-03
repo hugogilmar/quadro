@@ -16,3 +16,5 @@
       = render 'quadro/shared/toolbar'
       = render 'quadro/shared/modal'
     = javascript_include_tag 'quadro/application'
+    = javascript_include_tag "http://maps.google.com/maps/api/js?key=#{ENV['google_maps_api_key']}"
+    = yield :javascript

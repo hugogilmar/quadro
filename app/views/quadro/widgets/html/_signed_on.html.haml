@@ -6,4 +6,4 @@
   - elsif widget.content.blank?
     = content.html_safe
   - else
-    = widget.content.html_safe
+    = render "quadro/widgets/html/widget", widget: widget

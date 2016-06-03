@@ -4,6 +4,10 @@ body
 body.quadro-signed-in
   margin-bottom: 60px
 
+form
+  span.status
+    @extend .help-block
+
 #quadro-toolbar
   padding: 8px
 
@@ -46,6 +50,16 @@ body.quadro-signed-in
 .quadro-brand
   text-decoration: none !important
 
+.widget-map
+  height: 240px
+  background-color: #808080
+  background: no-repeat center center
+  background-attachment: scroll
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  background-size: cover
+  -o-background-size: cover
+
 .note-editor
   margin-bottom: 20px
 
@@ -57,6 +71,7 @@ body.quadro-signed-in
 
 .asset-dropper
   margin: 1em
+  position: relative
 
 .slick-arrow
   z-index: 1000
@@ -82,7 +97,3 @@ a.thumbnail
   -moz-background-size: cover
   background-size: cover
   -o-background-size: cover
-
-form
-  span.status
-    @extend .help-block

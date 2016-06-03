@@ -1,0 +1,6 @@
+=# render("quadro/widgets/map/toolbar", widget: widget)
+
+- if options[:latitude].blank? || options[:longitude].blank?
+  = render("quadro/widgets/map/empty")
+- else
+  = render "quadro/widgets/map/widget", widget: widget, options: options, content: content

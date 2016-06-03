@@ -8,6 +8,7 @@ development:
   template: "blank"
   frequency: "monthly"
   priority: "0.5"
+  google_maps_api_key: ""
 
 production:
   host: "http://www.example.com"
@@ -19,3 +20,4 @@ production:
   template: "blank"
   frequency: "monthly"
   priority: "0.5"
+  google_maps_api_key: ""
