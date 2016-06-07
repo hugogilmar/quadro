@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20160603215644) do
+ActiveRecord::Schema.define(:version => 20160607022104) do
 
   create_table "quadro_assets", :force => true do |t|
     t.integer  "assetable_id"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20160603215644) do
   add_index "quadro_assets", ["assetable_id", "assetable_type"], :name => "index_quadro_assets_on_assetable_id_and_assetable_type"
   add_index "quadro_assets", ["deleted_at"], :name => "index_quadro_assets_on_deleted_at"
   add_index "quadro_assets", ["type"], :name => "index_quadro_assets_on_type"
+
+  create_table "quadro_interactions", :force => true do |t|
+    t.integer  "interactable_id"
+    t.string   "interactable_type"
+    t.text     "content"
+    t.string   "ip_address"
+    t.string   "user_agent"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+  end
 
   create_table "quadro_pages", :force => true do |t|
     t.string   "title"
