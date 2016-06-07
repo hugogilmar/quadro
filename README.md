@@ -18,6 +18,7 @@ With **Quadro** you have the following features:
 - Image gallery with lightbox2.
 - Integrate any Bootstrap 3 template.
 - Google Maps integration with gmaps.
+- Customized forms.
 
 ## Current stable version
 
@@ -84,6 +85,9 @@ In this release, the possible options are:
 - slider
 - gallery
 - map
+- form
+
+### Map widget
 
 Map widget options are:
 
@@ -104,6 +108,20 @@ Content block will be used for location's pin info window if provided.
 You also need to set `google_maps_api_key` on `config/application.yml`.
 
 *Note: to get an API key, please refer to Google Maps official documentaion [here](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key).*
+
+### Form widget
+
+Form widget uses `simple_form` as form builder. You can specify a form block to define your own fields.
+
+```ruby
+= widget_for :contact, type: :form do |form|
+  = form.input :name
+  = form.input :email
+  = form.input :message, as: :text, input_html: { rows: 3 }
+  = form.button :submit
+```
+
+*Note: all form submits are saved to database. When logged in you can review each interaction below the form widget.*
 
 ## Working with page templates
 
@@ -137,7 +155,7 @@ Quadro global configuration options are defined at `config/application.yml`. Her
 *Note: as page templates, sub page list layout can be added at:*
 
 ```bash
-app/views/quadro/pages/page
+app/views/quadro/shared/templates/page
 ```
 
 ## Use it and enjoy it
