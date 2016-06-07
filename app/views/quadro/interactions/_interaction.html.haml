@@ -1,0 +1,22 @@
+- user_agent = UserAgent.parse(interaction.user_agent)
+- location = geoip.lookup(interaction.ip_address)
+
+%li
+  %ul.list-inline
+    %li.text-capitalize
+      %strong Date
+    %li= l(interaction.created_at, format: :long)
+    %li.text-capitalize
+      %strong Browser
+    %li
+      = user_agent.browser
+      %small= user_agent.version
+    %li.text-capitalize
+      %strong Location
+    %li
+      = interaction.ip_address
+      %small= location.found? ? location.country.iso_code : '??'
+    - interaction.content.keys.each do |key|
+      %li.text-capitalize
+        %strong= key
+      %li= interaction.content[key]

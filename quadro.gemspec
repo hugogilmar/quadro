@@ -51,6 +51,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
   s.add_dependency "turnout", "~> 2.2.1"
+  s.add_dependency "useragent", "~> 0.16.7"
+  s.add_dependency "maxminddb", "~> 0.1.11"
 
   s.add_development_dependency "sqlite3"
 end

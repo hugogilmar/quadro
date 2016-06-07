@@ -1,0 +1,6 @@
+= render("quadro/widgets/form/fields", widget: widget, options: options, content: content, form: form)
+
+- if content.blank?
+  = render("quadro/widgets/form/empty", widget: widget, options: options, content: content, form: form)
+- else
+  = render("quadro/widgets/form/widget", widget: widget, options: options, content: content, form: form)
