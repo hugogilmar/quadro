@@ -9,6 +9,7 @@ module Quadro
     # associations
     belongs_to :page
     has_many :assets, as: :assetable, dependent: :destroy
+    has_many :interactions, as: :interactable, dependent: :destroy
 
     # methods
     def find_asset(asset_id)

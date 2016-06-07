@@ -1,0 +1,14 @@
+=# render("quadro/widgets/form/toolbar", widget: widget)
+= render("quadro/widgets/form/fields", widget: widget, options: options, content: content, form: form)
+
+- if content.blank?
+  = render("quadro/widgets/form/empty", widget: widget, options: options, content: content, form: form)
+- else
+  = render("quadro/widgets/form/widget", widget: widget, options: options, content: content, form: form)
+
+- unless widget.interactions.blank?
+  .page-header
+    %h3 Interactions
+
+  %ul
+    = render widget.interactions

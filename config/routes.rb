@@ -6,6 +6,9 @@ Quadro::Engine.routes.draw do
   match 'sitemap.xml' => 'sitemaps#sitemap'
 
   resources :pages, path: '/' do
+    member do
+      post :form
+    end
     get 'page/:page', action: :index, on: :collection
     resources :widgets, only: [:edit, :update] do
       resources :assets, only: [:create, :edit, :update, :destroy]

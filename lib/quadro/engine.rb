@@ -15,6 +15,7 @@ module Quadro
       Quadro.available_widgets << Quadro::Widget::Slider.to_s
       Quadro.available_widgets << Quadro::Widget::Gallery.to_s
       Quadro.available_widgets << Quadro::Widget::Map.to_s
+      Quadro.available_widgets << Quadro::Widget::Form.to_s
 
       Quadro.available_assets << Quadro::Asset::Cover.to_s
       Quadro.available_assets << Quadro::Asset::Slide.to_s
