@@ -19,6 +19,7 @@ With **Quadro** you have the following features:
 - Integrate any Bootstrap 3 template.
 - Google Maps integration with gmaps.
 - Customized forms.
+- Maintenance mode.
 
 ## Current stable version
 
@@ -156,6 +157,28 @@ Quadro global configuration options are defined at `config/application.yml`. Her
 
 ```bash
 app/views/quadro/shared/templates/page
+```
+
+## Maintenance mode
+
+**Quadro** uses `turnout` gem for maintenance mode functionality.
+
+To start maintenance mode, run the command bellow:
+
+```bash
+rake maintenance:start
+```
+
+To finish maintenance mode, run the command bellow:
+
+```bash
+rake maintenance:end
+```
+
+You can customize the HTML for the maintenance status page at this path:
+
+```bash
+public/maintenance.html
 ```
 
 ## Use it and enjoy it
