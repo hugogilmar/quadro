@@ -1,7 +1,7 @@
 module Quadro
   module AssetHelper
     def paperclip_url(style_url)
-      URI.join(request.url, style_url)
+      [request.base_url, style_url].join
     end
   end
 end

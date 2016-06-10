@@ -3,6 +3,8 @@ Quadro::Engine.routes.draw do
 
   devise_for :users, class_name: 'Quadro::User', module: :devise
 
+  match 'atom.xml', to: 'feeds#atom', as: 'atom', format: 'xml'
+  match 'rss.xml', to: 'feeds#rss', as: 'rss', format: 'xml'
   match 'sitemap.xml' => 'sitemaps#sitemap'
 
   resources :pages, path: '/' do

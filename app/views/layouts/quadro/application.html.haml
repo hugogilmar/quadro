@@ -6,11 +6,14 @@
     %title= page.title
     %meta(content="#{page.description}" name="description")
     %meta(content="#{page.author}" name="author")
+    %meta(content="#{Quadro.to_s}" name="generator")
     %meta(content="#{page.title}" property="og:title")
     %meta(content="#{page.description}" property="og:description")
     %meta(content="article" property="og:type")
     %meta(content="#{page.is_root? ? root_url : page_url(page)}" property="og:url")
     %meta(content="#{paperclip_url(page.cover.url(:large))}" property="og:image")
+    %link(rel="alternate" type="application/rss+xml" title="#{root.title}" href="#{rss_path}")
+    %link(rel="alternate" type="application/atom+xml" title="#{root.title}" href="#{atom_path}")
     = stylesheet_link_tag 'quadro/application'
     = favicon_link_tag 'quadro/favicon.ico'
     = csrf_meta_tags

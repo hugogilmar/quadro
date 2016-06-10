@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency "paperclip", "~> 4.2.0"
   s.add_dependency "figaro", "~> 1.1.1"
   s.add_dependency "dynamic_sitemaps", "1.0.8"
+  s.add_dependency "ratom", "~> 0.9.0"
 
   s.add_dependency "jquery-rails", "~> 3.1.2"
   s.add_dependency "remotipart", "~> 1.0"
