@@ -22,6 +22,7 @@ With **Quadro** you have the following features:
 - Maintenance mode.
 - Feeds auto generation (rss and atom).
 - Auto-generated robots.txt.
+- Customized HTML static status pages.
 
 ## Current stable version
 
