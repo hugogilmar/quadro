@@ -1,11 +1,12 @@
 Quadro::Engine.routes.draw do
   default_url_options host: Quadro.vars[:host]
 
-  devise_for :users, class_name: 'Quadro::User', module: :devise
+  devise_for :users, class_name: 'Quadro::User', module: :devise, path: 'auth'
 
   match 'atom.xml', to: 'feeds#atom', as: 'atom', format: 'xml'
   match 'rss.xml', to: 'feeds#rss', as: 'rss', format: 'xml'
-  match 'sitemap.xml' => 'sitemaps#sitemap'
+  match 'sitemap.xml', to: 'sitemaps#sitemap', as: 'sitemap', format: 'xml'
+  match 'robots.txt', to: 'robots#index', as: 'robots', format: 'txt'
 
   resources :pages, path: '/' do
     member do

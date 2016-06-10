@@ -23,6 +23,7 @@ class Quadro::InstallGenerator < Rails::Generators::Base
 
     remove_file "public/index.html"
     remove_file "public/favicon.ico"
+    remove_file "public/robots.txt"
 
     rake "quadro:install:migrations"
     rake "db:migrate"
