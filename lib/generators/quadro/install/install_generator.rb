@@ -4,8 +4,11 @@ class Quadro::InstallGenerator < Rails::Generators::Base
   def install
     route "mount Quadro::Engine => '/'"
 
-    copy_file "db/GeoLite2-Country.mmdb", "db/GeoLite2-Country.mmdb"
+    remove_file "public/index.html"
+    remove_file "public/favicon.ico"
+    remove_file "public/robots.txt"
 
+    copy_file "db/GeoLite2-Country.mmdb", "db/GeoLite2-Country.mmdb"
     copy_file "config/application.yml", "config/application.yml"
     copy_file "config/initializers/quadro.rb", "config/initializers/quadro.rb"
     copy_file "app/views/quadro/shared/templates/page/_list.html.haml", "app/views/quadro/shared/templates/page/_list.html.haml"
@@ -19,11 +22,9 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     copy_file "app/assets/stylesheets/quadro/site.css.sass", "app/assets/stylesheets/quadro/site.css.sass"
     copy_file "app/assets/images/quadro/favicon.ico", "app/assets/images/quadro/favicon.ico"
     copy_file "public/maintenance.html", "public/maintenance.html"
-    copy_file "public/quadro-maintenance.png", "public/quadro-maintenance.png"
-
-    remove_file "public/index.html"
-    remove_file "public/favicon.ico"
-    remove_file "public/robots.txt"
+    copy_file "public/404.html", "public/404.html"
+    copy_file "public/422.html", "public/422.html"
+    copy_file "public/500.html", "public/500.html"
 
     rake "quadro:install:migrations"
     rake "db:migrate"
