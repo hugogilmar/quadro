@@ -11,9 +11,9 @@ With **Quadro** you have the following features:
 - Create pages.
 - Create your own templates.
 - Make any area on your template editable.
-- Generate a sitemap.xml automatically.
+- Auto-generated sitemap.xml.
 - Upload images for each page, even a cover.
-- Use summernote as content editor.
+- Use summernote as inline content editor.
 - Slider with slick carousel.
 - Image gallery with lightbox2.
 - Integrate any Bootstrap 3 template.
@@ -21,6 +21,7 @@ With **Quadro** you have the following features:
 - Customized forms.
 - Maintenance mode.
 - Feeds auto generation (rss and atom).
+- Auto-generated robots.txt.
 
 ## Current stable version
 

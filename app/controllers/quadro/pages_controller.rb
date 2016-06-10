@@ -3,6 +3,7 @@ require_dependency 'quadro/application_controller'
 module Quadro
   class PagesController < ApplicationController
     before_filter :authenticate_user!, except: [:index, :show, :form]
+    before_filter :page_exists?
     before_filter :prepare_breadcrumbs
 
     respond_to :html, :js
@@ -26,6 +27,10 @@ module Quadro
     end
 
     private
+
+    def page_exists?
+      not_found_page and return if page.nil?
+    end
 
     def prepare_breadcrumbs
       page.path.each do |path|

@@ -106,5 +106,9 @@ module Quadro
     def geoip
       @geoip ||= MaxMindDB.new(File.join(Rails.root, 'db', 'GeoLite2-Country.mmdb'))
     end
+
+    def not_found_page
+      render file: 'public/404', status: :not_found, layout: false
+    end
   end
 end
