@@ -1,26 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>The change you wanted was rejected (422)</title>
-  <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
-    }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-  </style>
-</head>
-
-<body>
-  <!-- This file lives in public/422.html -->
-  <div class="dialog">
-    <h1>The change you wanted was rejected.</h1>
-    <p>Maybe you tried to change something you didn't have access to.</p>
-  </div>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>The change you wanted was rejected!</title>
+    <meta charset="utf-8" />
+    <style>
+      body { display: table; height: 100vh; margin: 0px; padding: 0px; }
+      section { display: table-cell; vertical-align: middle; text-align: left; }
+      article { color: #333; }
+      h1 { font-family: sans; }
+      p { font-family: sans-serif; }
+      a { color: #666; text-decoration: none; }
+      a:hover { color: #333; text-decoration: none; }
+      @media only screen and (min-width : 320px) {
+        body { font-size: 16px; }
+        article { margin: 0px 1em; }
+        h1 { font-size: 32px; }
+      }
+      @media only screen and (min-width : 768px) {
+        body { font-size: 20px; }
+        article { margin: 0px 4em; }
+        h1 { font-size: 40px; }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <article>
+        <h1>The change you wanted was rejected!</h1>
+        <div>
+          <p>Maybe you tried to change something you didn&rsquo;t have access to. You can always go to <a href="/">home page</a> instead.</p>
+          <p>&mdash; Quadro Team</p>
+        </div>
+      </article>
+    </section>
+  </body>
 </html>
