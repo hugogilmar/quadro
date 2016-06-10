@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = "quadro"
   s.version     = Quadro::VERSION
   s.authors     = ["Hugo Gilmar Erazo"]
-  s.email       = ["hugogilmar@gmail.com"]
+  s.email       = ["hugogilmar@nanotutoriales.com"]
   s.homepage    = "https://github.com/hugogilmar/quadro"
   s.summary     = "Quadro CMS"
   s.description = "Quadro Content Management System"
