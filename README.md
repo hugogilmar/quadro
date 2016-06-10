@@ -20,6 +20,7 @@ With **Quadro** you have the following features:
 - Google Maps integration with gmaps.
 - Customized forms.
 - Maintenance mode.
+- Feeds auto generation (rss and atom).
 
 ## Current stable version
 
