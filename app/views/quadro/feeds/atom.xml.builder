@@ -6,8 +6,8 @@ xml.feed xmlns: "http://www.w3.org/2005/Atom" do
   xml.subtitle root.description
   xml.link Quadro.railtie_routes_url_helpers.atom_url, rel: "self"
   xml.link Quadro.railtie_routes_url_helpers.root_url, rel: "alternate"
-  xml.icon  paperclip_url(root.cover.url(:thumb))
-  xml.logo  paperclip_url(root.cover.url(:small))
+  xml.icon  absolute_url(root.cover.url(:thumb))
+  xml.logo  absolute_url(root.cover.url(:small))
   xml.generator Quadro.to_s
 
   root.descendants.each do |page|

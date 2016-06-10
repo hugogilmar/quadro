@@ -22,6 +22,7 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     copy_file "public/quadro-maintenance.png", "public/quadro-maintenance.png"
 
     remove_file "public/index.html"
+    remove_file "public/favicon.ico"
 
     rake "quadro:install:migrations"
     rake "db:migrate"
