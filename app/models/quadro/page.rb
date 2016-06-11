@@ -31,6 +31,9 @@ module Quadro
     after_initialize :initialize_defaults, if: :new_record?
     after_save :ensure_cover
 
+    # scopes
+    scope :ordered, order('quadro_pages.created_at DESC')
+
     # methods
     def to_param
       slug
