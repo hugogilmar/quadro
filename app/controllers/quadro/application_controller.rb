@@ -100,7 +100,7 @@ module Quadro
     end
 
     def subpages
-      @subpages ||= page.children.page(params[:page])
+      @subpages ||= page.children.ordered.page(params[:page])
     end
 
     def geoip
