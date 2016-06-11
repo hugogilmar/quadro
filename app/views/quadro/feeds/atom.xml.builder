@@ -6,8 +6,8 @@ xml.feed "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "xmlns" => "http://w
   xml.subtitle root.description
   xml.link href: Quadro.railtie_routes_url_helpers.atom_url, rel: "self"
   xml.link href: Quadro.railtie_routes_url_helpers.root_url
-  xml.icon  absolute_url(root.cover.url(:thumb))
-  xml.logo  absolute_url(root.cover.url(:small))
+  xml.icon absolute_url(root.cover.url(:thumb))
+  xml.logo absolute_url(root.cover.url(:small))
   xml.webfeeds :cover, image: absolute_url(root.cover.url(:small))
   xml.webfeeds :icon, absolute_url(image_path('quadro/quadro-logo.png'))
   xml.generator Quadro.to_s
