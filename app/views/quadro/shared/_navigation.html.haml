@@ -12,6 +12,6 @@
       - unless user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li
-            = link_to new_user_session_path do
+            = link_to new_user_session_path, rel: "nofollow" do
               Sign In
       = navigation_for root, class: "nav navbar-nav navbar-right"
