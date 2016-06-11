@@ -4,9 +4,11 @@ require "quadro/loader"
 module Quadro
   mattr_accessor :available_widgets
   mattr_accessor :available_assets
-  mattr_accessor :vars
+  mattr_accessor :config
 
-  self.available_widgets = []
-  self.available_assets = []
-  self.vars = {}
+  Quadro.config = Configatron::RootStore.new
+
+  def self.setup(&block)
+    yield self.config
+   end
 end

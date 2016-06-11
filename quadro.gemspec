@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.20"
+  s.add_dependency "rake", "~> 11.1.2"
 
   s.add_dependency "ancestry", "~> 2.1.0"
   s.add_dependency "paranoia", "~> 1.0"
@@ -29,7 +30,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "devise", "~> 3.5.4"
   s.add_dependency "paperclip", "~> 4.2.0"
-  s.add_dependency "figaro", "~> 1.1.1"
+  s.add_dependency "configatron", "~> 4.5.0"
   s.add_dependency "dynamic_sitemaps", "1.0.8"
 
   s.add_dependency "jquery-rails", "~> 3.1.2"

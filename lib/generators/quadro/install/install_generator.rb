@@ -9,7 +9,6 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     remove_file "public/robots.txt"
 
     copy_file "db/GeoLite2-Country.mmdb", "db/GeoLite2-Country.mmdb"
-    copy_file "config/application.yml", "config/application.yml"
     copy_file "config/initializers/quadro.rb", "config/initializers/quadro.rb"
     copy_file "app/views/quadro/shared/templates/page/_list.html.haml", "app/views/quadro/shared/templates/page/_list.html.haml"
     copy_file "app/views/quadro/shared/templates/page/_thumbnail.html.haml", "app/views/quadro/shared/templates/page/_thumbnail.html.haml"

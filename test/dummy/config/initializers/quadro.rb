@@ -1,1 +1,11 @@
-Figaro.require_keys %w(host email site author layout template frequency priority google_maps_api_key)
+Quadro.setup do |config|
+  config.host = "www.example.com"
+  config.email = "quadro@example.com"
+  config.site = "Quadro"
+  config.author = "Quadro"
+  config.layout = "list"
+  config.template = "blank"
+  config.frequency = "monthly"
+  config.priority = "0.5"
+  config.google_maps_api_key = ""
+end
