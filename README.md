@@ -109,7 +109,7 @@ Content block will be used for location's pin info window if provided.
   %p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 ```
 
-You also need to set `google_maps_api_key` on `config/application.yml`.
+You also need to set `google_maps_api_key` in `config/initializers/quadro.rb`.
 
 *Note: to get an API key, please refer to Google Maps official documentaion [here](https://developers.google.com/maps/documentation/javascript/get-api-key#get-an-api-key).*
 
