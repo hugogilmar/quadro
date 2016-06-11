@@ -12,10 +12,10 @@ With **Quadro** you have the following features:
 - Create your own templates.
 - Make any area on your template editable.
 - Auto-generated sitemap.xml.
-- Upload images for each page, even a cover.
+- Upload images for each page.
 - Use summernote as inline content editor.
 - Slider with slick carousel.
-- Image gallery with lightbox2.
+- Gallery with lightbox2.
 - Integrate any Bootstrap 3 template.
 - Google Maps integration with gmaps.
 - Customized forms.
@@ -142,9 +142,9 @@ You can create your own templates, just add the template files as partials in th
 app/views/quadro/shared/templates
 ```
 
-## Global configuration options
+## Initializer options
 
-Quadro global configuration options are defined at `config/application.yml`. Here a description for each of them:
+Quadro initializer options are defined at `config/initializers/quadro.rb`. Here a description for each of them:
 
 - host (site domain)
 - email (site email)

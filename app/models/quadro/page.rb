@@ -65,10 +65,10 @@ module Quadro
     private
 
     def initialize_defaults
-      self.template = Quadro.vars[:template] if self.template.blank?
-      self.frequency = Quadro.vars[:frequency] if self.frequency.blank?
-      self.priority = Quadro.vars[:priority] if self.priority.blank?
-      self.author = Quadro.vars[:author] if self.author.blank?
+      self.template = Quadro.config.template if self.template.blank?
+      self.frequency = Quadro.config.frequency if self.frequency.blank?
+      self.priority = Quadro.config.priority if self.priority.blank?
+      self.author = Quadro.config.author if self.author.blank?
     end
 
     def generate_cover

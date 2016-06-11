@@ -2,6 +2,20 @@ module Quadro
   class Engine < ::Rails::Engine
     isolate_namespace Quadro
 
+    config.before_configuration do
+      Quadro.setup do |config|
+        config.host = "www.example.com"
+        config.email = "quadro@example.com"
+        config.site = "Quadro"
+        config.author = "Quadro"
+        config.layout = "list"
+        config.template = "blank"
+        config.frequency = "monthly"
+        config.priority = "0.5"
+        config.google_maps_api_key = ""
+      end
+    end
+
     config.to_prepare do
       Devise::SessionsController.layout "quadro/devise"
       Devise::RegistrationsController.layout "quadro/devise"
@@ -11,25 +25,19 @@ module Quadro
     end
 
     config.after_initialize do
-      Quadro.available_widgets << Quadro::Widget::Html.to_s
-      Quadro.available_widgets << Quadro::Widget::Slider.to_s
-      Quadro.available_widgets << Quadro::Widget::Gallery.to_s
-      Quadro.available_widgets << Quadro::Widget::Map.to_s
-      Quadro.available_widgets << Quadro::Widget::Form.to_s
+      Quadro.available_widgets = [
+        Quadro::Widget::Html.to_s,
+        Quadro::Widget::Slider.to_s,
+        Quadro::Widget::Gallery.to_s,
+        Quadro::Widget::Map.to_s,
+        Quadro::Widget::Form.to_s
+      ]
 
-      Quadro.available_assets << Quadro::Asset::Cover.to_s
-      Quadro.available_assets << Quadro::Asset::Slide.to_s
-      Quadro.available_assets << Quadro::Asset::Image.to_s
-
-      Quadro.vars[:host] = Figaro.env.host
-      Quadro.vars[:email] = Figaro.env.email
-      Quadro.vars[:site] = Figaro.env.site
-      Quadro.vars[:author] = Figaro.env.author
-      Quadro.vars[:layout] = Figaro.env.layout
-      Quadro.vars[:template] = Figaro.env.template
-      Quadro.vars[:frequency] = Figaro.env.frequency
-      Quadro.vars[:priority] = Figaro.env.priority
-      Quadro.vars[:google_maps_api_key] = Figaro.env.google_maps_api_key
+      Quadro.available_assets = [
+        Quadro::Asset::Cover.to_s,
+        Quadro::Asset::Slide.to_s,
+        Quadro::Asset::Image.to_s
+      ]
     end
   end
 end
