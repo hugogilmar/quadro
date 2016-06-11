@@ -16,7 +16,7 @@ xml.rss version: "2.0" do
         xml.title page.title
         xml.description page.description
         xml.link Quadro.railtie_routes_url_helpers.page_url(page)
-        xml.pubDate l(page.created_at, format: :long)
+        xml.pubDate l(page.created_at, format: :long, locale: :en)
         xml.author page.author
       end
     end
