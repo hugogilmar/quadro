@@ -9,6 +9,9 @@
     %meta(content="#{Quadro::SIGNATURE}" name="generator")
     %meta(content="#{page.title}" property="og:title")
     %meta(content="#{page.description}" property="og:description")
+    - unless Quadro.config.twitter_username.blank?
+      %meta(name="twitter:card" content="summary")
+      %meta(name="twitter:site" content="@#{Quadro.config.twitter_username}")
     %meta(content="article" property="og:type")
     %meta(content="#{page.is_root? ? root_url : page_url(page)}" property="og:url")
     %meta(content="#{absolute_url(page.cover.url(:large))}" property="og:image")
