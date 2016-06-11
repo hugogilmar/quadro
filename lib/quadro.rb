@@ -1,5 +1,6 @@
 require "quadro/engine"
 require "quadro/loader"
+require "quadro/version"
 
 module Quadro
   mattr_accessor :available_widgets

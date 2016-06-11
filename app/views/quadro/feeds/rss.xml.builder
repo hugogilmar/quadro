@@ -9,7 +9,7 @@ xml.rss version: "2.0" do
       xml.title root.title
       xml.link Quadro.railtie_routes_url_helpers.root_url
     end
-    xml.generator Quadro.to_s
+    xml.generator Quadro::SIGNATURE
 
     root.descendants.ordered.each do |page|
       xml.item do
