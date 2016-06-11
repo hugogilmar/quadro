@@ -22,7 +22,6 @@ class Quadro::InstallGenerator < Rails::Generators::Base
     copy_file "app/assets/stylesheets/quadro/site.css.sass", "app/assets/stylesheets/quadro/site.css.sass"
     copy_file "app/assets/images/quadro/favicon.ico", "app/assets/images/quadro/favicon.ico"
     copy_file "app/assets/images/quadro/quadro-logo-mini.png", "app/assets/images/quadro/quadro-logo-mini.png"
-    copy_file "app/assets/images/quadro/quadro-logo-text.png", "app/assets/images/quadro/quadro-logo-text.png"
     copy_file "app/assets/images/quadro/quadro-logo.png", "app/assets/images/quadro/quadro-logo.png"
     copy_file "public/maintenance.html", "public/maintenance.html"
     copy_file "public/404.html", "public/404.html"
