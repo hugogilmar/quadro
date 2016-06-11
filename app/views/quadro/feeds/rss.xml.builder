@@ -1,5 +1,5 @@
-xml.instruct! :xml, version: "1.0", encoding: "UTF-8"
-xml.rss "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "version" => "2.0" do
+xml.instruct! :xml, version: "1.0", encoding: "utf-8"
+xml.rss version: "2.0" do
   xml.channel do
     xml.title root.title
     xml.description root.description
@@ -9,8 +9,6 @@ xml.rss "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "version" => "2.0" do
       xml.title root.title
       xml.link Quadro.railtie_routes_url_helpers.root_url
     end
-    xml.webfeeds :cover, image: absolute_url(root.cover.url(:small))
-    xml.webfeeds :icon, absolute_url(image_path('quadro/quadro-logo.png'))
     xml.generator Quadro.to_s
 
     root.descendants.ordered.each do |page|
@@ -18,7 +16,7 @@ xml.rss "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "version" => "2.0" do
         xml.title page.title
         xml.description page.description
         xml.link Quadro.railtie_routes_url_helpers.page_url(page)
-        xml.pubDate page.created_at
+        xml.pubDate l(page.created_at, format: :long)
         xml.author page.author
       end
     end
