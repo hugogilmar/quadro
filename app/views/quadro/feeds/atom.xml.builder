@@ -2,7 +2,7 @@ xml.instruct! :xml, version: "1.0", encoding: "utf-8"
 xml.feed xmlns: "http://www.w3.org/2005/Atom" do
   xml.id root.slug
   xml.title root.title
-  xml.updated l(root.updated_at, format: :long)
+  xml.updated l(root.updated_at, format: :long, locale: :en)
   xml.subtitle root.description
   xml.link href: Quadro.railtie_routes_url_helpers.atom_url, rel: "self"
   xml.link href: Quadro.railtie_routes_url_helpers.root_url
@@ -14,8 +14,8 @@ xml.feed xmlns: "http://www.w3.org/2005/Atom" do
     xml.entry do
       xml.id page.slug
       xml.title page.title
-      xml.updated l(page.updated_at, format: :long)
-      xml.published l(page.created_at, format: :long)
+      xml.updated l(page.updated_at, format: :long, locale: :en)
+      xml.published l(page.created_at, format: :long, locale: :en)
       xml.summary page.description
       xml.link href: Quadro.railtie_routes_url_helpers.page_url(page)
     end
