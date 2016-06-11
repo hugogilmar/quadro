@@ -4,8 +4,8 @@ xml.feed "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "xmlns" => "http://w
   xml.title root.title
   xml.updated root.updated_at
   xml.subtitle root.description
-  xml.link Quadro.railtie_routes_url_helpers.atom_url, rel: "self"
-  xml.link Quadro.railtie_routes_url_helpers.root_url
+  xml.link href: Quadro.railtie_routes_url_helpers.atom_url, rel: "self"
+  xml.link href: Quadro.railtie_routes_url_helpers.root_url
   xml.icon  absolute_url(root.cover.url(:thumb))
   xml.logo  absolute_url(root.cover.url(:small))
   xml.webfeeds :cover, image: absolute_url(root.cover.url(:small))
@@ -19,7 +19,7 @@ xml.feed "xmlns:webfeeds" => "http://webfeeds.org/rss/1.0", "xmlns" => "http://w
       xml.updated page.updated_at
       xml.published page.created_at
       xml.summary page.description
-      xml.link Quadro.railtie_routes_url_helpers.page_url(page)
+      xml.link href: Quadro.railtie_routes_url_helpers.page_url(page)
     end
   end
 end
