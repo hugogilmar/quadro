@@ -23,6 +23,7 @@ With **Quadro** you have the following features:
 - Feeds auto generation (rss and atom).
 - Auto-generated robots.txt.
 - Customized HTML static status pages.
+- Basic Open Graph and Twitter Cards support.
 
 ## Current stable version
 
@@ -155,6 +156,7 @@ Quadro initializer options are defined at `config/initializers/quadro.rb`. Here 
 - frequency (sitemap.xml default)
 - priority (sitemap.xml default)
 - google_maps_api_key
+- twitter_username (without @)
 
 *Note: as page templates, sub page list layout can be added at:*
 
