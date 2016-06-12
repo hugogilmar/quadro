@@ -1,5 +1,7 @@
 require "quadro/engine"
 require "quadro/loader"
+require "quadro/version"
+require "quadro/signature"
 
 module Quadro
   mattr_accessor :available_widgets

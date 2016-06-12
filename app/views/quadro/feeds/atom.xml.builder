@@ -8,7 +8,7 @@ xml.feed xmlns: "http://www.w3.org/2005/Atom" do
   xml.link href: Quadro.railtie_routes_url_helpers.root_url
   xml.icon absolute_url(root.cover.url(:thumb))
   xml.logo absolute_url(root.cover.url(:small))
-  xml.generator Quadro.to_s
+  xml.generator Quadro::SIGNATURE
 
   root.descendants.ordered.each do |page|
     xml.entry do
