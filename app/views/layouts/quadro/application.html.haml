@@ -9,11 +9,13 @@
     %meta(content="#{Quadro::SIGNATURE}" name="generator")
     %meta(content="#{page.title}" property="og:title")
     %meta(content="#{page.description}" property="og:description")
-    %meta(content="article" property="og:type")
+    %meta(content="#{page.is_root? ? 'website' : 'article'}" property="og:type")
     %meta(content="#{page.is_root? ? root_url : page_url(page)}" property="og:url")
     %meta(content="#{absolute_url(page.cover.url(:large))}" property="og:image")
+    - unless Quadro.config.facebook_id.blank?
+      %meta(content="#{Quadro.config.facebook_id}" property="fb:app_id")
+    %meta(name="twitter:card" content="summary")
     - unless Quadro.config.twitter_username.blank?
-      %meta(name="twitter:card" content="summary")
       %meta(name="twitter:site" content="@#{Quadro.config.twitter_username}")
     = auto_discovery_link_tag :rss, rss_path, title: root.title
     = auto_discovery_link_tag :atom, atom_path, title: root.title

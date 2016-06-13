@@ -156,6 +156,7 @@ Quadro initializer options are defined at `config/initializers/quadro.rb`. Here 
 - frequency (sitemap.xml default)
 - priority (sitemap.xml default)
 - google_maps_api_key
+- facebook_id (app_id)
 - twitter_username (without @)
 
 *Note: as page templates, sub page list layout can be added at:*
