@@ -20,6 +20,7 @@ With **Quadro** you have the following features:
 - Google Maps integration with gmaps.
 - Customized forms.
 - Maintenance mode.
+- SEO friendly urls and meta tags.
 - Feeds auto generation (rss and atom).
 - Auto-generated robots.txt.
 - Customized HTML static status pages.
@@ -156,6 +157,7 @@ Quadro initializer options are defined at `config/initializers/quadro.rb`. Here 
 - frequency (sitemap.xml default)
 - priority (sitemap.xml default)
 - google_maps_api_key
+- facebook_id (app_id)
 - twitter_username (without @)
 
 *Note: as page templates, sub page list layout can be added at:*
