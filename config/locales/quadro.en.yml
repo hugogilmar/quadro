@@ -1,0 +1,5 @@
+en:
+  time:
+    formats:
+      atom: "%FT%TZ"
+      rss: "%a, %d %b %Y %H:%M:%S %z"
