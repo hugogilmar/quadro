@@ -151,7 +151,6 @@ Quadro initializer options are defined at `config/initializers/quadro.rb`. Here 
 - host (site domain)
 - email (site email)
 - site (site name)
-- author (page author default)
 - layout (sub page list layout, use `list` or `thumbnail`)
 - template (page template default)
 - frequency (sitemap.xml default)
