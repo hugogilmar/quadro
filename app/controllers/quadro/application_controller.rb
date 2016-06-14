@@ -1,6 +1,6 @@
 module Quadro
   class ApplicationController < ActionController::Base
-    helper_method :widget, :asset, :interaction, :root, :parent, :page, :subpages, :geoip
+    helper_method :widget, :asset, :interaction, :root, :parent, :page, :subpages, :geoip, :user, :users
 
     def after_sign_in_path_for(_resource)
       quadro.root_path
@@ -105,6 +105,14 @@ module Quadro
 
     def geoip
       @geoip ||= MaxMindDB.new(File.join(Rails.root, 'db', 'GeoLite2-Country.mmdb'))
+    end
+
+    def user
+      @user ||= current_user
+    end
+
+    def users
+      @users ||= Quadro::User.ordered
     end
 
     def not_found_page

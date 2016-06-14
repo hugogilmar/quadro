@@ -1,0 +1,7 @@
+<% if user.errors.size > 0 %>
+  $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/users/edit', user: user)) %>");
+  new Message('User not updated');
+<% else %>
+  $("#quadro-modal").modal('hide');
+  new Message('User updated');
+<% end %>
