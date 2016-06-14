@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
   s.add_dependency "configatron", "~> 4.5.0"
 
   s.add_dependency "dynamic_sitemaps", "1.0.8"
-  s.add_dependency "canonical-rails", "~> 0.1.0"
 
   s.add_dependency "jquery-rails", "~> 3.1.2"
   s.add_dependency "remotipart", "~> 1.0"
