@@ -4,11 +4,11 @@
     %meta(charset='utf-8')
     %meta(content='width=device-width, initial-scale=1.0' name='viewport')
     %title= page.title
-    %meta(content="#{page.description}" name="description")
+    %meta(content="#{page.summary}" name="description")
     %meta(content="#{page.author}" name="author")
     %meta(content="#{Quadro::SIGNATURE}" name="generator")
     %meta(content="#{page.title}" property="og:title")
-    %meta(content="#{page.description}" property="og:description")
+    %meta(content="#{page.summary}" property="og:description")
     %meta(content="#{page.is_root? ? 'website' : 'article'}" property="og:type")
     %meta(content="#{page.is_root? ? root_url : page_url(page)}" property="og:url")
     %meta(content="#{absolute_url(page.cover.url(:large))}" property="og:image")

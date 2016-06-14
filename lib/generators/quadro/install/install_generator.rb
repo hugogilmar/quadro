@@ -29,7 +29,7 @@ class Quadro::InstallGenerator < Rails::Generators::Base
 
     rake "quadro:install:migrations"
     rake "db:migrate"
-    rake "quadro:create_root_page"
     rake "quadro:create_admin_user"
+    rake "quadro:create_root_page"
   end
 end

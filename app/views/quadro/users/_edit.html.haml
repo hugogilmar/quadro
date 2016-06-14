@@ -1,0 +1,15 @@
+.modal-header
+  %button.close(data-dismiss="modal" type="button")
+    %span(aria-hidden="true") ×
+    %span.sr-only Close
+  %h4.modal-title Edit user
+.modal-body
+  = simple_form_for user, multipart: true, remote: true do |form|
+    .row
+      .col-md-12
+        = form.input :name, input_html: { class: 'form-control' }
+        = form.input :password, input_html: { class: 'form-control' }
+        = form.input :password_confirmation, input_html: { class: 'form-control' }
+        = form.input :current_password, input_html: { class: 'form-control' }
+    .text-right
+      = form.submit class: 'btn btn-primary'

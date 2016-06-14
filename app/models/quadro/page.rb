@@ -6,15 +6,16 @@ module Quadro
     SITEMAP_PRIORITY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0].freeze
 
     # attributes
-    attr_accessible :title, :description, :author, :template, :frequency, :priority, :cover_attributes
-    store :settings, accessors: [:description, :author, :template, :frequency, :priority]
+    attr_accessible :title, :summary, :template, :frequency, :priority, :cover_attributes, :author_id
+    store :settings, accessors: [:template, :frequency, :priority]
 
     # validations
     validates :title, presence: true, length: { maximum: 60 }
     validates :slug, uniqueness: true
-    validates :description, length: { maximum: 160 }
+    validates :summary, length: { maximum: 160 }
 
     # associations
+    belongs_to :author, class_name: Quadro::User
     has_many :widgets, dependent: :destroy
     has_many :assets, as: :assetable, dependent: :destroy
     has_many :images, as: :assetable, class_name: Quadro::Asset::Image
@@ -30,6 +31,9 @@ module Quadro
     # callbacks
     after_initialize :initialize_defaults, if: :new_record?
     after_save :ensure_cover
+
+    # delegation
+    delegate :name, :email, to: :author, prefix: true, allow_nil: true
 
     # scopes
     scope :ordered, order('quadro_pages.created_at DESC')

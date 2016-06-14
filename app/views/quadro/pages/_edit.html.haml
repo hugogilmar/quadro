@@ -22,8 +22,8 @@
             %a.btn.btn-default.fileinput-exists(data-dismiss="fileinput" href="#") Remove
       .col-md-8
         = form.input :title, input_html: { class: 'form-control' }
-        = form.input :description, as: :text, input_html: { class: 'form-control', rows: 2 }
-        = form.input :author, input_html: { class: 'form-control' }
+        = form.input :summary, as: :text, input_html: { class: 'form-control', rows: 2 }
+        = form.input :author_id, collection: users, input_html: { class: 'form-control' }
     .row
       .col-md-4
         = form.input :template, collection: page.templates, input_html: { class: 'form-control' }
