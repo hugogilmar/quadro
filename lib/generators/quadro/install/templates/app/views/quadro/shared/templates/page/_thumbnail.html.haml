@@ -1,7 +1,7 @@
 .col-sm-6.col-md-4.col-lg-3
   .thumbnail
     = link_to page_path(page) do
-      = image_tag page.cover.url(:small)
+      = image_tag page.cover.url(:small), alt: page.title
     .caption
       %h2
         = link_to page.title, page_path(page)

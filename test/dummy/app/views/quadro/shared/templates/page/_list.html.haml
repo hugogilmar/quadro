@@ -1,9 +1,9 @@
 .media
   .media-left
     = link_to page_path(page), class: "media-object img-thumbnail" do
-      = image_tag page.cover.url(:thumb)
+      = image_tag page.cover.url(:thumb), alt: page.title
   .media-body
     %h4.media-heading
       = link_to page.title, page_path(page)
     %small.text-muted= l(page.created_at, format: :short)
-    %p= page.description
+    %p= page.summary

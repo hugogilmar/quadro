@@ -2,7 +2,7 @@ class CreateQuadroAssets < ActiveRecord::Migration
   def change
     create_table :quadro_assets do |t|
       t.references :assetable, polymorphic: true
-      t.string :type, length: 24, null: false
+      t.string :type
       t.text :settings
       t.attachment :attachment
       t.timestamp :deleted_at
