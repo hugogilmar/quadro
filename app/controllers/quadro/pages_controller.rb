@@ -9,7 +9,7 @@ module Quadro
     respond_to :html, :js
 
     def create
-      page.user = current_user
+      page.author = current_user
       page.save
     end
 
