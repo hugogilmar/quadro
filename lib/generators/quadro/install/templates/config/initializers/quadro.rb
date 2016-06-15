@@ -2,7 +2,6 @@ Quadro.setup do |config|
   config.host = "www.example.com"
   config.email = "quadro@example.com"
   config.site = "Quadro"
-  config.author = "Quadro"
   config.layout = "list"
   config.template = "blank"
   config.frequency = "monthly"
