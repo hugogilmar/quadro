@@ -72,7 +72,6 @@ module Quadro
       self.template = Quadro.config.template if self.template.blank?
       self.frequency = Quadro.config.frequency if self.frequency.blank?
       self.priority = Quadro.config.priority if self.priority.blank?
-      self.author = Quadro.config.author if self.author.blank?
     end
 
     def generate_cover
