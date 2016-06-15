@@ -2,8 +2,8 @@ class CreateQuadroWidgets < ActiveRecord::Migration
   def change
     create_table :quadro_widgets do |t|
       t.references :page
-      t.string :type, length: 24, null: false
-      t.string :name, length: 24, null: false
+      t.string :type
+      t.string :name
       t.text :content
       t.text :settings
       t.timestamp :deleted_at
