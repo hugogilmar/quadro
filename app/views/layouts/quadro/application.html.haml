@@ -18,8 +18,8 @@
     - unless Quadro.config.twitter_username.blank?
       %meta(name="twitter:site" content="@#{Quadro.config.twitter_username}")
     %link(href="#{page.is_root? ? root_url : page_url(page)}" rel="canonical")
-    = auto_discovery_link_tag :rss, rss_path, title: root.title
-    = auto_discovery_link_tag :atom, atom_path, title: root.title
+    = auto_discovery_link_tag :rss, rss_url, title: root.title
+    = auto_discovery_link_tag :atom, atom_url, title: root.title
     = stylesheet_link_tag 'quadro/application'
     = favicon_link_tag 'quadro/favicon.ico'
     = csrf_meta_tags
