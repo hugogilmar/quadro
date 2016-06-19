@@ -13,6 +13,7 @@ With **Quadro** you have the following features:
 - Create your own templates.
 - Make any area on your template editable.
 - Auto-generated sitemap.xml.
+- Manual sitemap.xml ping to search engines (production only).
 - Upload images for each page.
 - Use summernote as inline content editor.
 - Slider with slick carousel.
