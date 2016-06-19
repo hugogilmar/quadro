@@ -11,7 +11,7 @@ xml.rss version: "2.0" do
     end
     xml.generator Quadro::SIGNATURE
 
-    root.descendants.ordered.each do |page|
+    root.descendants.published.ordered.each do |page|
       xml.item do
         xml.title page.title
         xml.description page.summary

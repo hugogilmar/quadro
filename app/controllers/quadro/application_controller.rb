@@ -87,10 +87,14 @@ module Quadro
             parent.children.new
           when %w(create).include?(action_name)
             parent.children.new(params[:page])
-          when %w(edit update form).include?(action_name)
+          when %w(edit update form publish unpublish).include?(action_name)
             root.subtree.find_by_slug(params[:id]) rescue nil
           else
-            root.subtree.find_by_slug(params[:id]) rescue nil
+            if user_signed_in?
+              root.subtree.find_by_slug(params[:id]) rescue nil
+            else
+              root.subtree.published.find_by_slug(params[:id]) rescue nil
+            end
           end
         when %w(widgets assets).include?(controller_name)
           root.subtree.find(params[:page_id]) rescue nil
@@ -100,7 +104,11 @@ module Quadro
     end
 
     def subpages
-      @subpages ||= page.children.ordered.page(params[:page])
+      if user_signed_in?
+        @subpages ||= page.children.ordered.page(params[:page])
+      else
+        @subpages ||= page.children.published.ordered.page(params[:page])
+      end
     end
 
     def geoip

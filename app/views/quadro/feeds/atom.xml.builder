@@ -10,7 +10,7 @@ xml.feed xmlns: "http://www.w3.org/2005/Atom" do
   xml.logo absolute_url(root.cover.url(:small))
   xml.generator Quadro::SIGNATURE
 
-  root.descendants.ordered.each do |page|
+  root.descendants.published.ordered.each do |page|
     xml.entry do
       xml.id Quadro.railtie_routes_url_helpers.page_url(page)
       xml.title page.title

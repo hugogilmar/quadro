@@ -31,11 +31,13 @@ module Quadro
       options = args[0] || {}
 
       node.children.each do |child|
-        css_class = 'active' if page.path_ids.include?(child.id)
-        if child.has_children?
-          concat dropdown_for child, class: 'dropdown'
-        else
-          concat content_tag :li, content_tag(:a, child.title, href: page_path(child)), class: css_class
+        if child.published? || user_signed_in?
+          css_class = 'active' if page.path_ids.include?(child.id)
+          if child.has_children?
+            concat dropdown_for child, class: 'dropdown'
+          else
+            concat content_tag :li, content_tag(:a, child.title, href: page_path(child)), class: css_class
+          end
         end
       end
     end
