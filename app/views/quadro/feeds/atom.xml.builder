@@ -15,7 +15,7 @@ xml.feed xmlns: "http://www.w3.org/2005/Atom" do
       xml.id Quadro.railtie_routes_url_helpers.page_url(page)
       xml.title page.title
       xml.updated l(page.updated_at, format: :atom, locale: :en)
-      xml.published l(page.created_at, format: :atom, locale: :en)
+      xml.published l(page.published_at, format: :atom, locale: :en)
       xml.summary page.summary
       xml.author do
         xml.name page.author_name

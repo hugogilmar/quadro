@@ -59,6 +59,11 @@
           = current_user.email
           %b.caret
         %ul.dropdown-menu
+          - unless Rails.env.development?
+            %li
+              = link_to sitemap_notifier_path, remote: true do
+                %i.fa.fa-sitemap
+                Notify sitemap.xml
           %li
             = link_to edit_user_path, remote: true do
               %i.fa.fa-user

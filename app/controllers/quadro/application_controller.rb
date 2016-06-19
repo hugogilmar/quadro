@@ -115,6 +115,10 @@ module Quadro
       @geoip ||= MaxMindDB.new(File.join(Rails.root, 'db', 'GeoLite2-Country.mmdb'))
     end
 
+    def notifier
+      @notifier ||= SitemapNotifier::Notifier
+    end
+
     def user
       @user ||= current_user
     end
