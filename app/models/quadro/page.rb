@@ -36,7 +36,7 @@ module Quadro
     delegate :name, :email, to: :author, prefix: true, allow_nil: true
 
     # scopes
-    scope :ordered, order('quadro_pages.created_at DESC')
+    scope :ordered, order('quadro_pages.published_at DESC, quadro_pages.created_at DESC')
     scope :published, where('quadro_pages.published_at IS NOT NULL')
 
     # methods
