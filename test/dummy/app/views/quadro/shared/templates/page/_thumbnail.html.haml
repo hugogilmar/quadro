@@ -5,5 +5,5 @@
     .caption
       %h2
         = link_to page.title, page_path(page)
-      %small.text-muted= l(page.created_at, format: :short)
+      %small.text-muted= l(page.published_at, format: :short)
       %p= page.summary
