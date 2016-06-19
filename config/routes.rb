@@ -10,6 +10,8 @@ Quadro::Engine.routes.draw do
   match 'sitemap.xml', to: 'sitemaps#sitemap', as: 'sitemap', format: 'xml'
   match 'robots.txt', to: 'robots#index', as: 'robots', format: 'txt'
 
+  get 'tools/sitemap_notifier', to: 'tools#sitemap_notifier', as: 'sitemap_notifier'
+
   resources :pages, path: '/' do
     member do
       post :form
