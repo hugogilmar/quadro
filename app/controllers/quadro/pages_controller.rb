@@ -27,6 +27,14 @@ module Quadro
       interaction.update_attributes(content: params[:form])
     end
 
+    def publish
+      page.publish!
+    end
+
+    def unpublish
+      page.unpublish!
+    end
+
     private
 
     def page_exists?

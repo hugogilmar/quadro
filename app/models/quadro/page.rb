@@ -37,14 +37,31 @@ module Quadro
 
     # scopes
     scope :ordered, order('quadro_pages.created_at DESC')
+    scope :published, where('quadro_pages.published_at IS NOT NULL')
 
     # methods
+    def publish!
+      self.update_column(:published_at, Time.zone.now)
+    end
+
+    def unpublish!
+      self.update_column(:published_at, nil)
+    end
+
+    def published?
+      !self.published_at.nil?
+    end
+
+    def unpublished?
+      self.published_at.nil?
+    end
+
     def to_param
-      slug
+      self.slug
     end
 
     def to_s
-      title
+      self.title
     end
 
     def templates

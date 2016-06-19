@@ -13,6 +13,8 @@ Quadro::Engine.routes.draw do
   resources :pages, path: '/' do
     member do
       post :form
+      get :publish
+      get :unpublish
     end
     get 'page/:page', action: :index, on: :collection
     resources :widgets, only: [:edit, :update] do

@@ -9,6 +9,7 @@ This project rocks and uses MIT-LICENSE.
 With **Quadro** you have the following features:
 
 - Create pages.
+- Draft and published pages status.
 - Create your own templates.
 - Make any area on your template editable.
 - Auto-generated sitemap.xml.

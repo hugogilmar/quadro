@@ -12,18 +12,34 @@
         %i.fa.fa-plus
         New sub page
       = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
-        %i.fa.fa-cog
-        Edit current page
+        %i.fa.fa-pencil
+        Edit
       = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm hidden-xs" do
         %i.fa.fa-trash-o
-        Delete current page
+        Delete
+      - unless page.is_root?
+        - if page.published?
+          = link_to unpublish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
+            %i.fa.fa-eye-slash
+            Unpublish
+        - else
+          = link_to publish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
+            %i.fa.fa-eye
+            Publish
       .btn-group.visible-xs-inline-block(role='group')
         = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm" do
           %i.fa.fa-plus
         = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
-          %i.fa.fa-cog
+          %i.fa.fa-pencil
         = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm" do
           %i.fa.fa-trash-o
+        - unless page.is_root?
+          - if page.published?
+            = link_to unpublish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
+              %i.fa.fa-eye-slash
+          - else
+            = link_to publish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
+              %i.fa.fa-eye
     .pull-right
       %a#quadro-save.btn.btn-default.btn-sm.hide
         %i.fa.fa-floppy-o
@@ -31,12 +47,12 @@
       %a#quadro-gallery-toggle.btn.btn-default.btn-sm.hidden-xs.hidden-sm
         %i.fa.fa-picture-o
         Image gallery
-      %span.hidden-xs.hidden-sm Editor advanced:
+      %span.hidden-xs.hidden-sm Editor:
       .btn-group.hidden-xs.hidden-sm(role='group')
         %button#quadro-airmode-off.btn.btn-default.btn-sm(type='button')
-          %i.fa.fa-eye
-        %button#quadro-airmode-on.btn.btn-default.btn-sm(type='button')
-          %i.fa.fa-eye-slash
+          %i.fa.fa-toggle-on
+        %button#quadro-airmode-on.btn.btn-default.btn-sm.active(type='button')
+          %i.fa.fa-toggle-off
       .btn-group.dropup.hidden-xs
         %button.btn.btn-default.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
           = gravatar_image_tag(current_user.email, alt: current_user.email, title: current_user.email, gravatar: { size: 16 }, class: 'img-rounded')

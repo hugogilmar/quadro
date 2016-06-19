@@ -11,6 +11,7 @@
 #= require codemirror/modes/haml
 #= require summernote
 #= require jquery.slick
+#= require moment
 #= require quadro/plugins/jquery.fs.dropper.min
 #= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/plugins/jquery.smartmenus.min
@@ -20,6 +21,7 @@
 #= require quadro/plugins/humane.min
 #= require quadro/plugins/lightbox.min
 #= require quadro/plugins/gmaps.min
+#= require quadro/plugins/bootstrap-datetimepicker.min
 #= require quadro/message
 #= require quadro/widget
 #= require quadro/uploader
