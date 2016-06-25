@@ -31,7 +31,8 @@ module Quadro
         Quadro::Widget::Slider.to_s,
         Quadro::Widget::Gallery.to_s,
         Quadro::Widget::Map.to_s,
-        Quadro::Widget::Form.to_s
+        Quadro::Widget::Form.to_s,
+        Quadro::Widget::Video.to_s
       ]
 
       Quadro.available_assets = [

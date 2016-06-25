@@ -27,6 +27,7 @@ With **Quadro** you have the following features:
 - Auto-generated robots.txt.
 - Customized HTML static status pages.
 - Basic Open Graph and Twitter Cards support.
+- Youtube and Vimeo video and playlist embed support.
 
 ## Current stable version
 
@@ -94,6 +95,7 @@ In this release, the possible options are:
 - gallery
 - map
 - form
+- video
 
 ### Map widget
 
@@ -130,6 +132,22 @@ Form widget uses `simple_form` as form builder. You can specify a form block to 
 ```
 
 *Note: all form submits are saved to database. When logged in you can review each interaction below the form widget.*
+
+### Video widget
+
+Video widget uses `video_info` gem as video info fetch client.
+
+```ruby
+= widget_for :video, type: :video, src: "https://www.youtube.com/watch?v=YE7VzlLtp-4"
+```
+
+You can also set a playlist:
+
+```ruby
+= widget_for :video, type: :video, src: "https://www.youtube.com/watch?v=YE7VzlLtp-4&list=PLcsq2jjTfJ_pEUj2Cl4MlXnpgpSQMTO-f"
+```
+
+*Note: works the same with vimeo's videos and playlists.*
 
 ## Working with page templates
 
