@@ -147,7 +147,7 @@ You can also set a playlist:
 = widget_for :video, type: :video, src: "https://www.youtube.com/watch?v=YE7VzlLtp-4&list=PLcsq2jjTfJ_pEUj2Cl4MlXnpgpSQMTO-f"
 ```
 
-*Note: works the same with vimeo's videos and playlists.*
+*Note: works the same with Vimeo's videos and playlists.*
 
 ## Working with page templates
 
