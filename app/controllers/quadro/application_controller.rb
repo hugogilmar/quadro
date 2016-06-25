@@ -1,6 +1,6 @@
 module Quadro
   class ApplicationController < ActionController::Base
-    helper_method :widget, :asset, :interaction, :root, :parent, :page, :subpages, :geoip, :user, :users
+    helper_method :widget, :asset, :interaction, :root, :parent, :page, :subpages, :geoip, :video, :user, :users
 
     def after_sign_in_path_for(_resource)
       quadro.root_path
@@ -117,6 +117,10 @@ module Quadro
 
     def notifier
       @notifier ||= SitemapNotifier::Notifier
+    end
+
+    def video
+      @video ||= VideoInfo
     end
 
     def user

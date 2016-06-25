@@ -17,6 +17,8 @@ module Quadro
           page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Map.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Map.to_s).becomes(Quadro::Widget::Map)
         when :form
           page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Form.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Form.to_s).becomes(Quadro::Widget::Form)
+        when :video
+          page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Video.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Video.to_s).becomes(Quadro::Widget::Video)
         else
           page.widgets.select{ |w| w.name == name.to_s && w.type == Quadro::Widget::Html.to_s }.first || page.widgets.create(name: name, type: Quadro::Widget::Html.to_s)
         end

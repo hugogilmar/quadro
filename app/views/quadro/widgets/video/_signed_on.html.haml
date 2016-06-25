@@ -1,0 +1,6 @@
+=# render("quadro/widgets/video/toolbar", widget: widget)
+
+- if options[:src].blank?
+  = render("quadro/widgets/video/empty")
+- else
+  = render "quadro/widgets/video/widget", widget: widget, options: options, content: content

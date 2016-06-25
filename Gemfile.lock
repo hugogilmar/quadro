@@ -36,6 +36,7 @@ PATH
       summernote-rails (~> 0.5.10.2)
       turnout (~> 2.2.1)
       useragent (~> 0.16.7)
+      video_info (~> 2.4.0)
 
 GEM
   remote: https://rubygems.org/
@@ -67,6 +68,7 @@ GEM
     activesupport (3.2.22.2)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    addressable (2.4.0)
     ancestry (2.1.0)
       activerecord (>= 3.0.0)
     animate (0.1.0)
@@ -135,6 +137,7 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.3)
+    htmlentities (4.3.4)
     i18n (0.7.0)
     journey (1.0.4)
     jquery-rails (3.1.4)
@@ -240,6 +243,10 @@ GEM
       rack-accept (~> 0.4)
     tzinfo (0.3.50)
     useragent (0.16.7)
+    video_info (2.4.2)
+      addressable
+      htmlentities
+      multi_json
     warden (1.2.6)
       rack (>= 1.0)
 

@@ -1,0 +1,6 @@
+- info = video_info(options[:src])
+
+- if info.available?
+  .embed-responsive.embed-responsive-16by9
+    = info.embed_code(iframe_attributes: { class: "embed-responsive-item" }).html_safe
+- else
