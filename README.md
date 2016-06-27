@@ -35,7 +35,7 @@ Current stable version.
 
 [![Gem Version](https://badge.fury.io/rb/quadro.png)](https://badge.fury.io/rb/quadro)
 
-## Code Climate and Travis CI status
+## Code Climate, Hakiri and Travis CI status
 
 [![Code Climate](https://codeclimate.com/github/hugogilmar/quadro/badges/gpa.svg)](https://codeclimate.com/github/hugogilmar/quadro)
 [![Test Coverage](https://codeclimate.com/github/hugogilmar/quadro/badges/coverage.svg)](https://codeclimate.com/github/hugogilmar/quadro/coverage)
