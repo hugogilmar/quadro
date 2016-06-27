@@ -60,4 +60,7 @@ Gem::Specification.new do |s|
   s.add_dependency "maxminddb", "~> 0.1.11"
 
   s.add_development_dependency "sqlite3"
+  s.add_development_dependency "thin"
+  s.add_development_dependency "better_errors"
+  s.add_development_dependency "binding_of_caller"
 end
