@@ -52,7 +52,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails-i18n", "~> 3.0.0"
   s.add_dependency "devise-i18n", "~> 0.12.1"
+  s.add_dependency "devise-i18n-views", "~> 0.3.7"
   s.add_dependency "kaminari-i18n", "~> 0.3.2"
+
+  s.add_dependency "unobtrusive_flash", "~> 3.2.0"
 
   s.add_dependency "gravatar_image_tag", "~> 1.2.0"
   s.add_dependency "turnout", "~> 2.2.1"
@@ -64,4 +67,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency "better_errors"
   s.add_development_dependency "binding_of_caller"
   s.add_development_dependency "codeclimate-test-reporter"
+  s.add_development_dependency "i18n-debug", "~> 1.0.0"
 end

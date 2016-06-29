@@ -8,6 +8,6 @@
           = simple_form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |form|
             = devise_error_messages!
             = form.input :email, input_html: { class: 'form-control' }
-            = form.submit 'Resend unlock instructions', class: 'btn btn-primary btn-block'
+            = form.submit t('devise.unlocks.new.resend_unlock_instructions'), class: 'btn btn-primary btn-block'
           %br
           = render 'users/shared/links'

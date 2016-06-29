@@ -10,6 +10,6 @@
             = form.hidden_field :reset_password_token
             = form.input :password
             = form.input :password_confirmation, input_html: { class: 'form-control' }
-            = form.submit 'Change my password', class: 'btn btn-primary btn-block'
+            = form.submit t('devise.passwords.edit.change_my_password'), class: 'btn btn-primary btn-block'
           %br
           = render 'users/shared/links'

@@ -24,6 +24,7 @@
     = favicon_link_tag 'quadro/favicon.ico'
     = csrf_meta_tags
   %body(class="#{(user_signed_in? ? 'quadro-signed-in' : '')}")
+    .unobtrusive-flash-container
     = yield
     - if user_signed_in?
       = render 'quadro/shared/toolbar'

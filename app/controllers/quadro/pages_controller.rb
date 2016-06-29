@@ -10,29 +10,58 @@ module Quadro
 
     def create
       page.author = current_user
-      page.save
+      if page.save
+        flash[:notice] = t('flash.created')
+      else
+        flash[:alert] = t('flash.not_created')
+      end
     end
 
     def update
-      page.update_attributes(params[:page])
+      if page.update_attributes(params[:page])
+        flash[:notice] = t('flash.updated')
+      else
+        flash[:alert] = t('flash.not_updated')
+      end
     end
 
     def destroy
-      page.destroy unless page.is_root?
+      unless page.is_root?
+        if page.destroy
+          flash[:notice] = t('flash.deleted')
+        else
+          flash[:alert] = t('flash.not_deleted')
+        end
+      else
+        flash[:alert] = t('flash.could_not_be_deleted')
+      end
     end
 
     def form
       interaction.ip_address = request.remote_ip
       interaction.user_agent = request.user_agent
-      interaction.update_attributes(content: params[:form])
+      interaction.content = params[:form]
+      if interaction.save
+        flash[:notice] = t('flash.created')
+      else
+        flash[:alert] = t('flash.not_created')
+      end
     end
 
     def publish
-      page.publish!
+      if page.publish!
+        flash[:notice] = t('flash.published')
+      else
+        flash[:alert] = t('flash.not_published')
+      end
     end
 
     def unpublish
-      page.unpublish!
+      if page.unpublish!
+        flash[:notice] = t('flash.unpublished')
+      else
+        flash[:alert] = t('flash.not_unpublished')
+      end
     end
 
     private

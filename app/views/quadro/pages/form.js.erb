@@ -1,6 +1,4 @@
 <% if interaction.persisted? %>
-  new Message('Message sent');
   $('form#<%= interaction.interactable.name %>')[0].reset();
 <% else %>
-  new Message('Message not sent');
 <% end %>

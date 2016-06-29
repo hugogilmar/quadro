@@ -41,3 +41,5 @@ $(document).ready ->
       $('#quadro-gallery').removeClass('collapsed').addClass('expanded')
     else
       $('#quadro-gallery').removeClass('expanded').addClass('collapsed')
+
+  UnobtrusiveFlash.flashOptions['timeout'] = 3000

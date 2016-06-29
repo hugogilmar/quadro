@@ -8,6 +8,7 @@ module Quadro
 
     def sitemap_notifier
       notifier.run(sitemap_url)
+      flash[:notice] = t('flash.notified')
     end
   end
 end

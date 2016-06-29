@@ -1,5 +1,6 @@
 module Quadro
   class ApplicationController < ActionController::Base
+    after_filter :prepare_unobtrusive_flash
     helper_method :widget, :asset, :interaction, :root, :parent, :page, :subpages, :geoip, :video, :user, :users
 
     def after_sign_in_path_for(_resource)

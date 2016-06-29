@@ -10,6 +10,6 @@
             = form.input :password, input_html: { class: 'form-control' }
             - if devise_mapping.rememberable?
               = form.input :remember_me, as: :boolean, wrapper_html: { class: 'checkbox' }
-            = form.submit 'Sign In', class: 'btn btn-primary btn-block'
+            = form.submit t('devise.sessions.new.sign_in'), class: 'btn btn-primary btn-block'
           %br
           = render 'users/shared/links'

@@ -7,7 +7,12 @@ module Quadro
     respond_to :js, :json, :xml
 
     def update
-      widget.update_attributes(params[:widget])
+      if widget.update_attributes(params[:widget])
+        flash[:notice] = t('flash.updated')
+      else
+        flash[:alert] = t('flash.not_updated')
+      end
+
       respond_with widget
     end
   end

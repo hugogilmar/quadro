@@ -1,7 +1,5 @@
-<% if page.errors.size > 0 %>
-  $("#quadro-modal .modal-body").html("<%= escape_javascript(render('quadro/pages/new', page: page)) %>");
-  new Message('Page not created');
-<% else %>
+<% if page.persisted? %>
   $("#quadro-modal").modal('hide');
-  new Message('Page created');
+<% else %>
+  $("#quadro-modal .modal-body").html("<%= escape_javascript(render('quadro/pages/new', page: page)) %>");
 <% end %>

@@ -1,7 +1,5 @@
-<% if page.errors.size > 0 %>
+<% if page.changed? %>
   $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/pages/edit', page: page)) %>");
-  new Message('Page not updated');
 <% else %>
   $("#quadro-modal").modal('hide');
-  new Message('Page updated');
 <% end %>

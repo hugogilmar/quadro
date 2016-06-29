@@ -7,15 +7,27 @@ module Quadro
     respond_to :js, :json, :xml
 
     def create
-      asset.save
+      if asset.save
+        flash[:notice] = t('flash.created')
+      else
+        flash[:alert] = t('flash.not_created')
+      end
     end
 
     def update
-      asset.update_attributes(params[:asset])
+      if asset.update_attributes(params[:asset])
+        flash[:notice] = t('flash.updated')
+      else
+        flash[:alert] = t('flash.not_updated')
+      end
     end
 
     def destroy
-      asset.destroy
+      if asset.destroy
+        flash[:notice] = t('flash.deleted')
+      else
+        flash[:alert] = t('flash.not_deleted')
+      end
     end
   end
 end

@@ -8,6 +8,6 @@
           = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |form|
             = devise_error_messages!
             = form.input :email, input_html: { class: 'form-control' }
-            = form.submit 'Send me reset password instructions', class: 'btn btn-primary btn-block'
+            = form.submit t('devise.passwords.new.send_me_reset_password_instructions'), class: 'btn btn-primary btn-block'
           %br
           = render 'users/shared/links'

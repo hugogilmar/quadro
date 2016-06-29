@@ -52,10 +52,8 @@ class Widget
         widget:
           content: @content
       success: (data) ->
-        new Message "Content updated"
         return
       error: ->
-        new Message "Content not updated"
         return
     return
 
