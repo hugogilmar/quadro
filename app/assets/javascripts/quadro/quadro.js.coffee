@@ -20,14 +20,14 @@ $(document).ready ->
     uploader = new Uploader $(this)
 
   $('#quadro-airmode-on').on 'click', ->
-    $('#quadro-airmode-off').removeClass 'active'
-    $(this).addClass 'active'
+    $('#quadro-airmode-off').removeClass 'hidden'
+    $(this).addClass 'hidden'
     for widget in Object.keys(widgets)
       widgets[widget].switchAirmodeOn()
 
   $('#quadro-airmode-off').on 'click', ->
-    $('#quadro-airmode-on').removeClass 'active'
-    $(this).addClass 'active'
+    $('#quadro-airmode-on').removeClass 'hidden'
+    $(this).addClass 'hidden'
     for widget in Object.keys(widgets)
       widgets[widget].switchAirmodeOff()
 

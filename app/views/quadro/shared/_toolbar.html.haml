@@ -8,51 +8,34 @@
     .pull-left
       = link_to root_path, class: "quadro-brand" do
         = image_tag 'quadro/quadro-logo-mini.png'
-      = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm hidden-xs" do
+      = link_to new_page_path(parent_id: page.id), remote: true, id: "quadro-new", class: "btn btn-default btn-sm" do
         %i.fa.fa-plus
-        New sub page
-      = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
+        %span.hidden-xs.hidden-sm= t('toolbar.new')
+      = link_to edit_page_path(page.slug), remote: true, id: "quadro-edit", class: "btn btn-default btn-sm" do
         %i.fa.fa-pencil
-        Edit
-      = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm hidden-xs" do
-        %i.fa.fa-trash-o
-        Delete
+        %span.hidden-xs.hidden-sm= t('toolbar.edit')
+      = link_to page_path(page.slug), remote: true, method: "delete", confirm: t('confirmation.page'), id: "quadro-delete", class: "btn btn-default btn-sm" do
+        %i.fa.fa-trash-o.text-danger
+        %span.hidden-xs.hidden-sm.text-danger= t('toolbar.delete')
       - unless page.is_root?
-        - if page.published?
-          = link_to unpublish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
-            %i.fa.fa-eye-slash
-            Unpublish
-        - else
-          = link_to publish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm hidden-xs" do
-            %i.fa.fa-eye
-            Publish
-      .btn-group.visible-xs-inline-block(role='group')
-        = link_to new_page_path(parent_id: page.id), remote: true, class: "btn btn-default btn-sm" do
-          %i.fa.fa-plus
-        = link_to edit_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
-          %i.fa.fa-pencil
-        = link_to page_path(page.slug), remote: true, method: "delete", confirm: "Are you sure of delete this page?", class: "btn btn-default btn-sm" do
-          %i.fa.fa-trash-o
-        - unless page.is_root?
-          - if page.published?
-            = link_to unpublish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
-              %i.fa.fa-eye-slash
-          - else
-            = link_to publish_page_path(page.slug), remote: true, class: "btn btn-default btn-sm" do
-              %i.fa.fa-eye
+        = link_to unpublish_page_path(page.slug), remote: true, id: "quadro-unpublish", class: "btn btn-default btn-sm #{page.unpublished? ? 'hidden' : ''}" do
+          %i.fa.fa-eye-slash
+          %span.hidden-xs.hidden-sm= t('toolbar.unpublish')
+        = link_to publish_page_path(page.slug), remote: true, id: "quadro-publish", class: "btn btn-default btn-sm #{page.published? ? 'hidden' : ''}" do
+          %i.fa.fa-eye
+          %span.hidden-xs.hidden-sm= t('toolbar.publish')
     .pull-right
       %a#quadro-save.btn.btn-default.btn-sm.hide
         %i.fa.fa-floppy-o
-        Save changes
+        %span.hidden-xs.hidden-sm= t('toolbar.save')
       %a#quadro-gallery-toggle.btn.btn-default.btn-sm.hidden-xs.hidden-sm
         %i.fa.fa-picture-o
-        Image gallery
-      %span.hidden-xs.hidden-sm Editor:
-      .btn-group.hidden-xs.hidden-sm(role='group')
-        %button#quadro-airmode-off.btn.btn-default.btn-sm(type='button')
-          %i.fa.fa-toggle-on
-        %button#quadro-airmode-on.btn.btn-default.btn-sm.active(type='button')
-          %i.fa.fa-toggle-off
+        %span= t('toolbar.gallery')
+      %span.hidden-xs.hidden-sm= t('toolbar.editor')
+      %button#quadro-airmode-off.btn.btn-default.btn-sm.hidden-xs.hidden-sm(type='button')
+        %i.fa.fa-toggle-on
+      %button#quadro-airmode-on.btn.btn-default.btn-sm.hidden-xs.hidden-sm.hidden(type='button')
+        %i.fa.fa-toggle-off
       .btn-group.dropup.hidden-xs
         %button.btn.btn-default.btn-sm.dropdown-toggle(type='button' data-toggle='dropdown')
           = gravatar_image_tag(current_user.email, alt: current_user.email, title: current_user.email, gravatar: { size: 16 }, class: 'img-rounded')
@@ -63,14 +46,14 @@
             %li
               = link_to sitemap_notifier_path, remote: true do
                 %i.fa.fa-sitemap
-                Notify sitemap.xml
+                = t('toolbar.sitemap')
           %li
             = link_to edit_user_path, remote: true do
               %i.fa.fa-user
-              Edit user
+              = t('toolbar.profile')
           %li
             = link_to destroy_user_session_path, method: :delete do
               %i.fa.fa-sign-out
-              Sign Out
+              = t('toolbar.sign_out')
       = link_to destroy_user_session_url, method: :delete, class: "btn btn-default btn-sm visible-xs-inline-block hidden-sm" do
-        Sign Out
+        = t('toolbar.sign_out')

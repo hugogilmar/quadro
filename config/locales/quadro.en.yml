@@ -20,6 +20,19 @@ en:
     placeholders:
       defaults:
         summary: "Text to display as description on search results"
+  navigation:
+    sign_in: "Sign in"
+  toolbar:
+    new: "New sub page"
+    edit: "Edit"
+    delete: "Delete"
+    publish: "Publish"
+    unpublish: "Unpublish"
+    gallery: "Gallery"
+    editor: "Editor"
+    sitemap: "Notify sitemap.xml"
+    profile: "Edit user"
+    sign_out: "Sign out"
   flash:
     created: "Successfully created"
     not_created: "Was not successfully created"
@@ -33,3 +46,7 @@ en:
     unpublished: "Successfully unpublished"
     not_unpublished: "Was not successfully unpublished"
     notified: "Sitemap update notified"
+  confirmation:
+    page: "Are you sure of delete this page?"
+    image: "Are you sure of delete this image?"
+    slide: "Are you sure of delete this slide?"
