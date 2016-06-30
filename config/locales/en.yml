@@ -1,0 +1,66 @@
+en:
+  time:
+    formats:
+      atom: "%FT%TZ"
+      rss: "%a, %d %b %Y %H:%M:%S %z"
+  simple_form:
+    "yes": "Yes"
+    "no": "No"
+    required:
+      text: "required"
+      mark: "*"
+    error_notification:
+      default_message: "Please review the problems below:"
+    labels:
+      defaults:
+        email: "E-mail"
+        password_confirmation: "Confirm password"
+        alt: "Alternative text"
+        href: "Link to URL"
+    hints:
+      defaults:
+    placeholders:
+      defaults:
+        summary: "Text to display as description on search results"
+  quadro:
+    navigation:
+      sign_in: "Sign in"
+    toolbar:
+      new: "New sub page"
+      edit: "Edit"
+      delete: "Delete"
+      publish: "Publish"
+      unpublish: "Unpublish"
+      save: "Save"
+      gallery: "Gallery"
+      editor: "Editor"
+      sitemap: "Notify sitemap.xml"
+      profile: "Edit user"
+      sign_out: "Sign out"
+    modal:
+      new: "New"
+      edit: "Edit"
+    field:
+      chars_remaining: "chars remaining"
+      uploader: "Drag and drop files or click to select"
+      upload:
+        select: "Select"
+        change: "Change"
+        remove: "Remove"
+    flash:
+      created: "Successfully created"
+      not_created: "Was not successfully created"
+      updated: "Successfully updated"
+      not_updated: "Was not successfully updated"
+      deleted: "Successfully deleted"
+      could_not_be_deleted: "It could not be deleted"
+      not_deleted: "Was not successfully deleted"
+      published: "Successfully published"
+      not_published: "Was not successfully published"
+      unpublished: "Successfully unpublished"
+      not_unpublished: "Was not successfully unpublished"
+      notified: "Sitemap update notified"
+    confirmation:
+      page: "Are you sure of delete this page?"
+      image: "Are you sure of delete this image?"
+      slide: "Are you sure of delete this slide?"

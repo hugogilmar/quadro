@@ -5,6 +5,12 @@
   <% when 'slide' %>
     $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/assets/slide/form', asset: asset, widget: widget, page: page)) %>");
   <% end %>
+  $("#asset_alt").characterCounter({
+    limit: 60,
+    counterWrapper: "p",
+    counterCssClass: "help-block",
+    counterFormat: "%1 <%= t('quadro.field.chars_remaining') %>"
+  });
 <% else %>
   <% case asset.type.constantize.short_name %>
   <% when 'image' %>

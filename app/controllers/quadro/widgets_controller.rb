@@ -8,9 +8,9 @@ module Quadro
 
     def update
       if widget.update_attributes(params[:widget])
-        flash[:notice] = t('flash.updated')
+        flash[:notice] = t('quadro.flash.updated')
       else
-        flash[:alert] = t('flash.not_updated')
+        flash[:alert] = t('quadro.flash.not_updated')
       end
 
       respond_with widget

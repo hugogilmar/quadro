@@ -2,5 +2,9 @@
   .row
     - widget.images.each do |image|
       .col-xs-6.col-sm-3.col-md-2
-        = link_to image.url(:large), class: "thumbnail", data: { lightbox: widget.name } do
-          = image_tag image.url(:thumb), alt: image.alt
+        .thumbnail
+          = link_to image.url(:large), data: { lightbox: widget.name, title: image.alt } do
+            = image_tag image.url(:thumb), alt: image.alt
+            - unless image.alt.blank?
+              .caption
+                %small= image.alt

@@ -1,6 +1,16 @@
 $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/pages/edit', page: page)) %>");
-$("#page_title").show_char_limit(60);
-$("#page_summary").show_char_limit(160);
+$("#page_title").characterCounter({
+  limit: 60,
+  counterWrapper: "p",
+  counterCssClass: "help-block",
+  counterFormat: "%1 <%= t('quadro.field.chars_remaining') %>"
+});
+$("#page_summary").characterCounter({
+  limit: 155,
+  counterWrapper: "p",
+  counterCssClass: "help-block",
+  counterFormat: "%1 <%= t('quadro.field.chars_remaining') %>"
+});
 $('#page_published_at').datetimepicker({
   defaultDate: '<%= page.published_at.to_s %>',
   format: 'YYYY-MM-DD hh:mm:ss',

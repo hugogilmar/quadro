@@ -6,5 +6,5 @@
 
         = link_to (widget.present? ? edit_page_widget_asset_path(page_id: page.id, widget_id: widget.id, id: asset.id) : edit_page_asset_path(id: asset.id, page_id: page.id)), remote: true, class: "btn btn-link btn-xs" do
           %i.fa.fa-pencil.text-muted
-        = link_to (widget.present? ? page_widget_asset_path(page_id: page.id, widget_id: widget.id, id: asset.id) : page_asset_path(id: asset.id, page_id: page.id)), method: "delete", confirm: t('confirmation.image'), remote: true, class: "btn btn-link btn-xs" do
+        = link_to (widget.present? ? page_widget_asset_path(page_id: page.id, widget_id: widget.id, id: asset.id) : page_asset_path(id: asset.id, page_id: page.id)), method: "delete", confirm: t('quadro.confirmation.image'), remote: true, class: "btn btn-link btn-xs" do
           %i.fa.fa-trash-o.text-danger

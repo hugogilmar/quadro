@@ -12,7 +12,7 @@ module Quadro
     # validations
     validates :title, presence: true, length: { maximum: 60 }
     validates :slug, uniqueness: true
-    validates :summary, length: { maximum: 160 }
+    validates :summary, length: { maximum: 155 }
 
     # associations
     belongs_to :author, class_name: Quadro::User

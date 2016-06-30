@@ -42,4 +42,7 @@ $(document).ready ->
     else
       $('#quadro-gallery').removeClass('expanded').addClass('collapsed')
 
+  lightbox.option
+    'albumLabel': '%1 / %2'
+
   UnobtrusiveFlash.flashOptions['timeout'] = 3000

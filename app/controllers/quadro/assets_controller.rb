@@ -8,25 +8,25 @@ module Quadro
 
     def create
       if asset.save
-        flash[:notice] = t('flash.created')
+        flash[:notice] = t('quadro.flash.created')
       else
-        flash[:alert] = t('flash.not_created')
+        flash[:alert] = t('quadro.flash.not_created')
       end
     end
 
     def update
       if asset.update_attributes(params[:asset])
-        flash[:notice] = t('flash.updated')
+        flash[:notice] = t('quadro.flash.updated')
       else
-        flash[:alert] = t('flash.not_updated')
+        flash[:alert] = t('quadro.flash.not_updated')
       end
     end
 
     def destroy
       if asset.destroy
-        flash[:notice] = t('flash.deleted')
+        flash[:notice] = t('quadro.flash.deleted')
       else
-        flash[:alert] = t('flash.not_deleted')
+        flash[:alert] = t('quadro.flash.not_deleted')
       end
     end
   end
