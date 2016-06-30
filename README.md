@@ -208,6 +208,12 @@ You can customize the HTML for the maintenance status page at this path:
 public/maintenance.html
 ```
 
+## Translations
+
+For internationalization files you should add `quadro-i18n` gem.
+
+*Note: please refer to gem's official project page [here](https://github.com/hugogilmar/quadro-i18n) for further information**
+
 ## Use it and enjoy it
 
 Now when you log in into **Quadro** you will find a toolbar fixed at the bottom, to manage your new website or blog.
