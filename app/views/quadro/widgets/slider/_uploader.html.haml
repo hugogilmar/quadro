@@ -1,5 +1,5 @@
 .asset-uploader
-  .asset-dropper(data-assetable-type='Quadro::Widget::Slider' data-assetable-id="#{widget.id}" data-type='Quadro::Asset::Slide' data-path="#{page_widget_assets_path(page_id: widget.page.id, widget_id: widget.id)}")
+  .asset-dropper(data-assetable-type='Quadro::Widget::Slider' data-assetable-id="#{widget.id}" data-type='Quadro::Asset::Slide' data-path="#{page_widget_assets_path(page_id: widget.page.id, widget_id: widget.id)}" data-hint="#{t('quadro.field.uploader')}")
   .asset-list.clearfix(data-assetable-type='Quadro::Widget::Slider' data-assetable-id="#{widget.id}")
     - widget.slides.each do |slide|
       = render 'quadro/assets/slide/slide', asset: slide, widget: widget, page: page

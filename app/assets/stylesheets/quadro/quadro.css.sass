@@ -8,14 +8,6 @@ form
   span.status
     @extend .help-block
 
-.unobtrusive-flash-container
-  position: fixed
-  top: 0px
-  left: 10%
-  width: 80%
-  z-index: 2000
-  padding: 8px 0px 0px
-
 #quadro-toolbar
   padding: 8px
 
@@ -56,6 +48,26 @@ form
   #quadro-images
     height: 13em
 
+.modal-header
+  background: #e7e7e7
+  border-radius: 6px 6px 0px 0px
+
+.widget-gallery
+  .thumbnail
+    position: relative
+    .caption
+      position: absolute
+      bottom: 0px
+      left: 0px
+      width: 100%
+      background: rgba(0, 0, 0, 0.5)
+      color: #fff
+      border-radius: 0px 0px 4px 4px
+      a
+        color: #fff
+        text-decoration: none
+
+
 .quadro-brand
   text-decoration: none !important
 
@@ -92,8 +104,18 @@ form
   right: 20px
 
 .slide
+  position: relative
   img
     width: 100%
+
+h2.slide-description
+  position: absolute
+  right: 12px
+  bottom: 12px
+  background: rgba(0, 0, 0, 0.5)
+  color: #fff
+  padding: 4px 8px
+  margin: 0px
 
 a.thumbnail
   img
@@ -109,3 +131,11 @@ a.thumbnail
 
 .embed-responsive
   margin: 18px 0px
+
+.unobtrusive-flash-container
+  position: fixed
+  top: 0px
+  left: 10%
+  width: 80%
+  z-index: 2000
+  padding: 8px 0px 0px

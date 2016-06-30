@@ -1,8 +1,7 @@
 .modal-header
   %button.close(data-dismiss="modal" type="button")
     %span(aria-hidden="true") ×
-    %span.sr-only Close
-  %h4.modal-title Edit user
+  %h4.modal-title= t('quadro.modal.edit')
 .modal-body
   = simple_form_for user, multipart: true, remote: true do |form|
     .row

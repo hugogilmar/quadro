@@ -18,7 +18,7 @@
 #= require quadro/plugins/jasny-bootstrap.min
 #= require quadro/plugins/jquery.smartmenus.min
 #= require quadro/plugins/jquery.smartmenus.bootstrap.min
-#= require quadro/plugins/jquery.show_char_limit.min
+#= require quadro/plugins/jquery.charactercounter.min
 #= require quadro/plugins/pace.min
 #= require quadro/plugins/lightbox.min
 #= require quadro/plugins/gmaps.min

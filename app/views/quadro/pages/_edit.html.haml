@@ -1,8 +1,7 @@
 .modal-header
   %button.close(data-dismiss="modal" type="button")
     %span(aria-hidden="true") ×
-    %span.sr-only Close
-  %h4.modal-title Edit page
+  %h4.modal-title= t('quadro.modal.edit')
 .modal-body
   = simple_form_for page, multipart: true, remote: true do |form|
     - form.object.build_cover if form.object.cover.nil?
@@ -15,11 +14,11 @@
           .fileinput-preview.fileinput-exists.thumbnail
           .text-center
             %span.btn.btn-default.btn-file
-              %span.fileinput-new Select cover
-              %span.fileinput-exists Change
+              %span.fileinput-new= t('quadro.field.upload.select')
+              %span.fileinput-exists= t('quadro.field.upload.change')
               = form.simple_fields_for :cover do |cover|
                 = cover.input_field :attachment
-            %a.btn.btn-default.fileinput-exists(data-dismiss="fileinput" href="#") Remove
+            %a.btn.btn-default.fileinput-exists(data-dismiss="fileinput" href="#")= t('quadro.field.upload.remove')
       .col-md-8
         = form.input :title, input_html: { class: 'form-control' }
         = form.input :summary, as: :text, input_html: { class: 'form-control', rows: 2 }

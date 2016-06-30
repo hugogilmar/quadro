@@ -1,6 +1,6 @@
 #quadro-toolbar.navbar.navbar-fixed-bottom
   #quadro-gallery.well.well-sm.collapsed
-    #quadro-uploader.asset-dropper(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}")
+    #quadro-uploader.asset-dropper(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}" data-type='Quadro::Asset::Image' data-path="#{page_assets_path(page_id: page.id)}" data-hint="#{t('quadro.field.uploader')}")
     #quadro-images.asset-list.clearfix(data-assetable-type='Quadro::Page' data-assetable-id="#{page.id}")
       - page.images.each do |image|
         = render 'quadro/assets/image/image', asset: image, page: page
@@ -10,28 +10,28 @@
         = image_tag 'quadro/quadro-logo-mini.png'
       = link_to new_page_path(parent_id: page.id), remote: true, id: "quadro-new", class: "btn btn-default btn-sm" do
         %i.fa.fa-plus
-        %span.hidden-xs.hidden-sm= t('toolbar.new')
+        %span.hidden-xs.hidden-sm= t('quadro.toolbar.new')
       = link_to edit_page_path(page.slug), remote: true, id: "quadro-edit", class: "btn btn-default btn-sm" do
         %i.fa.fa-pencil
-        %span.hidden-xs.hidden-sm= t('toolbar.edit')
-      = link_to page_path(page.slug), remote: true, method: "delete", confirm: t('confirmation.page'), id: "quadro-delete", class: "btn btn-default btn-sm" do
+        %span.hidden-xs.hidden-sm= t('quadro.toolbar.edit')
+      = link_to page_path(page.slug), remote: true, method: "delete", confirm: t('quadro.confirmation.page'), id: "quadro-delete", class: "btn btn-default btn-sm" do
         %i.fa.fa-trash-o.text-danger
-        %span.hidden-xs.hidden-sm.text-danger= t('toolbar.delete')
+        %span.hidden-xs.hidden-sm.text-danger= t('quadro.toolbar.delete')
       - unless page.is_root?
         = link_to unpublish_page_path(page.slug), remote: true, id: "quadro-unpublish", class: "btn btn-default btn-sm #{page.unpublished? ? 'hidden' : ''}" do
           %i.fa.fa-eye-slash
-          %span.hidden-xs.hidden-sm= t('toolbar.unpublish')
+          %span.hidden-xs.hidden-sm= t('quadro.toolbar.unpublish')
         = link_to publish_page_path(page.slug), remote: true, id: "quadro-publish", class: "btn btn-default btn-sm #{page.published? ? 'hidden' : ''}" do
           %i.fa.fa-eye
-          %span.hidden-xs.hidden-sm= t('toolbar.publish')
+          %span.hidden-xs.hidden-sm= t('quadro.toolbar.publish')
     .pull-right
       %a#quadro-save.btn.btn-default.btn-sm.hide
         %i.fa.fa-floppy-o
-        %span.hidden-xs.hidden-sm= t('toolbar.save')
+        %span.hidden-xs.hidden-sm= t('quadro.toolbar.save')
       %a#quadro-gallery-toggle.btn.btn-default.btn-sm.hidden-xs.hidden-sm
         %i.fa.fa-picture-o
-        %span= t('toolbar.gallery')
-      %span.hidden-xs.hidden-sm= t('toolbar.editor')
+        %span= t('quadro.toolbar.gallery')
+      %span.hidden-xs.hidden-sm= t('quadro.toolbar.editor')
       %button#quadro-airmode-off.btn.btn-default.btn-sm.hidden-xs.hidden-sm(type='button')
         %i.fa.fa-toggle-on
       %button#quadro-airmode-on.btn.btn-default.btn-sm.hidden-xs.hidden-sm.hidden(type='button')
@@ -46,14 +46,14 @@
             %li
               = link_to sitemap_notifier_path, remote: true do
                 %i.fa.fa-sitemap
-                = t('toolbar.sitemap')
+                = t('quadro.toolbar.sitemap')
           %li
             = link_to edit_user_path, remote: true do
               %i.fa.fa-user
-              = t('toolbar.profile')
+              = t('quadro.toolbar.profile')
           %li
             = link_to destroy_user_session_path, method: :delete do
               %i.fa.fa-sign-out
-              = t('toolbar.sign_out')
+              = t('quadro.toolbar.sign_out')
       = link_to destroy_user_session_url, method: :delete, class: "btn btn-default btn-sm visible-xs-inline-block hidden-sm" do
-        = t('toolbar.sign_out')
+        = t('quadro.toolbar.sign_out')

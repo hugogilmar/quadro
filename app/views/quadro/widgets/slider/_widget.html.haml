@@ -1,4 +1,10 @@
 .widget.widget-slider
   - widget.slides.each do |slide|
     .slide
-      = image_tag slide.url(:medium), alt: slide.alt
+      - unless slide.href.blank?
+        = link_to slide.href do
+          = image_tag slide.url(:medium), alt: slide.alt
+          %h2.slide-description= slide.alt
+      - else
+        = image_tag slide.url(:medium), alt: slide.alt
+        %h2.slide-description= slide.alt

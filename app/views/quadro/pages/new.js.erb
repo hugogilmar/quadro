@@ -1,2 +1,8 @@
 $("#quadro-modal .modal-content").html("<%= escape_javascript(render('quadro/pages/new', page: page)) %>");
+$("#page_title").characterCounter({
+  limit: 60,
+  counterWrapper: "p",
+  counterCssClass: "help-block",
+  counterFormat: "%1 <%= t('quadro.field.chars_remaining') %>"
+});
 $("#quadro-modal").modal("show");
