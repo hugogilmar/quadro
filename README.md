@@ -62,6 +62,8 @@ Now the last step is to run the installer.
 rails g quadro:install
 ```
 
+*Note: for Rails 3.2 use 0.5.x gem version.*
+
 ## Configuration
 
 It will add a mountable route on your project `config/routes.rb`.

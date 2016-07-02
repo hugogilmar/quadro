@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quadro (0.5.8)
+    quadro (0.6.0)
       ancestry (~> 2.1)
       animate (~> 0.1)
       bootstrap-sass (~> 3.3)
