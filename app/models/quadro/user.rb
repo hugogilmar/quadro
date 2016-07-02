@@ -1,7 +1,7 @@
 module Quadro
   class User < ActiveRecord::Base
     # attributes
-    attr_accessible :email, :password, :password_confirmation, :remember_me, :name
+    # attr_accessible :email, :password, :password_confirmation, :remember_me, :name
 
     # behaviours
     devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :lockable
@@ -14,6 +14,6 @@ module Quadro
     has_many :pages, dependent: :destroy
 
     # scopes
-    scope :ordered, order('quadro_users.name ASC')
+    scope :ordered, -> { order('quadro_users.name ASC') }
   end
 end

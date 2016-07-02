@@ -6,7 +6,6 @@ module Quadro
     SITEMAP_PRIORITY = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0].freeze
 
     # attributes
-    attr_accessible :title, :summary, :template, :frequency, :priority, :cover_attributes, :author_id, :published_at
     store :settings, accessors: [:template, :frequency, :priority]
 
     # validations
@@ -36,8 +35,8 @@ module Quadro
     delegate :name, :email, to: :author, prefix: true, allow_nil: true
 
     # scopes
-    scope :ordered, order('quadro_pages.published_at DESC, quadro_pages.created_at DESC')
-    scope :published, where('quadro_pages.published_at IS NOT NULL')
+    scope :ordered, -> { order('quadro_pages.published_at DESC, quadro_pages.created_at DESC') }
+    scope :published, -> { where('quadro_pages.published_at IS NOT NULL') }
 
     # methods
     def publish!

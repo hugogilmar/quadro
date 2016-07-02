@@ -15,7 +15,7 @@ module Quadro
     end
 
     def update
-      if asset.update_attributes(params[:asset])
+      if asset.update_attributes(asset_params)
         flash[:notice] = t('quadro.flash.updated')
       else
         flash[:alert] = t('quadro.flash.not_updated')

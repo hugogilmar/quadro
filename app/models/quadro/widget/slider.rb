@@ -1,7 +1,6 @@
 module Quadro
   class Widget::Slider < Widget
     # attributes
-    attr_accessible :content
     store :settings, accessors: [:width, :height]
 
     # associations

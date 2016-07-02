@@ -3,6 +3,7 @@ en:
     formats:
       atom: "%FT%TZ"
       rss: "%a, %d %b %Y %H:%M:%S %z"
+      sitemap: "%FT%TZ"
   simple_form:
     "yes": "Yes"
     "no": "No"

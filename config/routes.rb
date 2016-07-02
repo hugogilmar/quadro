@@ -5,12 +5,12 @@ Quadro::Engine.routes.draw do
 
   resource :user, only: [:edit, :update]
 
-  match 'atom.xml', to: 'feeds#atom', as: 'atom', format: 'xml'
-  match 'rss.xml', to: 'feeds#rss', as: 'rss', format: 'xml'
-  match 'sitemap.xml', to: 'sitemaps#sitemap', as: 'sitemap', format: 'xml'
-  match 'robots.txt', to: 'robots#index', as: 'robots', format: 'txt'
+  get 'atom.xml', to: 'feeds#atom', as: 'atom', format: 'xml'
+  get 'rss.xml', to: 'feeds#rss', as: 'rss', format: 'xml'
+  get 'sitemap.xml', to: 'sitemaps#index', as: 'sitemap', format: 'xml'
+  get 'robots.txt', to: 'robots#index', as: 'robots', format: 'txt'
 
-  get 'tools/sitemap_notifier', to: 'tools#sitemap_notifier', as: 'sitemap_notifier'
+  get 'sitemaps/ping', to: 'sitemaps#ping', as: 'ping'
 
   resources :pages, path: '/' do
     member do

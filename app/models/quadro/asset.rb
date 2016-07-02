@@ -1,7 +1,7 @@
 module Quadro
   class Asset < ActiveRecord::Base
     # attributes
-    attr_accessible :attachment
+    # attr_accessible :attachment
 
     delegate :url, to: :attachment
 

@@ -2,7 +2,6 @@
   .container
     .navbar-header
       %button.navbar-toggle.collapsed(data-target='#navigation' data-toggle='collapse' type='button')
-        %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
@@ -12,6 +11,6 @@
       - unless user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li
-            = link_to new_user_session_path do
-              Sign In
+            = link_to new_user_session_path, rel: "nofollow" do
+              = t('navigation.sign_in')
       = navigation_for root, class: "nav navbar-nav navbar-right"
