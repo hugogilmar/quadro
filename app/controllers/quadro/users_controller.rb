@@ -7,7 +7,7 @@ module Quadro
     respond_to :js, :json, :xml
 
     def update
-      if user.update_with_password(params[:user])
+      if user.update_with_password(user_params)
         sign_in user, bypass: true
       end
     end

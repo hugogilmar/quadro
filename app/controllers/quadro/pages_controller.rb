@@ -18,7 +18,7 @@ module Quadro
     end
 
     def update
-      if page.update_attributes(params[:page])
+      if page.update_attributes(page_params)
         flash[:notice] = t('quadro.flash.updated')
       else
         flash[:alert] = t('quadro.flash.not_updated')

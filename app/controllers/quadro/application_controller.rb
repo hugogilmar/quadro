@@ -46,7 +46,7 @@ module Quadro
           asset_type = params[:type]
           if Quadro.available_assets.include?(asset_type)
             klass = asset_type.constantize
-            new_asset = klass.new(params[:asset])
+            new_asset = klass.new(asset_params)
             if widget.present?
               widget.assets << new_asset
             elsif page.present?
@@ -87,7 +87,7 @@ module Quadro
           when %w(new).include?(action_name)
             parent.children.new
           when %w(create).include?(action_name)
-            parent.children.new(params[:page])
+            parent.children.new(page_params)
           when %w(edit update form publish unpublish).include?(action_name)
             root.subtree.find_by_slug(params[:id]) rescue nil
           else
@@ -106,9 +106,9 @@ module Quadro
 
     def subpages
       if user_signed_in?
-        @subpages ||= page.children.ordered.page(params[:page])
+        @subpages ||= page.children.ordered.page(params[:page]).per(1)
       else
-        @subpages ||= page.children.published.ordered.page(params[:page])
+        @subpages ||= page.children.published.ordered.page(params[:page]).per(1)
       end
     end
 
@@ -134,6 +134,24 @@ module Quadro
 
     def not_found_page
       render file: 'public/404', status: :not_found, layout: false
+    end
+
+    private
+
+    def page_params
+      params.require(:page).permit(:title, :summary, :template, :frequency, :priority, :cover_attributes, :author_id, :published_at)
+    end
+
+    def widget_params
+      params.require(:widget).permit(:name, :type, :content, :width, :height)
+    end
+
+    def asset_params
+      params.require(:asset).permit(:attachment, :width, :height, :alt, :href)
+    end
+
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation, :remember_me, :name)
     end
   end
 end

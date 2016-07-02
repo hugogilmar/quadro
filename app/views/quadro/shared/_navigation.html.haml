@@ -8,9 +8,9 @@
       = link_to root_path, class: 'navbar-brand' do
         = Quadro.config.site
     #navigation.collapse.navbar-collapse
-      = navigation_for root, class: "nav navbar-nav navbar-right"
       - unless user_signed_in?
         %ul.nav.navbar-nav.navbar-right
           %li
             = link_to new_user_session_path, rel: "nofollow" do
-              = t('quadro.navigation.sign_in')
+              = t('navigation.sign_in')
+      = navigation_for root, class: "nav navbar-nav navbar-right"

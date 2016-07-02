@@ -19,21 +19,24 @@ class Widget
         tabSize: 2
         mode: 'htmlmixed'
         theme: 'monokai'
-      onChange: =>
-        @setChanged()
-      onfocus: =>
-        @setFocus()
-        return
+      callbacks:
+        onChange: =>
+          console.log "summernote:change"
+          @setChanged()
+          return
+        onfocus: =>
+          @setFocus()
+          return
     return
 
   switchAirmodeOn: ->
-    @element.destroy()
+    @element.summernote('destroy')
     @airmode = true
     @summernote()
     return
 
   switchAirmodeOff: ->
-    @element.destroy()
+    @element.summernote('destroy')
     @airmode = false
     @summernote()
     return
@@ -47,7 +50,7 @@ class Widget
   update: ->
     $.ajax
       url: "#{@path}"
-      type: "PUT"
+      type: 'PUT'
       data:
         widget:
           content: @content
@@ -58,7 +61,7 @@ class Widget
     return
 
   getContent: ->
-    @content = $(".widget-html[data-name=#{@name}]").code()
+    @content = $(".widget-html[data-name=#{@name}]").summernote('code')
     return
 
   setFocus: ->

@@ -14,7 +14,7 @@
       = link_to edit_page_path(page.slug), remote: true, id: "quadro-edit", class: "btn btn-default btn-sm" do
         %i.fa.fa-pencil
         %span.hidden-xs.hidden-sm= t('quadro.toolbar.edit')
-      = link_to page_path(page.slug), remote: true, method: "delete", confirm: t('quadro.confirmation.page'), id: "quadro-delete", class: "btn btn-default btn-sm" do
+      = link_to page_path(page.slug), remote: true, method: "delete", data: { confirm: t('quadro.confirmation.page') }, id: "quadro-delete", class: "btn btn-default btn-sm" do
         %i.fa.fa-trash-o.text-danger
         %span.hidden-xs.hidden-sm.text-danger= t('quadro.toolbar.delete')
       - unless page.is_root?
@@ -44,7 +44,7 @@
         %ul.dropdown-menu
           - unless Rails.env.development?
             %li
-              = link_to sitemap_notifier_path, remote: true do
+              = link_to ping_path, remote: true do
                 %i.fa.fa-sitemap
                 = t('quadro.toolbar.sitemap')
           %li
