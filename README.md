@@ -1,6 +1,4 @@
-![Quadro CMS Logo](https://raw.githubusercontent.com/hugogilmar/quadro/master/app/assets/images/quadro/quadro-logo.png)
-
-# Quadro
+![Quadro CMS](https://raw.githubusercontent.com/hugogilmar/quadro/master/app/assets/images/quadro/quadro-logo.png)
 
 This project rocks and uses MIT-LICENSE.
 
@@ -216,7 +214,7 @@ public/maintenance.html
 
 For internationalization files you should add `quadro-i18n` gem.
 
-*Note: please refer to gem's official project page [here](https://github.com/hugogilmar/quadro-i18n) for further information**
+*Note: please refer to gem's official project page [here](https://github.com/hugogilmar/quadro-i18n) for further information*
 
 ## Use it and enjoy it
 
