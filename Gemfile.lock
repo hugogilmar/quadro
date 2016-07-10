@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    quadro (0.6.0)
+    quadro (0.6.1)
       ancestry (~> 2.1)
       animate (~> 0.1)
       bootstrap-sass (~> 3.3)
@@ -83,7 +83,7 @@ GEM
     ansi (1.5.0)
     arel (6.0.3)
     ast (2.3.0)
-    autoprefixer-rails (6.3.6.2)
+    autoprefixer-rails (6.3.7)
       execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
@@ -103,8 +103,8 @@ GEM
       climate_control (>= 0.0.3, < 1.0)
     codeclimate-test-reporter (0.6.0)
       simplecov (>= 0.7.1, < 1.0.0)
-    codemirror-rails (5.11)
-      railties (>= 3.0, < 5)
+    codemirror-rails (5.11.1)
+      railties (>= 3.0, < 6.0)
     coderay (1.1.1)
     coffee-rails (4.2.1)
       coffee-script (>= 2.2.0)
