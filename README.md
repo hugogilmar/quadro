@@ -1,3 +1,5 @@
+![Quadro CMS Logo](https://raw.githubusercontent.com/hugogilmar/quadro/master/app/assets/images/quadro/quadro-logo.png)
+
 # Quadro
 
 This project rocks and uses MIT-LICENSE.
