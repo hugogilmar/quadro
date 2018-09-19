@@ -2,6 +2,8 @@
 
 This project rocks and uses MIT-LICENSE.
 
+ **No Longer Maintained**
+
 ---
 
 **Quadro** is a CMS written for Rails developers. It works as an engine and provides the standard functionality to start a website or a blog from the scratch.
